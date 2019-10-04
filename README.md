@@ -30,7 +30,7 @@ Since 2019-09-23 OSINT.digitalside.it MISP feed has been added to the "Default f
 3. Find the OSINT.digitalside.it row
 ![DigitalSide MISP Feed](https://raw.githubusercontent.com/davidonzo/host/master/list.png)
 4. Select the row and click on "Enable selected" button at the top of the table
-![List feeds](https://raw.githubusercontent.com/davidonzo/host/master/list.png)
+![List feeds](https://raw.githubusercontent.com/davidonzo/host/master/button.png)
 
 You can also subscribe the feed manually, following the below instructions.
 
