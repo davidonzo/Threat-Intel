@@ -6,4 +6,5 @@
 * 2019-09-25: added PE sections analysis for the PE Executable files 
 * 2019-09-28: retention restricted to 7 days for all formats
 * 2019-10-04: updated https://osint.digitalside.it
+* 2019-10-04: Added lists of uniques IPs, domains and urls collected in squid like format
 * 2019-10-04: updated GitHub repository README.md file
