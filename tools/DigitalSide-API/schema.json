@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Validator for DigitalSide-API response",
+  "id": "https://github.com/davidonzo/Threat-Intel/tools/DigitalSide-API/schema.json",
+  "properties": {
+    "item": {
+      "type": "string",
+      "description": "The entity to search using DigitalSide-API"
+    },
+    "item_type": {
+      "type": "string",
+      "enum": ["domain", "ip", "url"],
+      "description": "The entity type, that can be an URL, an IP or a domain name"
+    },
+    "response": {
+      "type": "boolean",
+      "description": "True if a match has been found. False if no match has been found"
+    },
+    "response_text": {
+      "type": "string",
+      "description": "Just a human readble representation of the 'response' item"
+    },
+    "related_urls": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty"
+        }
+      ]
+    },
+    "list_date": {
+      "type": "string",
+      "description": "The published datetime of the downloaded list"
+      
+    },
+    "list_link": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "item",
+    "item_type",
+    "response",
+    "response_text",
+    "related_urls",
+    "list_date",
+    "list_link"
+  ]
+}
