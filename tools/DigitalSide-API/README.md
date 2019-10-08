@@ -3,6 +3,10 @@ On demand query API for OSINT.digitalside.it project. You can query for souspici
 
 The purpose of this project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort.
 
+## Requiremets
+The script runs using python intepreter at version 3.x. No support will be given to python 2.x.
+Running the script it should be advise you in case you don't have installed a required library.
+
 ## Usage
 ```
 python3 /path/to/digitest.py [IPv4|Domain|Url]
@@ -13,7 +17,7 @@ Example response for a listed item
 {
      "item": "120.142.181.110",
      "item_type": "ip",
-     "response": "true",
+     "response": true,
      "response_text": "Item found in ips.txt list",
      "related_urls": [
          "http://120.142.181.110:48329/.i"
@@ -28,7 +32,7 @@ Example response for an unlisted item:
 {
      "item": "120.142.181.109",
      "item_type": "ip",
-     "response": "false",
+     "response": false,
      "response_text": "Item not found",
      "related_urls": []
      "list_date": "2019-10-08 12:14:18",
