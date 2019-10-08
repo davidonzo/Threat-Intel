@@ -38,7 +38,7 @@ Example response for an unlisted item:
 }
 ```
 
-[Json schema](https://github.com/davidonzo/Threat-Intel/tools/DigitalSide-API/schema.json)
+[Json schema](https://github.com/davidonzo/Threat-Intel/blob/master/tools/DigitalSide-API/schema.json)
 ```
 {
   "$schema": "http://json-schema.org/schema#",
