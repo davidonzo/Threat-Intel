@@ -1,8 +1,6 @@
 # DigitalSide-API v.0.1
 On demand query API for OSINT.digitalside.it project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
 
-The purpose of this project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort.
-
 ## Requiremets
 The script runs using python intepreter at version 3.x. No support will be given to python 2.x.
 Running the script it should be advise you in case you don't have installed a required library.
