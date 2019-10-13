@@ -1,6 +1,7 @@
+# For new version please visit the project [apiosintDS Project](https://github.com/davidonzo/apiosintDS)
+
 # FINAL VERSION
 ## This is a legacy version.
-## For new version please visit the project [apiosintDS Project](https://github.com/davidonzo/apiosintDS)
 
 # DigitalSide-API v.0.1
 On demand query API for OSINT.digitalside.it project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
