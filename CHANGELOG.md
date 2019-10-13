@@ -8,3 +8,4 @@
 * 2019-10-04: updated https://osint.digitalside.it
 * 2019-10-04: Added lists of uniques IPs, domains and urls collected in squid like format
 * 2019-10-04: updated GitHub repository README.md file
+* 2019-10-13: Added new API version https://github.com/davidonzo/apiosintDS
