@@ -40,6 +40,9 @@ You can also subscribe the feed manually, following the below instructions.
 
 ![DigitalSide MISP Feed](https://raw.githubusercontent.com/davidonzo/host/master/digitalsidemispfeed.png)
 
+## Public API
+Please visit the [DigitalSide-API project page](https://github.com/davidonzo/apiosintDS).
+
 ## Sharing samples
 Malware samples are not included in the reports. If you need some binary file for further analysis and investigation send an email to info[at]digitalside.it, qualifing yourself as member of a SOC/CSIRT/CERT or other cyber security organization working on public safety. No commercial company will be supported at all.
 
