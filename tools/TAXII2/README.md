@@ -18,7 +18,7 @@ One way to interact with the TAXII server is using [cti-taxii-client](https://gi
 pip install taxii2-client
 ```
 
-### Example 1: get TAXII server infos and collections
+### Example 1: get TAXII server infos and collections ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiidiscovery.py))
 
 ```
 #!/usr/bin/env python3
@@ -30,7 +30,7 @@ username="guest"
 password="guest"
 
 server = Server(discovery, user=username, password=password)
-print("=============================")
+print("=============================")	
 print(server.title)
 print("=============================")
 print(server.description+"\n")
@@ -53,7 +53,7 @@ for api in server.api_roots:
 print("For info please contact: "+server.contact+"\n")
 ```
 
-### Example 2: get the collection's manifest
+### Example 2: get the collection's manifest ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetmanifest.py))
 
 ```
 #!/usr/bin/env python3
@@ -72,7 +72,7 @@ test = collection.get_manifest()
 print(json.dumps(test, indent=4, sort_keys=True))
 ```
 
-### Example 3: get collection's objects
+### Example 3: get collection's objects ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetobjects.py))
 
 ```
 #!/usr/bin/env python3
