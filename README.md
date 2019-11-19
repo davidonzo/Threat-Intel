@@ -1,5 +1,5 @@
 # DigitalSide Threat-Intel
-This repository contains a set of Open Source Cyber Threat Intellegence information, monstly based on malware analysis and compromised URLs, IPs and domains.
+This repository contains a set of Open Source Cyber Threat Intellegence information, mostly based on malware analysis and compromised URLs, IPs and domains.
 
 The purpose of this project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort.
 
