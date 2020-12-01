@@ -1,6 +1,6 @@
 # DigitalSide Threat-Intel Feed Generator
 
-The script is coded to generate the same output three of [OSINT.digitalside.it](https://osint.digitalside.it/) project.
+The script is coded to generate the same output three of [OSINT.digitalside.it](https://osint.digitalside.it/) project **quering your own [MISP](https://www.misp-project.org/) instance**.
 
 Instructions: 
 
