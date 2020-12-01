@@ -31,10 +31,10 @@ Configure the output directories that must be created by hand before you'll run 
 # Configure the output directories
 # WARNING => Must be created manually. The script does not create them for you!
 # The directory must ends with slash "/"
-mispfeeddir = 'Threat-Intel/digitalside-misp-feed/'
-csvdir = 'Threat-Intel/csv/'
-stix2dir = 'Threat-Intel/stix2/'
-listsdir = 'Threat-Intel/lists/'
+mispfeeddir = 'digitalside-misp-feed/'
+csvdir = 'csv/'
+stix2dir = 'stix2/'
+listsdir = 'lists/'
 ```
 
 Choose the enabled output to produce, the enabled lists to generate and the custom header to be printed in top of any enabled list.

@@ -18,10 +18,10 @@ ssl = False
 # Configure the output directories
 # WARNING => Must be created manually. The script does not create them for you!
 # The directory must ends with slash "/"
-mispfeeddir = 'Threat-Intel/digitalside-misp-feed/'
-csvdir = 'Threat-Intel/csv/'
-stix2dir = 'Threat-Intel/stix2/'
-listsdir = 'Threat-Intel/lists/'
+mispfeeddir = 'digitalside-misp-feed/'
+csvdir = 'csv/'
+stix2dir = 'stix2/'
+listsdir = 'lists/'
 
 
 #Enable or disable the feed creation by type. You can choose to enable the MISP feed, che CSV export, the STIX2 export and the lists generation.
