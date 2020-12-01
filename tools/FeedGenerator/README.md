@@ -26,6 +26,7 @@ ssl = False
 ```
 
 Configure the output directories that must be created by hand before you'll run the script.
+
 **Important**: the script won't create the missed directories, resulting in a fatal error during execution.
 ```
 # Configure the output directories
@@ -38,6 +39,7 @@ listsdir = 'lists/'
 ```
 
 Choose the enabled output to produce, the enabled lists to generate and the custom header to be printed in top of any enabled list.
+
 **Important**: in order to enable lists creation the `enabled["list"]` dict item must be `True`.
 ```
 #Enable or disable the feed creation by type. You can choose to enable the MISP feed, che CSV export, the STIX2 export and the lists generation.
@@ -68,6 +70,7 @@ listsheader = {
 ```
 
 Configure the filters to be applied in data generation process.
+
 **Note**: refer to the [official pymisp documentation page](https://pymisp.readthedocs.io/en/latest/modules.html#pymisp.PyMISP.search_index) for more information.
 ```
 filters = {'published':'true', 'timestamp':'2d'}
