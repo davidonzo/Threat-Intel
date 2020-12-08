@@ -55,8 +55,7 @@ listsenabled = {
 			'domains': True,
 			'ips': True,
 			'urls': True,
-			'piHole': True,
-			'hashes': True
+			'piHole': True
 		}
 
 #Set the header for any list	
@@ -64,8 +63,7 @@ listsheader = {
 		'domains': "###################\n## Your list header here.\n## The list contains set of domains\n######################",
 		'ips': "###################\n## Your list header here.\n## The list contains set of domainsin piHole format\n######################",
 		'urls': "###################\n## Your list header here.\n## The list contains set of IPs\n######################",
-		'piHole': "###################\n## Your list header here.\n## The list contains set of URLs\n######################",
-		'hashes': "###################\n## Your list header here.\n## The list contains the latest hashes lookup.\n######################"
+		'piHole': "###################\n## Your list header here.\n## The list contains set of URLs\n######################"
 }
 ```
 
