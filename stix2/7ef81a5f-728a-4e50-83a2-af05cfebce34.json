@@ -1,11 +1,11 @@
 {
-    "id": "bundle--fbddf60b-5b2a-46da-a35c-91aacd2404fd",
+    "id": "bundle--24c8d6f3-7205-42df-b257-9f65566b9f81",
     "objects": [
         {
-            "created": "2021-02-05T07:14:51.766Z",
+            "created": "2021-02-06T07:03:18.525Z",
             "id": "identity--5e9dad84-c570-47a4-bcc8-0315c0a80112",
             "identity_class": "organization",
-            "modified": "2021-02-05T07:14:51.766Z",
+            "modified": "2021-02-06T07:03:18.525Z",
             "name": "DIGITALSIDE.IT",
             "type": "identity"
         },
@@ -20,7 +20,7 @@
                 "source:DigitalSide.IT",
                 "source:urlhaus.abuse.ch"
             ],
-            "modified": "2021-02-02T00:27:11.000Z",
+            "modified": "2021-02-05T18:04:09.000Z",
             "name": "DigitalSide Malware report: MD5: 0af70bf6e67b99aa315fc6ab77dccd5a",
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
@@ -33,10 +33,14 @@
                 "x-misp-object-mime-type--b4f9dab8-5ec9-40df-bcd9-889e277fb19b",
                 "indicator--19fad1f7-f562-47f4-ab90-2f6c4b247ecd",
                 "indicator--868b2a6c-c280-4428-b707-c3ab800478a0",
+                "observed-data--0fda6401-20d3-4d4b-b152-339415f56829",
+                "observed-data--995cb475-1e8b-4e31-834f-851063e29446",
+                "indicator--7bf85d3f-6b5f-400e-aa3e-c8540e92f82e",
+                "indicator--8de6f6a0-f043-432f-a282-1eb6e671fe1f",
                 "x-misp-object-virustotal-report--d6a28987-6715-41ef-88d4-3d8240505501",
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
             ],
-            "published": "2021-02-02T00:27:22Z",
+            "published": "2021-02-05T18:04:13Z",
             "type": "report"
         },
         {
@@ -178,6 +182,90 @@
             "type": "indicator",
             "valid_from": "2021-02-02T00:27:05Z",
             "valid_until": "2021-02-02T00:27:05Z"
+        },
+        {
+            "created": "2021-02-05T17:47:08.000Z",
+            "created_by_ref": "identity--5e9dad84-c570-47a4-bcc8-0315c0a80112",
+            "first_observed": "2021-02-05T17:47:08Z",
+            "id": "observed-data--0fda6401-20d3-4d4b-b152-339415f56829",
+            "labels": [
+                "misp:type=\"filename\"",
+                "misp:category=\"Payload delivery\"",
+                "misp:to_ids=\"False\""
+            ],
+            "last_observed": "2021-02-05T17:47:08Z",
+            "modified": "2021-02-05T17:47:08.000Z",
+            "number_observed": 1,
+            "objects": {
+                "0": {
+                    "name": "bin.sh",
+                    "type": "file"
+                }
+            },
+            "type": "observed-data"
+        },
+        {
+            "created": "2021-02-05T18:04:06.000Z",
+            "created_by_ref": "identity--5e9dad84-c570-47a4-bcc8-0315c0a80112",
+            "first_observed": "2021-02-05T18:04:06Z",
+            "id": "observed-data--995cb475-1e8b-4e31-834f-851063e29446",
+            "labels": [
+                "misp:type=\"filename\"",
+                "misp:category=\"Payload delivery\"",
+                "misp:to_ids=\"False\""
+            ],
+            "last_observed": "2021-02-05T18:04:06Z",
+            "modified": "2021-02-05T18:04:06.000Z",
+            "number_observed": 1,
+            "objects": {
+                "0": {
+                    "name": "i",
+                    "type": "file"
+                }
+            },
+            "type": "observed-data"
+        },
+        {
+            "created": "2021-02-05T18:04:06.000Z",
+            "created_by_ref": "identity--5e9dad84-c570-47a4-bcc8-0315c0a80112",
+            "id": "indicator--7bf85d3f-6b5f-400e-aa3e-c8540e92f82e",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "misp-category",
+                    "phase_name": "Network activity"
+                }
+            ],
+            "labels": [
+                "misp:type=\"url\"",
+                "misp:category=\"Network activity\"",
+                "misp:to_ids=\"True\""
+            ],
+            "modified": "2021-02-05T18:04:06.000Z",
+            "pattern": "[url:value = 'http://59.97.168.81:35136/bin.sh']",
+            "type": "indicator",
+            "valid_from": "2021-02-05T18:04:06Z",
+            "valid_until": "2021-02-05T18:04:06Z"
+        },
+        {
+            "created": "2021-02-05T18:04:06.000Z",
+            "created_by_ref": "identity--5e9dad84-c570-47a4-bcc8-0315c0a80112",
+            "id": "indicator--8de6f6a0-f043-432f-a282-1eb6e671fe1f",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "misp-category",
+                    "phase_name": "Network activity"
+                }
+            ],
+            "labels": [
+                "misp:type=\"ip-dst\"",
+                "misp:category=\"Network activity\"",
+                "misp:to_ids=\"True\""
+            ],
+            "modified": "2021-02-05T18:04:06.000Z",
+            "pattern": "[network-traffic:dst_ref.type = 'ipv4-addr' AND network-traffic:dst_ref.value = '59.97.168.81']",
+            "type": "indicator",
+            "valid_from": "2021-02-05T18:04:06Z",
+            "valid_until": "2021-02-05T18:04:06Z"
         },
         {
             "created": "2021-02-02T00:27:06.000Z",
