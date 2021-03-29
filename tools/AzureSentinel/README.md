@@ -57,10 +57,12 @@ api_version = "2019-01-01-preview" #actual valid version
 ## Run the script
 
 Give the script executable permission and run it.
+
 Schedule the execution no more than one time a day, since the OSINT.digitalside.it repository is updated daily.
 
 ## Notes
 
 The script increment the watchlist any time new IoC will be release by the service. To delete old entries, make your own procedure related to the retention policies of your Organization.
+
 For more informations about Azure Sentinel watchlists API [refer to Microsoft documentation](https://docs.microsoft.com/it-it/azure/sentinel/watchlist-with-rest-api#add-or-update-a-watchlist-item).
 
