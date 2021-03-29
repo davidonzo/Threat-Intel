@@ -28,12 +28,12 @@ watchlist_alias = "osintds" #can change the default
 displayName = "OSINT-DigitalSide.it" #can change the default
 source = "https://osint.digitalside.it" #can change the default
 description = "Watchlist from OSINT-Digitalside.it lists" #can change the default
-tenant_id = "`<the Azure tenant id>`"
-client_id = "`<the registered app client id>`"
-client_secret = "`<the registered app client secret>`"
-subscription_id = "`<your Azure subscription id>`"
-resource_group = "`<the Resource Group where the Sentinel workspace is mapped>`"
-workspace = "`<the name of the workspace used by Sentinel>`"
+tenant_id = "<the Azure tenant id>"
+client_id = "<the registered app client id>"
+client_secret = "<the registered app client secret>"
+subscription_id = "<your Azure subscription id>"
+resource_group = "<the Resource Group where the Sentinel workspace is mapped>"
+workspace = "<the name of the workspace used by Sentinel>"
 api_version = "2019-01-01-preview" #actual valid version
 #########################################################
 #########################################################
