@@ -1,6 +1,4 @@
-# DigitalSide Threat-Intel to Azure Sentinel Watchlist 
-
-![Microsoft Azure Sentinel] (https://raw.githubusercontent.com/davidonzo/host/master/sentinel.png)
+# DigitalSide Threat-Intel to Azure Sentinel Watchlist ![Microsoft Azure Sentinel](https://raw.githubusercontent.com/davidonzo/host/master/sentinel.png)
 
 [Microsoft Azure Sentinel](https://docs.microsoft.com/it-it/azure/sentinel/overview) is a cloud-native Security Information Event Management (SIEM). [Azure Sentinel Watchlists](https://docs.microsoft.com/it-it/azure/sentinel/watchlists) is a preview feature that enable the collection of data from external data sources for correlation with the events in your Azure Sentinel environment.
 
