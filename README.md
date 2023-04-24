@@ -41,6 +41,9 @@ You can also subscribe to the feed manually, following the below instructions.
 
 ![DigitalSide MISP Feed](https://raw.githubusercontent.com/davidonzo/host/master/digitalsidemispfeed.png)
 
+## Domain white list and MISP Warning List
+For more information about domain white list applied to the project, please refer to [OSINT.DigitalSide.IT Threat-Intel Domains White List](https://github.com/davidonzo/Threat-Intel-Domain-WL).
+
 ## Public API
 Please visit the [DigitalSide-API project page](https://github.com/davidonzo/apiosintDS).
 
