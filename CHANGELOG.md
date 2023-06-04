@@ -1,6 +1,6 @@
 # CHANGELOG 2023
-| CHLID | Date	    | Type      | Details |
-| - | --------- | :-------: | ------- |
+| ID | Date	    | Type      | Details |
+|:-:| --------- | :-------: | ------- |
 | 1 | 2023-06-04| **ADDED** | File MIME type now included in the [online reports](https://osint.digitalside.it/report/) |
 | 2 | 2023-06-04| **FIXED** | File MIME type now included in [STIX2 reports](https://osint.digitalside.it/Threat-Intel/stix2/). No more extended file type in the STIX `File.mime_type` attribute |
 | 3 | 2023-06-04| **FIXED** | All IDs generated in any STIX2 report are now immutable. Even if an update is applied to an existing STIX2 file, previous generated IDs related to Bundle, Report, ObservedData and Indicator objects won't be updated, so you can use `STIXOBJECT.id` with an hight level of confidence |
