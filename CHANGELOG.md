@@ -5,6 +5,7 @@
 | 2 | 2023-06-10 | **CHANGED** | Outdated indicators, based on `valid_until` datetime, are removed from [STIX2](https://osint.digitalside.it/Threat-Intel/stix2/) report. Full list with no retention is available via [MISP Feed subscription](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/) | 
 | 3 | 2023-06-10 | **ADDED** | STIX object `Malware` added to the report, with external references to OSINT.DigitalSide.it [report page](https://osint.digitalside.it/report/) and, when available, the [VirusTotal](https://www.virustotal.com/) report page and detection ratio |
 | 4 | 2023-06-10 | **ADDED** | STIX objects `Relationship` added. `Indicators <=> ObservedData` and `Indicators <=> Malware` |
+| 5 | 2023-06-10 | **ADDED** | Minor changes on `Identity` |
 
 ## CHANGELOG 2023 #1
 | ID | Date	    | Type      | Details |
