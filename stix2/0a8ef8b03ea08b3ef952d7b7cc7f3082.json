@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--9a8fc495-4ba2-4961-8482-c7f031dac876",
-            "created": "2023-06-10T17:49:21.852584Z",
-            "modified": "2023-06-10T17:49:21.852584Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--cf69b1bc-4929-420b-9d37-af0cea2ea903",
-            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
+            "id": "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-07T16:42:03.000Z",
+            "modified": "2023-06-07T16:42:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://www.jyotigroup.co.in/admin/images/Tender/dot.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-07T16:42:03Z",
+            "valid_until": "2023-06-14T16:42:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--87b7d1c1-bcfc-45c9-8cfc-8571af40970f",
-            "created": "2023-06-10T17:49:21.852774Z",
-            "modified": "2023-06-10T17:49:21.852774Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--eda3503a-41d9-4d85-acf2-f1f649043080",
-            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--19f85fec-858f-486e-81d1-ecb2791543a5",
-            "created": "2023-06-10T17:49:21.85294Z",
-            "modified": "2023-06-10T17:49:21.85294Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--229ec1b6-dda6-4d5e-b74d-b2bb88fbdba7",
-            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
+            "id": "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-07T16:42:03.000Z",
+            "modified": "2023-06-07T16:42:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'www.jyotigroup.co.in']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-07T16:42:03Z",
+            "valid_until": "2023-06-14T16:42:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--2af2cf4b-e370-40dc-8bff-351d095e0a73"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-07T16:42:03.000Z",
-            "modified": "2023-06-07T16:42:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://www.jyotigroup.co.in/admin/images/Tender/dot.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-07T16:42:03Z",
-            "valid_until": "2023-06-14T16:42:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--93e05fe2-ac7e-4a29-b2c5-6c7af289735b",
+            "created": "2023-06-10T17:49:21.854657Z",
+            "modified": "2023-06-10T17:49:21.854657Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
+            "target_ref": "observed-data--2af2cf4b-e370-40dc-8bff-351d095e0a73"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9681c218-efc6-4103-8ef8-5d97b32d98e3",
+            "created": "2023-06-10T17:49:21.855961Z",
+            "modified": "2023-06-10T17:49:21.855961Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
+            "target_ref": "observed-data--2af2cf4b-e370-40dc-8bff-351d095e0a73"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9a8fc495-4ba2-4961-8482-c7f031dac876",
+            "created": "2023-06-10T17:49:21.852584Z",
+            "modified": "2023-06-10T17:49:21.852584Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--cf69b1bc-4929-420b-9d37-af0cea2ea903",
+            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--87b7d1c1-bcfc-45c9-8cfc-8571af40970f",
+            "created": "2023-06-10T17:49:21.852774Z",
+            "modified": "2023-06-10T17:49:21.852774Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--eda3503a-41d9-4d85-acf2-f1f649043080",
+            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--19f85fec-858f-486e-81d1-ecb2791543a5",
+            "created": "2023-06-10T17:49:21.85294Z",
+            "modified": "2023-06-10T17:49:21.85294Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--229ec1b6-dda6-4d5e-b74d-b2bb88fbdba7",
+            "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--93e05fe2-ac7e-4a29-b2c5-6c7af289735b",
-            "created": "2023-06-10T17:49:21.854657Z",
-            "modified": "2023-06-10T17:49:21.854657Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
-            "target_ref": "observed-data--2af2cf4b-e370-40dc-8bff-351d095e0a73"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-07T16:42:03.000Z",
-            "modified": "2023-06-07T16:42:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'www.jyotigroup.co.in']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-07T16:42:03Z",
-            "valid_until": "2023-06-14T16:42:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--fd427366-5dda-40f3-b438-a85ceec0015f",
             "created": "2023-06-10T17:49:21.855774Z",
             "modified": "2023-06-10T17:49:21.855774Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--74fa950d-ada0-455b-aa14-3e273177d383"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--9681c218-efc6-4103-8ef8-5d97b32d98e3",
-            "created": "2023-06-10T17:49:21.855961Z",
-            "modified": "2023-06-10T17:49:21.855961Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
-            "target_ref": "observed-data--2af2cf4b-e370-40dc-8bff-351d095e0a73"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--cceaa7dc-6519-49c6-80a0-8b7fb1a8c7dd",
+            "id": "report--b4fa8a0e-715d-4da3-9d17-cac95cc12a3c",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-07T16:42:03.000Z",
             "modified": "2023-06-07T16:42:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--cf69b1bc-4929-420b-9d37-af0cea2ea903",
                 "indicator--eda3503a-41d9-4d85-acf2-f1f649043080",
                 "indicator--229ec1b6-dda6-4d5e-b74d-b2bb88fbdba7",
-                "relationship--9a8fc495-4ba2-4961-8482-c7f031dac876",
-                "relationship--87b7d1c1-bcfc-45c9-8cfc-8571af40970f",
-                "relationship--19f85fec-858f-486e-81d1-ecb2791543a5",
+                "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
+                "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
                 "relationship--82f3c002-62f0-4060-9c62-25e6eeb4b97b",
                 "relationship--77df4831-25b2-42e3-a41c-af5dacdbf091",
                 "relationship--404f9be4-d2ef-4765-8183-da4f13c34b27",
-                "indicator--17652e41-eb1f-4f38-a8bd-aae1cf11b4b5",
-                "relationship--a825a17c-9838-4e4f-b545-fcf15e50c7c8",
                 "relationship--93e05fe2-ac7e-4a29-b2c5-6c7af289735b",
-                "indicator--a9267175-7999-4a1e-a077-5787c8ac34cb",
-                "relationship--fd427366-5dda-40f3-b438-a85ceec0015f",
-                "relationship--9681c218-efc6-4103-8ef8-5d97b32d98e3"
+                "relationship--9681c218-efc6-4103-8ef8-5d97b32d98e3",
+                "relationship--9a8fc495-4ba2-4961-8482-c7f031dac876",
+                "relationship--87b7d1c1-bcfc-45c9-8cfc-8571af40970f",
+                "relationship--19f85fec-858f-486e-81d1-ecb2791543a5",
+                "relationship--a825a17c-9838-4e4f-b545-fcf15e50c7c8",
+                "relationship--fd427366-5dda-40f3-b438-a85ceec0015f"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

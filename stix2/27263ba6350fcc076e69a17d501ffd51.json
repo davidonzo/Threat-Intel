@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--e76d6bbe-9a3c-4133-8f37-a12c7607ea95",
-            "created": "2023-06-10T17:49:08.274716Z",
-            "modified": "2023-06-10T17:49:08.274716Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--58c567b7-dfaa-45aa-a4ba-c9f356f06b0c",
-            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
+            "id": "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-07T12:41:02.000Z",
+            "modified": "2023-06-07T12:41:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://193.29.189.74/hiddenbin/boatnet.ppc']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-07T12:41:02Z",
+            "valid_until": "2023-06-14T12:41:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--82dcf795-f89e-4c2e-be6c-9c868d55ef5a",
-            "created": "2023-06-10T17:49:08.27494Z",
-            "modified": "2023-06-10T17:49:08.27494Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--52c1c01c-c576-4f85-afa1-fc175570d0cc",
-            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--92d6d4b6-32b5-4dca-8523-fd5ad0dc6331",
-            "created": "2023-06-10T17:49:08.275109Z",
-            "modified": "2023-06-10T17:49:08.275109Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--e06dd94f-a5de-470b-9ef3-bda756df9e4b",
-            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
+            "id": "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-07T12:41:02.000Z",
+            "modified": "2023-06-07T12:41:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[ipv4-addr:value = '193.29.189.74/32']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-07T12:41:02Z",
+            "valid_until": "2023-06-14T12:41:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--249c359e-fc92-4ca8-b408-bc864a439f91"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-07T12:41:02.000Z",
-            "modified": "2023-06-07T12:41:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://193.29.189.74/hiddenbin/boatnet.ppc']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-07T12:41:02Z",
-            "valid_until": "2023-06-14T12:41:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--3a568d14-32d0-4049-b8e3-d31bdb4291b3",
+            "created": "2023-06-10T17:49:08.276742Z",
+            "modified": "2023-06-10T17:49:08.276742Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
+            "target_ref": "observed-data--249c359e-fc92-4ca8-b408-bc864a439f91"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f3d0146b-2838-49f8-ae73-c43e56d03a72",
+            "created": "2023-06-10T17:49:08.277895Z",
+            "modified": "2023-06-10T17:49:08.277895Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
+            "target_ref": "observed-data--249c359e-fc92-4ca8-b408-bc864a439f91"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e76d6bbe-9a3c-4133-8f37-a12c7607ea95",
+            "created": "2023-06-10T17:49:08.274716Z",
+            "modified": "2023-06-10T17:49:08.274716Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--58c567b7-dfaa-45aa-a4ba-c9f356f06b0c",
+            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--82dcf795-f89e-4c2e-be6c-9c868d55ef5a",
+            "created": "2023-06-10T17:49:08.27494Z",
+            "modified": "2023-06-10T17:49:08.27494Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--52c1c01c-c576-4f85-afa1-fc175570d0cc",
+            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--92d6d4b6-32b5-4dca-8523-fd5ad0dc6331",
+            "created": "2023-06-10T17:49:08.275109Z",
+            "modified": "2023-06-10T17:49:08.275109Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--e06dd94f-a5de-470b-9ef3-bda756df9e4b",
+            "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--3a568d14-32d0-4049-b8e3-d31bdb4291b3",
-            "created": "2023-06-10T17:49:08.276742Z",
-            "modified": "2023-06-10T17:49:08.276742Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
-            "target_ref": "observed-data--249c359e-fc92-4ca8-b408-bc864a439f91"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-07T12:41:02.000Z",
-            "modified": "2023-06-07T12:41:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[ipv4-addr:value = '193.29.189.74/32']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-07T12:41:02Z",
-            "valid_until": "2023-06-14T12:41:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--92faea2d-53f8-455d-9623-90d067ebea5c",
             "created": "2023-06-10T17:49:08.277718Z",
             "modified": "2023-06-10T17:49:08.277718Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--5c8248a6-a25f-4db6-a229-c7250b65e779"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--f3d0146b-2838-49f8-ae73-c43e56d03a72",
-            "created": "2023-06-10T17:49:08.277895Z",
-            "modified": "2023-06-10T17:49:08.277895Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
-            "target_ref": "observed-data--249c359e-fc92-4ca8-b408-bc864a439f91"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--adc557de-a6f8-4340-b5ff-58f8ac3fb1cb",
+            "id": "report--d9d26ebc-0504-4686-bc37-2f43967cc461",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-07T12:41:02.000Z",
             "modified": "2023-06-07T12:41:02.000Z",
@@ -316,18 +316,18 @@
                 "indicator--58c567b7-dfaa-45aa-a4ba-c9f356f06b0c",
                 "indicator--52c1c01c-c576-4f85-afa1-fc175570d0cc",
                 "indicator--e06dd94f-a5de-470b-9ef3-bda756df9e4b",
-                "relationship--e76d6bbe-9a3c-4133-8f37-a12c7607ea95",
-                "relationship--82dcf795-f89e-4c2e-be6c-9c868d55ef5a",
-                "relationship--92d6d4b6-32b5-4dca-8523-fd5ad0dc6331",
+                "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
+                "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
                 "relationship--5d6d690c-03bc-4afc-bdef-d40d4a06c261",
                 "relationship--42a79b41-281d-436a-9e99-099a2f4a8aa5",
                 "relationship--c15b1980-044f-4847-9c00-b86c497ffc54",
-                "indicator--6edc6d38-6662-4f24-b0c8-6cd40369c40c",
-                "relationship--b9482afe-4138-4740-a850-ee56ebc14330",
                 "relationship--3a568d14-32d0-4049-b8e3-d31bdb4291b3",
-                "indicator--122e3c39-4e44-4a68-9935-e625033e86d9",
-                "relationship--92faea2d-53f8-455d-9623-90d067ebea5c",
-                "relationship--f3d0146b-2838-49f8-ae73-c43e56d03a72"
+                "relationship--f3d0146b-2838-49f8-ae73-c43e56d03a72",
+                "relationship--e76d6bbe-9a3c-4133-8f37-a12c7607ea95",
+                "relationship--82dcf795-f89e-4c2e-be6c-9c868d55ef5a",
+                "relationship--92d6d4b6-32b5-4dca-8523-fd5ad0dc6331",
+                "relationship--b9482afe-4138-4740-a850-ee56ebc14330",
+                "relationship--92faea2d-53f8-455d-9623-90d067ebea5c"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

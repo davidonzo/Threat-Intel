@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--e40c6124-6143-46a0-9aa2-8551cdcb5d55",
-            "created": "2023-06-10T17:49:25.790288Z",
-            "modified": "2023-06-10T17:49:25.790288Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--6de8c792-e3e9-45dc-98cb-235acefb26e9",
-            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
+            "id": "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-05T22:14:02.000Z",
+            "modified": "2023-06-05T22:14:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://vertebromed.md/temp/IMG_3360_103pdf.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-05T22:14:02Z",
+            "valid_until": "2023-06-12T22:14:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--9fa83fa9-5bb8-4215-82a3-e8b5fd3103d4",
-            "created": "2023-06-10T17:49:25.790506Z",
-            "modified": "2023-06-10T17:49:25.790506Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--e5bab47c-f647-4098-a137-8915fa9e8e65",
-            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--c27df8f6-082e-403f-9124-11942dc5a09e",
-            "created": "2023-06-10T17:49:25.790745Z",
-            "modified": "2023-06-10T17:49:25.790745Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--96450201-b4bd-43cd-829c-7002177c6d5f",
-            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
+            "id": "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-05T22:14:02.000Z",
+            "modified": "2023-06-05T22:14:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'vertebromed.md']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-05T22:14:02Z",
+            "valid_until": "2023-06-12T22:14:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--549dd033-44a6-4606-9bce-8719a860c37b"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-05T22:14:02.000Z",
-            "modified": "2023-06-05T22:14:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://vertebromed.md/temp/IMG_3360_103pdf.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-05T22:14:02Z",
-            "valid_until": "2023-06-12T22:14:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--6588b4e1-60d4-4663-a78f-42cdfbfd8a33",
+            "created": "2023-06-10T17:49:25.792647Z",
+            "modified": "2023-06-10T17:49:25.792647Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
+            "target_ref": "observed-data--549dd033-44a6-4606-9bce-8719a860c37b"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--245b5981-cd28-47fc-81b4-e658e701e2bb",
+            "created": "2023-06-10T17:49:25.794091Z",
+            "modified": "2023-06-10T17:49:25.794091Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
+            "target_ref": "observed-data--549dd033-44a6-4606-9bce-8719a860c37b"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e40c6124-6143-46a0-9aa2-8551cdcb5d55",
+            "created": "2023-06-10T17:49:25.790288Z",
+            "modified": "2023-06-10T17:49:25.790288Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--6de8c792-e3e9-45dc-98cb-235acefb26e9",
+            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9fa83fa9-5bb8-4215-82a3-e8b5fd3103d4",
+            "created": "2023-06-10T17:49:25.790506Z",
+            "modified": "2023-06-10T17:49:25.790506Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--e5bab47c-f647-4098-a137-8915fa9e8e65",
+            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c27df8f6-082e-403f-9124-11942dc5a09e",
+            "created": "2023-06-10T17:49:25.790745Z",
+            "modified": "2023-06-10T17:49:25.790745Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--96450201-b4bd-43cd-829c-7002177c6d5f",
+            "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--6588b4e1-60d4-4663-a78f-42cdfbfd8a33",
-            "created": "2023-06-10T17:49:25.792647Z",
-            "modified": "2023-06-10T17:49:25.792647Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
-            "target_ref": "observed-data--549dd033-44a6-4606-9bce-8719a860c37b"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-05T22:14:02.000Z",
-            "modified": "2023-06-05T22:14:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'vertebromed.md']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-05T22:14:02Z",
-            "valid_until": "2023-06-12T22:14:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--fc5299cc-f67c-461e-a93d-1ffa8a7385e9",
             "created": "2023-06-10T17:49:25.7939Z",
             "modified": "2023-06-10T17:49:25.7939Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--d2c82ade-dbd3-464b-8443-88573132e0d5"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--245b5981-cd28-47fc-81b4-e658e701e2bb",
-            "created": "2023-06-10T17:49:25.794091Z",
-            "modified": "2023-06-10T17:49:25.794091Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
-            "target_ref": "observed-data--549dd033-44a6-4606-9bce-8719a860c37b"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--8e22469f-0acd-4614-9aef-d79cdadbfba6",
+            "id": "report--bcad1e11-e276-4e55-86ce-8c00393dcbcd",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-05T22:14:02.000Z",
             "modified": "2023-06-05T22:14:02.000Z",
@@ -316,18 +316,18 @@
                 "indicator--6de8c792-e3e9-45dc-98cb-235acefb26e9",
                 "indicator--e5bab47c-f647-4098-a137-8915fa9e8e65",
                 "indicator--96450201-b4bd-43cd-829c-7002177c6d5f",
-                "relationship--e40c6124-6143-46a0-9aa2-8551cdcb5d55",
-                "relationship--9fa83fa9-5bb8-4215-82a3-e8b5fd3103d4",
-                "relationship--c27df8f6-082e-403f-9124-11942dc5a09e",
+                "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
+                "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
                 "relationship--533332c8-8868-48f4-b947-6f8de19e8247",
                 "relationship--cde59d71-2244-40b5-b2aa-92aeb5c86693",
                 "relationship--41d0ada3-06d3-4f50-bda6-a3becdf4bcad",
-                "indicator--4332be1d-c894-46cd-8e30-520345c5e8da",
-                "relationship--62539b1e-a845-419e-a2b5-145bd226ae8b",
                 "relationship--6588b4e1-60d4-4663-a78f-42cdfbfd8a33",
-                "indicator--d67eb5f4-729e-41ab-9718-2ae7050be6d9",
-                "relationship--fc5299cc-f67c-461e-a93d-1ffa8a7385e9",
-                "relationship--245b5981-cd28-47fc-81b4-e658e701e2bb"
+                "relationship--245b5981-cd28-47fc-81b4-e658e701e2bb",
+                "relationship--e40c6124-6143-46a0-9aa2-8551cdcb5d55",
+                "relationship--9fa83fa9-5bb8-4215-82a3-e8b5fd3103d4",
+                "relationship--c27df8f6-082e-403f-9124-11942dc5a09e",
+                "relationship--62539b1e-a845-419e-a2b5-145bd226ae8b",
+                "relationship--fc5299cc-f67c-461e-a93d-1ffa8a7385e9"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--c729e429-5af5-443a-821f-5b66d1350e13",
-            "created": "2023-06-10T17:49:01.667629Z",
-            "modified": "2023-06-10T17:49:01.667629Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5d4f172b-0fc6-4cc9-8d8c-2b07353a19a4",
-            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
+            "id": "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-06T07:34:02.000Z",
+            "modified": "2023-06-06T07:34:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://hydramecs.com/NA.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-06T07:34:02Z",
+            "valid_until": "2023-06-13T07:34:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--eabfea4f-6508-4b71-93e2-a43fa6de186a",
-            "created": "2023-06-10T17:49:01.667817Z",
-            "modified": "2023-06-10T17:49:01.667817Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--7a75d302-ce65-4d68-bd03-b880d09052e9",
-            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--1c8cb8a8-a519-4660-99ad-68042e413330",
-            "created": "2023-06-10T17:49:01.667979Z",
-            "modified": "2023-06-10T17:49:01.667979Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--fdf56b05-4141-4cc8-b9cc-57f473b663db",
-            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
+            "id": "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-06T07:34:02.000Z",
+            "modified": "2023-06-06T07:34:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'hydramecs.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-06T07:34:02Z",
+            "valid_until": "2023-06-13T07:34:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--d2322b8d-a885-4dd5-b133-53d7bd1dbcd5"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-06T07:34:02.000Z",
-            "modified": "2023-06-06T07:34:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://hydramecs.com/NA.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-06T07:34:02Z",
-            "valid_until": "2023-06-13T07:34:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--53115531-36cb-4436-b934-e21580f0236d",
+            "created": "2023-06-10T17:49:01.669626Z",
+            "modified": "2023-06-10T17:49:01.669626Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
+            "target_ref": "observed-data--d2322b8d-a885-4dd5-b133-53d7bd1dbcd5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b352715e-de7a-43eb-a40c-efab4305c0b5",
+            "created": "2023-06-10T17:49:01.670926Z",
+            "modified": "2023-06-10T17:49:01.670926Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
+            "target_ref": "observed-data--d2322b8d-a885-4dd5-b133-53d7bd1dbcd5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c729e429-5af5-443a-821f-5b66d1350e13",
+            "created": "2023-06-10T17:49:01.667629Z",
+            "modified": "2023-06-10T17:49:01.667629Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5d4f172b-0fc6-4cc9-8d8c-2b07353a19a4",
+            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--eabfea4f-6508-4b71-93e2-a43fa6de186a",
+            "created": "2023-06-10T17:49:01.667817Z",
+            "modified": "2023-06-10T17:49:01.667817Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7a75d302-ce65-4d68-bd03-b880d09052e9",
+            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1c8cb8a8-a519-4660-99ad-68042e413330",
+            "created": "2023-06-10T17:49:01.667979Z",
+            "modified": "2023-06-10T17:49:01.667979Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fdf56b05-4141-4cc8-b9cc-57f473b663db",
+            "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--53115531-36cb-4436-b934-e21580f0236d",
-            "created": "2023-06-10T17:49:01.669626Z",
-            "modified": "2023-06-10T17:49:01.669626Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
-            "target_ref": "observed-data--d2322b8d-a885-4dd5-b133-53d7bd1dbcd5"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-06T07:34:02.000Z",
-            "modified": "2023-06-06T07:34:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'hydramecs.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-06T07:34:02Z",
-            "valid_until": "2023-06-13T07:34:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--333a4614-08f5-4215-b12f-24fd08902d2e",
             "created": "2023-06-10T17:49:01.670739Z",
             "modified": "2023-06-10T17:49:01.670739Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--ec12d35e-1ac7-4a91-8b5c-124918749f0d"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--b352715e-de7a-43eb-a40c-efab4305c0b5",
-            "created": "2023-06-10T17:49:01.670926Z",
-            "modified": "2023-06-10T17:49:01.670926Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
-            "target_ref": "observed-data--d2322b8d-a885-4dd5-b133-53d7bd1dbcd5"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--61fdca6a-365c-4a20-8014-98ec9d08a9b8",
+            "id": "report--3940bb35-701f-4737-8195-cdd4cc35e56f",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-06T07:34:02.000Z",
             "modified": "2023-06-06T07:34:02.000Z",
@@ -316,18 +316,18 @@
                 "indicator--5d4f172b-0fc6-4cc9-8d8c-2b07353a19a4",
                 "indicator--7a75d302-ce65-4d68-bd03-b880d09052e9",
                 "indicator--fdf56b05-4141-4cc8-b9cc-57f473b663db",
-                "relationship--c729e429-5af5-443a-821f-5b66d1350e13",
-                "relationship--eabfea4f-6508-4b71-93e2-a43fa6de186a",
-                "relationship--1c8cb8a8-a519-4660-99ad-68042e413330",
+                "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
+                "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
                 "relationship--72705c5e-6cbc-49fa-a399-b9356c27d022",
                 "relationship--80957418-aebf-4504-a2c6-ea871329f7bc",
                 "relationship--66141ae7-12c7-4bbb-9695-c547432b0361",
-                "indicator--334f152f-7ed7-4a6d-96e2-2d8e69a8d0c5",
-                "relationship--d58f6463-fb04-4a98-96b7-56e356623820",
                 "relationship--53115531-36cb-4436-b934-e21580f0236d",
-                "indicator--0ded8d4c-7b88-47b8-b460-ad3bd7a066dd",
-                "relationship--333a4614-08f5-4215-b12f-24fd08902d2e",
-                "relationship--b352715e-de7a-43eb-a40c-efab4305c0b5"
+                "relationship--b352715e-de7a-43eb-a40c-efab4305c0b5",
+                "relationship--c729e429-5af5-443a-821f-5b66d1350e13",
+                "relationship--eabfea4f-6508-4b71-93e2-a43fa6de186a",
+                "relationship--1c8cb8a8-a519-4660-99ad-68042e413330",
+                "relationship--d58f6463-fb04-4a98-96b7-56e356623820",
+                "relationship--333a4614-08f5-4215-b12f-24fd08902d2e"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

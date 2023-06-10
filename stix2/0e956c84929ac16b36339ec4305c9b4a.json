@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--0556e07c-bb88-4d3a-b957-590893cb6315",
-            "created": "2023-06-10T17:49:16.658404Z",
-            "modified": "2023-06-10T17:49:16.658404Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--af50b626-9b66-4902-82f6-7988d794ab39",
-            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
+            "id": "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T13:33:04.000Z",
+            "modified": "2023-06-08T13:33:04.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://file.gta5cheatcode.world/dashboard/file/dxpserver.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T13:33:04Z",
+            "valid_until": "2023-06-15T13:33:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--5ab6b7bf-83c5-43e4-a527-a0b1432813d8",
-            "created": "2023-06-10T17:49:16.658587Z",
-            "modified": "2023-06-10T17:49:16.658587Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--f8df5dfd-06b1-48a5-906c-86f66164f253",
-            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--3b518d22-a30e-46fd-8830-d2c672d3122b",
-            "created": "2023-06-10T17:49:16.658745Z",
-            "modified": "2023-06-10T17:49:16.658745Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--39475a4b-6303-43af-927a-22306d3c3941",
-            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
+            "id": "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T13:33:04.000Z",
+            "modified": "2023-06-08T13:33:04.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'file.gta5cheatcode.world']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T13:33:04Z",
+            "valid_until": "2023-06-15T13:33:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--4cfef0ab-a1c9-4656-a17f-bc60fb9d75d6"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T13:33:04.000Z",
-            "modified": "2023-06-08T13:33:04.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://file.gta5cheatcode.world/dashboard/file/dxpserver.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T13:33:04Z",
-            "valid_until": "2023-06-15T13:33:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--b81867ca-b666-4dc5-9d48-40dde051309d",
+            "created": "2023-06-10T17:49:16.660386Z",
+            "modified": "2023-06-10T17:49:16.660386Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
+            "target_ref": "observed-data--4cfef0ab-a1c9-4656-a17f-bc60fb9d75d6"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1de4d243-f2ec-44ae-8905-57646450bb76",
+            "created": "2023-06-10T17:49:16.661672Z",
+            "modified": "2023-06-10T17:49:16.661672Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
+            "target_ref": "observed-data--4cfef0ab-a1c9-4656-a17f-bc60fb9d75d6"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0556e07c-bb88-4d3a-b957-590893cb6315",
+            "created": "2023-06-10T17:49:16.658404Z",
+            "modified": "2023-06-10T17:49:16.658404Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--af50b626-9b66-4902-82f6-7988d794ab39",
+            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5ab6b7bf-83c5-43e4-a527-a0b1432813d8",
+            "created": "2023-06-10T17:49:16.658587Z",
+            "modified": "2023-06-10T17:49:16.658587Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--f8df5dfd-06b1-48a5-906c-86f66164f253",
+            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3b518d22-a30e-46fd-8830-d2c672d3122b",
+            "created": "2023-06-10T17:49:16.658745Z",
+            "modified": "2023-06-10T17:49:16.658745Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--39475a4b-6303-43af-927a-22306d3c3941",
+            "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--b81867ca-b666-4dc5-9d48-40dde051309d",
-            "created": "2023-06-10T17:49:16.660386Z",
-            "modified": "2023-06-10T17:49:16.660386Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
-            "target_ref": "observed-data--4cfef0ab-a1c9-4656-a17f-bc60fb9d75d6"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T13:33:04.000Z",
-            "modified": "2023-06-08T13:33:04.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'file.gta5cheatcode.world']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T13:33:04Z",
-            "valid_until": "2023-06-15T13:33:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--0817ca8b-acc3-4f58-aa52-9940883fd8a5",
             "created": "2023-06-10T17:49:16.66149Z",
             "modified": "2023-06-10T17:49:16.66149Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--32f40343-f5b8-4249-b842-3919f1fce8d4"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--1de4d243-f2ec-44ae-8905-57646450bb76",
-            "created": "2023-06-10T17:49:16.661672Z",
-            "modified": "2023-06-10T17:49:16.661672Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
-            "target_ref": "observed-data--4cfef0ab-a1c9-4656-a17f-bc60fb9d75d6"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--403da546-f8c5-4785-8afa-c3eec34c7e39",
+            "id": "report--4b04b791-0878-4e3f-ae9b-d452fdfad27c",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-08T13:33:04.000Z",
             "modified": "2023-06-08T13:33:04.000Z",
@@ -316,18 +316,18 @@
                 "indicator--af50b626-9b66-4902-82f6-7988d794ab39",
                 "indicator--f8df5dfd-06b1-48a5-906c-86f66164f253",
                 "indicator--39475a4b-6303-43af-927a-22306d3c3941",
-                "relationship--0556e07c-bb88-4d3a-b957-590893cb6315",
-                "relationship--5ab6b7bf-83c5-43e4-a527-a0b1432813d8",
-                "relationship--3b518d22-a30e-46fd-8830-d2c672d3122b",
+                "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
+                "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
                 "relationship--bfe88d87-41b3-4bdd-a0bd-fc9737073b1a",
                 "relationship--41a55022-db0a-48aa-9757-f76e94f01880",
                 "relationship--68392db7-c4c6-4cb8-91c7-b0cef4c2fa26",
-                "indicator--a53fcce2-7319-4182-b4b3-7f876f825b3d",
-                "relationship--2244b1f0-0e39-4a0a-813e-34c06e4e905f",
                 "relationship--b81867ca-b666-4dc5-9d48-40dde051309d",
-                "indicator--233dd2a3-3cf5-4c10-bb3d-c18d5d7efbfe",
-                "relationship--0817ca8b-acc3-4f58-aa52-9940883fd8a5",
-                "relationship--1de4d243-f2ec-44ae-8905-57646450bb76"
+                "relationship--1de4d243-f2ec-44ae-8905-57646450bb76",
+                "relationship--0556e07c-bb88-4d3a-b957-590893cb6315",
+                "relationship--5ab6b7bf-83c5-43e4-a527-a0b1432813d8",
+                "relationship--3b518d22-a30e-46fd-8830-d2c672d3122b",
+                "relationship--2244b1f0-0e39-4a0a-813e-34c06e4e905f",
+                "relationship--0817ca8b-acc3-4f58-aa52-9940883fd8a5"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
