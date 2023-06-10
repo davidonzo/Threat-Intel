@@ -1,4 +1,12 @@
-# CHANGELOG 2023
+# CHANGELOG 2023 #2
+| ID | Date	    | Type      | Details |
+|:-:| --------- | :-------: | ------- |
+| 1 | 2023-06-10 | **FIXED** | HOST and DOMAIN indicators duplicated in single report |
+| 2 | 2023-06-10 | **CHANGED** | Outdated indicators, based on `valid_until` datetime, are removed from [STIX2](https://osint.digitalside.it/Threat-Intel/stix2/) report. Full list with no retention is available via [MISP Feed subscription](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/) | 
+| 3 | 2023-06-10 | **ADDED** | STIX object `Malware` added to the report, with external references to OSINT.DigitalSide.it [report page](https://osint.digitalside.it/report/) and, when available, the [VirusTotal](https://www.virustotal.com/) report page and detection ratio |
+| 4 | 2023-06-10 | **ADDED** | STIX objects `Relationship` added. `Indicators <=> ObservedData` and `Indicators <=> Malware` |
+
+## CHANGELOG 2023 #1
 | ID | Date	    | Type      | Details |
 |:-:| --------- | :-------: | ------- |
 | 1 | 2023-06-04| **ADDED** | File MIME type now included in the [online reports](https://osint.digitalside.it/report/) |
@@ -8,7 +16,6 @@
 | 5 | 2023-06-04| **FIXED** | [Project whitelisted domains](https://github.com/davidonzo/Threat-Intel-Domain-WL) included in STIX2 reports are highlighted with the following description: `Domain included in the Osint.DigitalSide.IT whitelist. Possible false positive` |
 | 6 | 2023-06-04| **FIXED** | [Project whitelisted domains](https://github.com/davidonzo/Threat-Intel-Domain-WL) included in MISP events are shared with the `"to_ids" : False` flag configured, plus a standard comment: `Domain listed as False Positive in OSINT.DigitalSide.IT whitelist` |
 | 7 | 2023-06-04| **FIXED** | Dozens of minor bug fix |
-
 
 ## CHANGELOG (Archived)
 * 2019-05-15: source tag now includes reference to the OSINT source for automated download via crawling
