@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f3a3493e-7b0d-43b5-90d1-e02fe3363782",
-            "created": "2023-06-10T18:31:24.089887Z",
-            "modified": "2023-06-10T18:31:24.089887Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5a0d9f03-5c3d-48cc-83b0-823688d7a650",
-            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
+            "id": "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-06T11:58:03.000Z",
+            "modified": "2023-06-06T11:58:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://let4pakistan.com/download/File_pass1234.7z']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-06T11:58:03Z",
+            "valid_until": "2023-06-13T11:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--4528e1f9-ca02-496f-888f-7b6972fbd9c1",
-            "created": "2023-06-10T18:31:24.090075Z",
-            "modified": "2023-06-10T18:31:24.090075Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--aef6459f-ded7-4be0-a5c8-2c3ef43db5ae",
-            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--bcbf4726-5f24-46c6-9859-91b5096cbd5e",
-            "created": "2023-06-10T18:31:24.090238Z",
-            "modified": "2023-06-10T18:31:24.090238Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--3c1a7a16-ec62-4d42-8a57-2ba1f8467c23",
-            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
+            "id": "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-06T11:58:03.000Z",
+            "modified": "2023-06-06T11:58:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'let4pakistan.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-06T11:58:03Z",
+            "valid_until": "2023-06-13T11:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--0879c7d5-759b-4476-afc7-0f91bb1cbd25"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-06T11:58:03.000Z",
-            "modified": "2023-06-06T11:58:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://let4pakistan.com/download/File_pass1234.7z']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-06T11:58:03Z",
-            "valid_until": "2023-06-13T11:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--bf5eea35-92b6-4af0-97d9-80eabde5630d",
+            "created": "2023-06-10T18:31:24.091924Z",
+            "modified": "2023-06-10T18:31:24.091924Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
+            "target_ref": "observed-data--0879c7d5-759b-4476-afc7-0f91bb1cbd25"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--cb1a59b3-2c1c-4bbf-b262-9356f419da52",
+            "created": "2023-06-10T18:31:24.093204Z",
+            "modified": "2023-06-10T18:31:24.093204Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
+            "target_ref": "observed-data--0879c7d5-759b-4476-afc7-0f91bb1cbd25"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f3a3493e-7b0d-43b5-90d1-e02fe3363782",
+            "created": "2023-06-10T18:31:24.089887Z",
+            "modified": "2023-06-10T18:31:24.089887Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5a0d9f03-5c3d-48cc-83b0-823688d7a650",
+            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4528e1f9-ca02-496f-888f-7b6972fbd9c1",
+            "created": "2023-06-10T18:31:24.090075Z",
+            "modified": "2023-06-10T18:31:24.090075Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--aef6459f-ded7-4be0-a5c8-2c3ef43db5ae",
+            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--bcbf4726-5f24-46c6-9859-91b5096cbd5e",
+            "created": "2023-06-10T18:31:24.090238Z",
+            "modified": "2023-06-10T18:31:24.090238Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--3c1a7a16-ec62-4d42-8a57-2ba1f8467c23",
+            "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--bf5eea35-92b6-4af0-97d9-80eabde5630d",
-            "created": "2023-06-10T18:31:24.091924Z",
-            "modified": "2023-06-10T18:31:24.091924Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
-            "target_ref": "observed-data--0879c7d5-759b-4476-afc7-0f91bb1cbd25"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-06T11:58:03.000Z",
-            "modified": "2023-06-06T11:58:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'let4pakistan.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-06T11:58:03Z",
-            "valid_until": "2023-06-13T11:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--5337c1d6-b900-4a9b-8cdb-f2902dd9707a",
             "created": "2023-06-10T18:31:24.093021Z",
             "modified": "2023-06-10T18:31:24.093021Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--c29eaf7e-9d0b-4024-b0ab-57f4d2549b2d"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--cb1a59b3-2c1c-4bbf-b262-9356f419da52",
-            "created": "2023-06-10T18:31:24.093204Z",
-            "modified": "2023-06-10T18:31:24.093204Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
-            "target_ref": "observed-data--0879c7d5-759b-4476-afc7-0f91bb1cbd25"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--2e293984-aaeb-48ea-95b6-ec8589d25c65",
+            "id": "report--c163f971-2abb-4957-99e6-87ef5f71fb2f",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-06T11:58:03.000Z",
             "modified": "2023-06-06T11:58:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--5a0d9f03-5c3d-48cc-83b0-823688d7a650",
                 "indicator--aef6459f-ded7-4be0-a5c8-2c3ef43db5ae",
                 "indicator--3c1a7a16-ec62-4d42-8a57-2ba1f8467c23",
-                "relationship--f3a3493e-7b0d-43b5-90d1-e02fe3363782",
-                "relationship--4528e1f9-ca02-496f-888f-7b6972fbd9c1",
-                "relationship--bcbf4726-5f24-46c6-9859-91b5096cbd5e",
+                "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
+                "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
                 "relationship--5c82ec7b-aabb-4176-9d7d-492c41c86959",
                 "relationship--5caae993-912a-4593-8082-7343c8c4a23f",
                 "relationship--46af07a1-dcf7-43db-9756-1add6529f4fc",
-                "indicator--a986d682-9b3c-4094-a050-ed536be2a818",
-                "relationship--fc54d69d-73bb-45cb-9c0f-0ae6bbf53d5a",
                 "relationship--bf5eea35-92b6-4af0-97d9-80eabde5630d",
-                "indicator--e376a26e-7322-403d-952f-f5223f6ed251",
-                "relationship--5337c1d6-b900-4a9b-8cdb-f2902dd9707a",
-                "relationship--cb1a59b3-2c1c-4bbf-b262-9356f419da52"
+                "relationship--cb1a59b3-2c1c-4bbf-b262-9356f419da52",
+                "relationship--f3a3493e-7b0d-43b5-90d1-e02fe3363782",
+                "relationship--4528e1f9-ca02-496f-888f-7b6972fbd9c1",
+                "relationship--bcbf4726-5f24-46c6-9859-91b5096cbd5e",
+                "relationship--fc54d69d-73bb-45cb-9c0f-0ae6bbf53d5a",
+                "relationship--5337c1d6-b900-4a9b-8cdb-f2902dd9707a"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

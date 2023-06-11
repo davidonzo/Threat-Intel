@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--58be9fec-0918-4c04-960d-6f222cc821b3",
-            "created": "2023-06-10T18:31:13.458648Z",
-            "modified": "2023-06-10T18:31:13.458648Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--84b39019-0a3a-4d92-803b-18b052000d59",
-            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
+            "id": "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T09:00:14.000Z",
+            "modified": "2023-06-08T09:00:14.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://callonmejunk.com/download/File_pass1234.7z']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T09:00:14Z",
+            "valid_until": "2023-06-15T09:00:14Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--1c690442-1c29-4d7b-abe2-a329ca507216",
-            "created": "2023-06-10T18:31:13.458838Z",
-            "modified": "2023-06-10T18:31:13.458838Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--0163f91a-9946-40f3-a25c-b27a56eef93e",
-            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e43ddf30-b9a1-4ea1-bb88-1c368a43a03c",
-            "created": "2023-06-10T18:31:13.459001Z",
-            "modified": "2023-06-10T18:31:13.459001Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--33167018-a6ed-4e4c-af35-810954749284",
-            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
+            "id": "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T09:00:14.000Z",
+            "modified": "2023-06-08T09:00:14.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'callonmejunk.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T09:00:14Z",
+            "valid_until": "2023-06-15T09:00:14Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--008a52c7-b558-4b6c-a5d8-18fc772425bf"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T09:00:14.000Z",
-            "modified": "2023-06-08T09:00:14.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://callonmejunk.com/download/File_pass1234.7z']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T09:00:14Z",
-            "valid_until": "2023-06-15T09:00:14Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--c4a994d9-60e5-47b8-ba82-35b8df23cd29",
+            "created": "2023-06-10T18:31:13.460772Z",
+            "modified": "2023-06-10T18:31:13.460772Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
+            "target_ref": "observed-data--008a52c7-b558-4b6c-a5d8-18fc772425bf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--42a4c25d-bf7f-4021-af87-ff3fa4ee76ca",
+            "created": "2023-06-10T18:31:13.462244Z",
+            "modified": "2023-06-10T18:31:13.462244Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
+            "target_ref": "observed-data--008a52c7-b558-4b6c-a5d8-18fc772425bf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--58be9fec-0918-4c04-960d-6f222cc821b3",
+            "created": "2023-06-10T18:31:13.458648Z",
+            "modified": "2023-06-10T18:31:13.458648Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--84b39019-0a3a-4d92-803b-18b052000d59",
+            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1c690442-1c29-4d7b-abe2-a329ca507216",
+            "created": "2023-06-10T18:31:13.458838Z",
+            "modified": "2023-06-10T18:31:13.458838Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--0163f91a-9946-40f3-a25c-b27a56eef93e",
+            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e43ddf30-b9a1-4ea1-bb88-1c368a43a03c",
+            "created": "2023-06-10T18:31:13.459001Z",
+            "modified": "2023-06-10T18:31:13.459001Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--33167018-a6ed-4e4c-af35-810954749284",
+            "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--c4a994d9-60e5-47b8-ba82-35b8df23cd29",
-            "created": "2023-06-10T18:31:13.460772Z",
-            "modified": "2023-06-10T18:31:13.460772Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
-            "target_ref": "observed-data--008a52c7-b558-4b6c-a5d8-18fc772425bf"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T09:00:14.000Z",
-            "modified": "2023-06-08T09:00:14.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'callonmejunk.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T09:00:14Z",
-            "valid_until": "2023-06-15T09:00:14Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--c5860c61-ebc1-40c0-8837-fef301bf860a",
             "created": "2023-06-10T18:31:13.462052Z",
             "modified": "2023-06-10T18:31:13.462052Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--5dde88b2-8b93-4474-8670-a3ad0803ee5b"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--42a4c25d-bf7f-4021-af87-ff3fa4ee76ca",
-            "created": "2023-06-10T18:31:13.462244Z",
-            "modified": "2023-06-10T18:31:13.462244Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
-            "target_ref": "observed-data--008a52c7-b558-4b6c-a5d8-18fc772425bf"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--c8ff637a-a646-4877-8e48-8e6240f35caf",
+            "id": "report--6d9cb481-3992-4197-8054-9edf9c89cb89",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-08T09:00:14.000Z",
             "modified": "2023-06-08T09:00:14.000Z",
@@ -316,18 +316,18 @@
                 "indicator--84b39019-0a3a-4d92-803b-18b052000d59",
                 "indicator--0163f91a-9946-40f3-a25c-b27a56eef93e",
                 "indicator--33167018-a6ed-4e4c-af35-810954749284",
-                "relationship--58be9fec-0918-4c04-960d-6f222cc821b3",
-                "relationship--1c690442-1c29-4d7b-abe2-a329ca507216",
-                "relationship--e43ddf30-b9a1-4ea1-bb88-1c368a43a03c",
+                "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
+                "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
                 "relationship--28a65acd-1e74-445d-9f13-a0c0b5dbbea7",
                 "relationship--59b5bb4e-580d-4275-b0b8-4745182a557a",
                 "relationship--f4b67955-f983-4042-9093-62aaffdc29b6",
-                "indicator--c5726057-beae-4852-a663-5b70d6149bd4",
-                "relationship--8b71e2ce-c0fe-4af9-8bb4-da771f0f721f",
                 "relationship--c4a994d9-60e5-47b8-ba82-35b8df23cd29",
-                "indicator--3f603ce4-cd2e-46c4-8330-fd7b73121b43",
-                "relationship--c5860c61-ebc1-40c0-8837-fef301bf860a",
-                "relationship--42a4c25d-bf7f-4021-af87-ff3fa4ee76ca"
+                "relationship--42a4c25d-bf7f-4021-af87-ff3fa4ee76ca",
+                "relationship--58be9fec-0918-4c04-960d-6f222cc821b3",
+                "relationship--1c690442-1c29-4d7b-abe2-a329ca507216",
+                "relationship--e43ddf30-b9a1-4ea1-bb88-1c368a43a03c",
+                "relationship--8b71e2ce-c0fe-4af9-8bb4-da771f0f721f",
+                "relationship--c5860c61-ebc1-40c0-8837-fef301bf860a"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

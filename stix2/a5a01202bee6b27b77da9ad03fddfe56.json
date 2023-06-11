@@ -148,34 +148,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f26b18ad-6381-4595-a84e-117611111d77",
-            "created": "2023-06-10T18:31:08.18416Z",
-            "modified": "2023-06-10T18:31:08.18416Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--45ee92ce-91d7-409e-aebe-697ecb2a2384",
-            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
+            "id": "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T23:42:03.000Z",
+            "modified": "2023-06-08T23:42:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://fuelrescue.ie/wp/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T23:42:03Z",
+            "valid_until": "2023-06-15T23:42:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--4bab75b8-1b0f-4a2c-8aa5-4a145341e506",
-            "created": "2023-06-10T18:31:08.184351Z",
-            "modified": "2023-06-10T18:31:08.184351Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--30b00a73-3d1b-4bf9-85ef-e1211c19eaf9",
-            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--66b38f90-2c08-48a8-b9f9-4bab7502eea4",
-            "created": "2023-06-10T18:31:08.184516Z",
-            "modified": "2023-06-10T18:31:08.184516Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--833a1ce6-c312-4e41-b61b-fced66892fac",
-            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
+            "id": "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-08T23:42:03.000Z",
+            "modified": "2023-06-08T23:42:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'fuelrescue.ie']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-08T23:42:03Z",
+            "valid_until": "2023-06-15T23:42:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -208,28 +226,54 @@
             "target_ref": "observed-data--becb9569-ef29-403f-9d65-bd1b02fc0453"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T23:42:03.000Z",
-            "modified": "2023-06-08T23:42:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://fuelrescue.ie/wp/']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T23:42:03Z",
-            "valid_until": "2023-06-15T23:42:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--d063a080-5019-434b-b9bf-ec4f19c19e2e",
+            "created": "2023-06-10T18:31:08.186243Z",
+            "modified": "2023-06-10T18:31:08.186243Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
+            "target_ref": "observed-data--becb9569-ef29-403f-9d65-bd1b02fc0453"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--229ff0b7-f1cb-4263-83ad-cd86160441a2",
+            "created": "2023-06-10T18:31:08.187773Z",
+            "modified": "2023-06-10T18:31:08.187773Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
+            "target_ref": "observed-data--becb9569-ef29-403f-9d65-bd1b02fc0453"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f26b18ad-6381-4595-a84e-117611111d77",
+            "created": "2023-06-10T18:31:08.18416Z",
+            "modified": "2023-06-10T18:31:08.18416Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--45ee92ce-91d7-409e-aebe-697ecb2a2384",
+            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4bab75b8-1b0f-4a2c-8aa5-4a145341e506",
+            "created": "2023-06-10T18:31:08.184351Z",
+            "modified": "2023-06-10T18:31:08.184351Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--30b00a73-3d1b-4bf9-85ef-e1211c19eaf9",
+            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--66b38f90-2c08-48a8-b9f9-4bab7502eea4",
+            "created": "2023-06-10T18:31:08.184516Z",
+            "modified": "2023-06-10T18:31:08.184516Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--833a1ce6-c312-4e41-b61b-fced66892fac",
+            "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
         },
         {
             "type": "relationship",
@@ -244,40 +288,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--d063a080-5019-434b-b9bf-ec4f19c19e2e",
-            "created": "2023-06-10T18:31:08.186243Z",
-            "modified": "2023-06-10T18:31:08.186243Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
-            "target_ref": "observed-data--becb9569-ef29-403f-9d65-bd1b02fc0453"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-08T23:42:03.000Z",
-            "modified": "2023-06-08T23:42:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'fuelrescue.ie']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-08T23:42:03Z",
-            "valid_until": "2023-06-15T23:42:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--58087a9e-cac0-4b8f-a072-d7351285d101",
             "created": "2023-06-10T18:31:08.187583Z",
             "modified": "2023-06-10T18:31:08.187583Z",
@@ -286,19 +296,9 @@
             "target_ref": "malware--c1d6a7ac-e2f4-48ac-91a3-0b5298f445c2"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--229ff0b7-f1cb-4263-83ad-cd86160441a2",
-            "created": "2023-06-10T18:31:08.187773Z",
-            "modified": "2023-06-10T18:31:08.187773Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
-            "target_ref": "observed-data--becb9569-ef29-403f-9d65-bd1b02fc0453"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--c17cc003-cd0f-43a7-adfe-4e5e1091f867",
+            "id": "report--202f103b-b06e-4f2e-9391-51cb225d6832",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-08T23:42:03.000Z",
             "modified": "2023-06-08T23:42:03.000Z",
@@ -311,18 +311,18 @@
                 "indicator--45ee92ce-91d7-409e-aebe-697ecb2a2384",
                 "indicator--30b00a73-3d1b-4bf9-85ef-e1211c19eaf9",
                 "indicator--833a1ce6-c312-4e41-b61b-fced66892fac",
-                "relationship--f26b18ad-6381-4595-a84e-117611111d77",
-                "relationship--4bab75b8-1b0f-4a2c-8aa5-4a145341e506",
-                "relationship--66b38f90-2c08-48a8-b9f9-4bab7502eea4",
+                "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
+                "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
                 "relationship--0aa16fbc-3e6f-4503-a38e-05d57b467e2e",
                 "relationship--7885a2ea-1a43-48b0-8de7-b5dbe0a3cb19",
                 "relationship--93784710-99f1-4cb8-8593-384d0774e369",
-                "indicator--e0c503ca-3af6-4546-b1bf-d930171f12ba",
-                "relationship--c8339bdb-6d53-4dbf-826c-ecd20e98c596",
                 "relationship--d063a080-5019-434b-b9bf-ec4f19c19e2e",
-                "indicator--aa9f1ecf-cd1c-49ac-ba9d-3bd2bcad1133",
-                "relationship--58087a9e-cac0-4b8f-a072-d7351285d101",
-                "relationship--229ff0b7-f1cb-4263-83ad-cd86160441a2"
+                "relationship--229ff0b7-f1cb-4263-83ad-cd86160441a2",
+                "relationship--f26b18ad-6381-4595-a84e-117611111d77",
+                "relationship--4bab75b8-1b0f-4a2c-8aa5-4a145341e506",
+                "relationship--66b38f90-2c08-48a8-b9f9-4bab7502eea4",
+                "relationship--c8339bdb-6d53-4dbf-826c-ecd20e98c596",
+                "relationship--58087a9e-cac0-4b8f-a072-d7351285d101"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
