@@ -148,34 +148,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f68b5cac-6934-43fa-9f01-8afb3eec13b9",
-            "created": "2023-06-14T06:04:51.884819Z",
-            "modified": "2023-06-14T06:04:51.884819Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--d8d313ed-60f7-4fdc-9b8c-fe42e1844f67",
-            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
+            "id": "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T07:01:03.000Z",
+            "modified": "2023-06-14T07:01:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://www.tikto.pw/setup.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T07:01:03Z",
+            "valid_until": "2023-06-21T07:01:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--ba4ca641-21db-442b-b4f6-77e4a2c41b67",
-            "created": "2023-06-14T06:04:51.885006Z",
-            "modified": "2023-06-14T06:04:51.885006Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--fa118e15-51cf-4f36-9b7c-3a25c16a0d66",
-            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--aa04ec0b-7ff3-43fc-8eae-4545ce1657ab",
-            "created": "2023-06-14T06:04:51.885166Z",
-            "modified": "2023-06-14T06:04:51.885166Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5f9aaa31-07b9-4d33-a368-ab33b34e4fb3",
-            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
+            "id": "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T07:01:03.000Z",
+            "modified": "2023-06-14T07:01:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'www.tikto.pw']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T07:01:03Z",
+            "valid_until": "2023-06-21T07:01:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -208,28 +226,54 @@
             "target_ref": "observed-data--ddbfd8fb-f6cd-483a-a125-099e71984cdf"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T07:01:03.000Z",
-            "modified": "2023-06-14T07:01:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://www.tikto.pw/setup.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T07:01:03Z",
-            "valid_until": "2023-06-21T07:01:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--7f49d980-3170-4ff0-9933-0def6521947a",
+            "created": "2023-06-14T06:04:51.886778Z",
+            "modified": "2023-06-14T06:04:51.886778Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
+            "target_ref": "observed-data--ddbfd8fb-f6cd-483a-a125-099e71984cdf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--592b188d-7c32-4db8-a941-b1513f9f4925",
+            "created": "2023-06-14T06:04:51.888146Z",
+            "modified": "2023-06-14T06:04:51.888146Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
+            "target_ref": "observed-data--ddbfd8fb-f6cd-483a-a125-099e71984cdf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f68b5cac-6934-43fa-9f01-8afb3eec13b9",
+            "created": "2023-06-14T06:04:51.884819Z",
+            "modified": "2023-06-14T06:04:51.884819Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--d8d313ed-60f7-4fdc-9b8c-fe42e1844f67",
+            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ba4ca641-21db-442b-b4f6-77e4a2c41b67",
+            "created": "2023-06-14T06:04:51.885006Z",
+            "modified": "2023-06-14T06:04:51.885006Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fa118e15-51cf-4f36-9b7c-3a25c16a0d66",
+            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--aa04ec0b-7ff3-43fc-8eae-4545ce1657ab",
+            "created": "2023-06-14T06:04:51.885166Z",
+            "modified": "2023-06-14T06:04:51.885166Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5f9aaa31-07b9-4d33-a368-ab33b34e4fb3",
+            "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
         },
         {
             "type": "relationship",
@@ -244,40 +288,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--7f49d980-3170-4ff0-9933-0def6521947a",
-            "created": "2023-06-14T06:04:51.886778Z",
-            "modified": "2023-06-14T06:04:51.886778Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
-            "target_ref": "observed-data--ddbfd8fb-f6cd-483a-a125-099e71984cdf"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T07:01:03.000Z",
-            "modified": "2023-06-14T07:01:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'www.tikto.pw']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T07:01:03Z",
-            "valid_until": "2023-06-21T07:01:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--b35a4107-afe7-492f-8b56-3a3c6789235e",
             "created": "2023-06-14T06:04:51.887959Z",
             "modified": "2023-06-14T06:04:51.887959Z",
@@ -286,19 +296,9 @@
             "target_ref": "malware--a15c18b6-9b7c-4fc8-abf6-ba5897fcedf8"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--592b188d-7c32-4db8-a941-b1513f9f4925",
-            "created": "2023-06-14T06:04:51.888146Z",
-            "modified": "2023-06-14T06:04:51.888146Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
-            "target_ref": "observed-data--ddbfd8fb-f6cd-483a-a125-099e71984cdf"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--49132b66-75d1-4e0e-8bd5-c264be25d6c3",
+            "id": "report--6e3acb30-3050-407d-9dd2-79e4478b8913",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-14T07:01:03.000Z",
             "modified": "2023-06-14T07:01:03.000Z",
@@ -311,18 +311,18 @@
                 "indicator--d8d313ed-60f7-4fdc-9b8c-fe42e1844f67",
                 "indicator--fa118e15-51cf-4f36-9b7c-3a25c16a0d66",
                 "indicator--5f9aaa31-07b9-4d33-a368-ab33b34e4fb3",
-                "relationship--f68b5cac-6934-43fa-9f01-8afb3eec13b9",
-                "relationship--ba4ca641-21db-442b-b4f6-77e4a2c41b67",
-                "relationship--aa04ec0b-7ff3-43fc-8eae-4545ce1657ab",
+                "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
+                "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
                 "relationship--98939097-5efd-4407-b79c-2a2017c4bd02",
                 "relationship--222171ce-6117-4efa-994b-91b2dd8df754",
                 "relationship--74c5ce1e-f444-4909-820d-d4b17082f56b",
-                "indicator--265b2f68-d90b-46e4-8b12-d63fe8144ad6",
-                "relationship--4a229d61-238e-41e1-8c1e-4217ba52d179",
                 "relationship--7f49d980-3170-4ff0-9933-0def6521947a",
-                "indicator--50e2c1c0-8e4a-40d0-bc8c-765ad710aa85",
-                "relationship--b35a4107-afe7-492f-8b56-3a3c6789235e",
-                "relationship--592b188d-7c32-4db8-a941-b1513f9f4925"
+                "relationship--592b188d-7c32-4db8-a941-b1513f9f4925",
+                "relationship--f68b5cac-6934-43fa-9f01-8afb3eec13b9",
+                "relationship--ba4ca641-21db-442b-b4f6-77e4a2c41b67",
+                "relationship--aa04ec0b-7ff3-43fc-8eae-4545ce1657ab",
+                "relationship--4a229d61-238e-41e1-8c1e-4217ba52d179",
+                "relationship--b35a4107-afe7-492f-8b56-3a3c6789235e"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
