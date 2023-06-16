@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--ef3416a4-a3b1-4d87-8b3a-09628284897e",
-            "created": "2023-06-16T06:04:14.654682Z",
-            "modified": "2023-06-16T06:04:14.654682Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--053d482e-bd4f-4350-86b5-38fbd2d4272a",
-            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
+            "id": "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-15T09:58:04.000Z",
+            "modified": "2023-06-15T09:58:04.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://projetokevlar.org:999/PortaDosFundos/VirusDownload?ArquivoBaixar=zip&Usuario=1']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-15T09:58:04Z",
+            "valid_until": "2023-06-22T09:58:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--b929f799-e66a-41bd-85c4-181726febe18",
-            "created": "2023-06-16T06:04:14.654849Z",
-            "modified": "2023-06-16T06:04:14.654849Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--e81baebf-9bf6-4da9-a2c2-1be69e9e3890",
-            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--60590024-1c27-408b-9ed1-798ed69a5bff",
-            "created": "2023-06-16T06:04:14.65499Z",
-            "modified": "2023-06-16T06:04:14.65499Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--927a665c-c56e-4c32-a720-75c7be59eb2a",
-            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
+            "id": "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-15T09:58:04.000Z",
+            "modified": "2023-06-15T09:58:04.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'projetokevlar.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-15T09:58:04Z",
+            "valid_until": "2023-06-22T09:58:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--f6967a31-9bff-4553-9ece-ac2e8fe2c47c"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-15T09:58:04.000Z",
-            "modified": "2023-06-15T09:58:04.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://projetokevlar.org:999/PortaDosFundos/VirusDownload?ArquivoBaixar=zip&Usuario=1']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-15T09:58:04Z",
-            "valid_until": "2023-06-22T09:58:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--92bf53ff-f331-4ac6-868b-03caee6abc8d",
+            "created": "2023-06-16T06:04:14.656747Z",
+            "modified": "2023-06-16T06:04:14.656747Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
+            "target_ref": "observed-data--f6967a31-9bff-4553-9ece-ac2e8fe2c47c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--32f09841-564d-43e3-b9dc-ce0e3b5f4241",
+            "created": "2023-06-16T06:04:14.657886Z",
+            "modified": "2023-06-16T06:04:14.657886Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
+            "target_ref": "observed-data--f6967a31-9bff-4553-9ece-ac2e8fe2c47c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ef3416a4-a3b1-4d87-8b3a-09628284897e",
+            "created": "2023-06-16T06:04:14.654682Z",
+            "modified": "2023-06-16T06:04:14.654682Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--053d482e-bd4f-4350-86b5-38fbd2d4272a",
+            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b929f799-e66a-41bd-85c4-181726febe18",
+            "created": "2023-06-16T06:04:14.654849Z",
+            "modified": "2023-06-16T06:04:14.654849Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--e81baebf-9bf6-4da9-a2c2-1be69e9e3890",
+            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--60590024-1c27-408b-9ed1-798ed69a5bff",
+            "created": "2023-06-16T06:04:14.65499Z",
+            "modified": "2023-06-16T06:04:14.65499Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--927a665c-c56e-4c32-a720-75c7be59eb2a",
+            "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--92bf53ff-f331-4ac6-868b-03caee6abc8d",
-            "created": "2023-06-16T06:04:14.656747Z",
-            "modified": "2023-06-16T06:04:14.656747Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
-            "target_ref": "observed-data--f6967a31-9bff-4553-9ece-ac2e8fe2c47c"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-15T09:58:04.000Z",
-            "modified": "2023-06-15T09:58:04.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'projetokevlar.org']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-15T09:58:04Z",
-            "valid_until": "2023-06-22T09:58:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--ede07ae8-0cda-4a99-b630-06c37306ca5c",
             "created": "2023-06-16T06:04:14.65772Z",
             "modified": "2023-06-16T06:04:14.65772Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--1331070a-edbf-4fbc-b605-63a099c388e1"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--32f09841-564d-43e3-b9dc-ce0e3b5f4241",
-            "created": "2023-06-16T06:04:14.657886Z",
-            "modified": "2023-06-16T06:04:14.657886Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
-            "target_ref": "observed-data--f6967a31-9bff-4553-9ece-ac2e8fe2c47c"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--19b79c0e-effb-4df7-b7a3-ed2e6a14f3f4",
+            "id": "report--2175f9e4-afb3-4064-aa2f-8e38b571cd72",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-15T09:58:04.000Z",
             "modified": "2023-06-15T09:58:04.000Z",
@@ -316,18 +316,18 @@
                 "indicator--053d482e-bd4f-4350-86b5-38fbd2d4272a",
                 "indicator--e81baebf-9bf6-4da9-a2c2-1be69e9e3890",
                 "indicator--927a665c-c56e-4c32-a720-75c7be59eb2a",
-                "relationship--ef3416a4-a3b1-4d87-8b3a-09628284897e",
-                "relationship--b929f799-e66a-41bd-85c4-181726febe18",
-                "relationship--60590024-1c27-408b-9ed1-798ed69a5bff",
+                "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
+                "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
                 "relationship--1f0d74e2-177d-4c29-a0ce-7749a26f2101",
                 "relationship--3818a255-eb24-4b02-8f2d-74e846fadf73",
                 "relationship--890170f4-d482-47b7-a6a9-a751e52b64a3",
-                "indicator--e5517339-6daa-49d8-ae98-a99bfa1f471e",
-                "relationship--c1ad9db1-64d1-449e-9e86-64724c379ff3",
                 "relationship--92bf53ff-f331-4ac6-868b-03caee6abc8d",
-                "indicator--9e9392eb-d474-4c35-900d-2a12c455a5f6",
-                "relationship--ede07ae8-0cda-4a99-b630-06c37306ca5c",
-                "relationship--32f09841-564d-43e3-b9dc-ce0e3b5f4241"
+                "relationship--32f09841-564d-43e3-b9dc-ce0e3b5f4241",
+                "relationship--ef3416a4-a3b1-4d87-8b3a-09628284897e",
+                "relationship--b929f799-e66a-41bd-85c4-181726febe18",
+                "relationship--60590024-1c27-408b-9ed1-798ed69a5bff",
+                "relationship--c1ad9db1-64d1-449e-9e86-64724c379ff3",
+                "relationship--ede07ae8-0cda-4a99-b630-06c37306ca5c"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

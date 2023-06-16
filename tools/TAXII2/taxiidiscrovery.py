@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 from taxii2client import Server
 
-discovery="http://taxii.digitalside.it/taxii"
+discovery="https://osint.digitalside.it/taxii2"
 username="guest"
 password="guest"
 
 server = Server(discovery, user=username, password=password)
-print("=============================")
+print("=============================")	
 print(server.title)
 print("=============================")
 print(server.description+"\n")

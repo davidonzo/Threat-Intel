@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--24e8fa5c-4fdb-4036-b832-dc0836e7a463",
-            "created": "2023-06-16T06:04:20.776334Z",
-            "modified": "2023-06-16T06:04:20.776334Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5b960a2d-8a03-4371-aa06-e12dd575326f",
-            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
+            "id": "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-15T22:35:03.000Z",
+            "modified": "2023-06-15T22:35:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://sociembal.pt/SetUpLyla1408.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-15T22:35:03Z",
+            "valid_until": "2023-06-22T22:35:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--17f9b133-01bb-458a-ae0d-7ce40168881c",
-            "created": "2023-06-16T06:04:20.776499Z",
-            "modified": "2023-06-16T06:04:20.776499Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--bb0ba900-9c04-4311-8e87-95d20602b09b",
-            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e8477025-3563-40b3-9b4d-c2932d0c9231",
-            "created": "2023-06-16T06:04:20.776641Z",
-            "modified": "2023-06-16T06:04:20.776641Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--10aadf54-20a9-40e2-ac05-ed6ab05a53d7",
-            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
+            "id": "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-15T22:35:03.000Z",
+            "modified": "2023-06-15T22:35:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'sociembal.pt']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-15T22:35:03Z",
+            "valid_until": "2023-06-22T22:35:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--201d86bf-9ee1-4722-8407-1399b6db9428"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-15T22:35:03.000Z",
-            "modified": "2023-06-15T22:35:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://sociembal.pt/SetUpLyla1408.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-15T22:35:03Z",
-            "valid_until": "2023-06-22T22:35:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--4136a104-5aaa-4d26-8fcd-a0eca49a100d",
+            "created": "2023-06-16T06:04:20.778102Z",
+            "modified": "2023-06-16T06:04:20.778102Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
+            "target_ref": "observed-data--201d86bf-9ee1-4722-8407-1399b6db9428"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--69c8b3b6-5566-4ea6-b8f5-32125a4d2c83",
+            "created": "2023-06-16T06:04:20.779232Z",
+            "modified": "2023-06-16T06:04:20.779232Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
+            "target_ref": "observed-data--201d86bf-9ee1-4722-8407-1399b6db9428"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--24e8fa5c-4fdb-4036-b832-dc0836e7a463",
+            "created": "2023-06-16T06:04:20.776334Z",
+            "modified": "2023-06-16T06:04:20.776334Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5b960a2d-8a03-4371-aa06-e12dd575326f",
+            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--17f9b133-01bb-458a-ae0d-7ce40168881c",
+            "created": "2023-06-16T06:04:20.776499Z",
+            "modified": "2023-06-16T06:04:20.776499Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--bb0ba900-9c04-4311-8e87-95d20602b09b",
+            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e8477025-3563-40b3-9b4d-c2932d0c9231",
+            "created": "2023-06-16T06:04:20.776641Z",
+            "modified": "2023-06-16T06:04:20.776641Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--10aadf54-20a9-40e2-ac05-ed6ab05a53d7",
+            "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--4136a104-5aaa-4d26-8fcd-a0eca49a100d",
-            "created": "2023-06-16T06:04:20.778102Z",
-            "modified": "2023-06-16T06:04:20.778102Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
-            "target_ref": "observed-data--201d86bf-9ee1-4722-8407-1399b6db9428"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-15T22:35:03.000Z",
-            "modified": "2023-06-15T22:35:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'sociembal.pt']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-15T22:35:03Z",
-            "valid_until": "2023-06-22T22:35:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--fd7e48b2-89b3-4f9f-a618-527aef7a93d4",
             "created": "2023-06-16T06:04:20.779069Z",
             "modified": "2023-06-16T06:04:20.779069Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--5834b32e-f4f8-4561-933e-01b1c136e431"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--69c8b3b6-5566-4ea6-b8f5-32125a4d2c83",
-            "created": "2023-06-16T06:04:20.779232Z",
-            "modified": "2023-06-16T06:04:20.779232Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
-            "target_ref": "observed-data--201d86bf-9ee1-4722-8407-1399b6db9428"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--db339e8e-9c48-43b4-a184-138308bf3d43",
+            "id": "report--284df745-d4dc-4f92-9820-2cefd37ae10f",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-15T22:35:03.000Z",
             "modified": "2023-06-15T22:35:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--5b960a2d-8a03-4371-aa06-e12dd575326f",
                 "indicator--bb0ba900-9c04-4311-8e87-95d20602b09b",
                 "indicator--10aadf54-20a9-40e2-ac05-ed6ab05a53d7",
-                "relationship--24e8fa5c-4fdb-4036-b832-dc0836e7a463",
-                "relationship--17f9b133-01bb-458a-ae0d-7ce40168881c",
-                "relationship--e8477025-3563-40b3-9b4d-c2932d0c9231",
+                "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
+                "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
                 "relationship--fc8eb922-4835-43f2-a328-a0754255866c",
                 "relationship--dfe3705b-327b-4417-8fbd-31bf81395a54",
                 "relationship--7be6b342-54d7-479a-bf87-d8a5512759af",
-                "indicator--bd76bd56-aa52-4838-b699-d24aa371929e",
-                "relationship--5f3ad3a8-bb2c-4cd0-98a6-7c4e0e098815",
                 "relationship--4136a104-5aaa-4d26-8fcd-a0eca49a100d",
-                "indicator--eb08b8f9-486a-4b78-a331-5922f39ba3ee",
-                "relationship--fd7e48b2-89b3-4f9f-a618-527aef7a93d4",
-                "relationship--69c8b3b6-5566-4ea6-b8f5-32125a4d2c83"
+                "relationship--69c8b3b6-5566-4ea6-b8f5-32125a4d2c83",
+                "relationship--24e8fa5c-4fdb-4036-b832-dc0836e7a463",
+                "relationship--17f9b133-01bb-458a-ae0d-7ce40168881c",
+                "relationship--e8477025-3563-40b3-9b4d-c2932d0c9231",
+                "relationship--5f3ad3a8-bb2c-4cd0-98a6-7c4e0e098815",
+                "relationship--fd7e48b2-89b3-4f9f-a618-527aef7a93d4"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import json
 from taxii2client import Server
 
-discovery="http://taxii.digitalside.it/taxii"
+discovery="https://osint.digitalside.it/taxii2"
 username="guest"
 password="guest"
 
