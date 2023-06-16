@@ -16,7 +16,8 @@ Three formats are available to download the reports:
 * [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-21-specification) server implementation containing STIX2 bundles shared reports (retention: 24 hours) - [[GO TO]](https://osint.digitalside.it/taxiiserver.html)
 
 The majority of the information is stored in the MISP data format. So, best way to collect data is to subscribe to the [Digitalside-misp-feed](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/).
-All sharing formats are based on MISP export format. **All reports in any format can be consumed by any up-to-dated MISP instance**.
+
+All sharing formats, except for STIX2.1 reports, are based on MISP export format. **All reports in any format can be consumed by any up-to-dated MISP instance**.
 
 ## Sharing endpoints
 Reports shared by two sharing endpoints:
