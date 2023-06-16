@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--895e28e8-1fc2-4cbd-a87a-8fa17c93465f",
-            "created": "2023-06-15T06:04:02.574563Z",
-            "modified": "2023-06-15T06:04:02.574563Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--80d64df7-0fac-4a39-acae-fafc1d7eb5e6",
-            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
+            "id": "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T09:58:05.000Z",
+            "modified": "2023-06-14T09:58:05.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://miateknik.com/Amday.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T09:58:05Z",
+            "valid_until": "2023-06-21T09:58:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--90cd17ec-1b0b-4ddc-b04d-7a4188eee833",
-            "created": "2023-06-15T06:04:02.574775Z",
-            "modified": "2023-06-15T06:04:02.574775Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--76a22dc7-0814-4d30-a7d2-73ea913f0f25",
-            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--015d6b03-3e04-46c5-a342-50dffa237c06",
-            "created": "2023-06-15T06:04:02.574935Z",
-            "modified": "2023-06-15T06:04:02.574935Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--ee9b775b-f964-4b4a-8b12-1ca6ba0f8766",
-            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
+            "id": "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T09:58:05.000Z",
+            "modified": "2023-06-14T09:58:05.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'miateknik.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T09:58:05Z",
+            "valid_until": "2023-06-21T09:58:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--02a6ce2c-67f4-41f0-ae18-ceaadb141396"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T09:58:05.000Z",
-            "modified": "2023-06-14T09:58:05.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://miateknik.com/Amday.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T09:58:05Z",
-            "valid_until": "2023-06-21T09:58:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--a079cac9-1b53-46c4-85d7-8578bf84c1e4",
+            "created": "2023-06-15T06:04:02.576696Z",
+            "modified": "2023-06-15T06:04:02.576696Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
+            "target_ref": "observed-data--02a6ce2c-67f4-41f0-ae18-ceaadb141396"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8be2721c-49f3-4d71-beff-bbd2b8548567",
+            "created": "2023-06-15T06:04:02.578073Z",
+            "modified": "2023-06-15T06:04:02.578073Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
+            "target_ref": "observed-data--02a6ce2c-67f4-41f0-ae18-ceaadb141396"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--895e28e8-1fc2-4cbd-a87a-8fa17c93465f",
+            "created": "2023-06-15T06:04:02.574563Z",
+            "modified": "2023-06-15T06:04:02.574563Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--80d64df7-0fac-4a39-acae-fafc1d7eb5e6",
+            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--90cd17ec-1b0b-4ddc-b04d-7a4188eee833",
+            "created": "2023-06-15T06:04:02.574775Z",
+            "modified": "2023-06-15T06:04:02.574775Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--76a22dc7-0814-4d30-a7d2-73ea913f0f25",
+            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--015d6b03-3e04-46c5-a342-50dffa237c06",
+            "created": "2023-06-15T06:04:02.574935Z",
+            "modified": "2023-06-15T06:04:02.574935Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--ee9b775b-f964-4b4a-8b12-1ca6ba0f8766",
+            "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--a079cac9-1b53-46c4-85d7-8578bf84c1e4",
-            "created": "2023-06-15T06:04:02.576696Z",
-            "modified": "2023-06-15T06:04:02.576696Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
-            "target_ref": "observed-data--02a6ce2c-67f4-41f0-ae18-ceaadb141396"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T09:58:05.000Z",
-            "modified": "2023-06-14T09:58:05.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'miateknik.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T09:58:05Z",
-            "valid_until": "2023-06-21T09:58:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--e98e0929-ffd0-46a6-b3e9-dc917b433034",
             "created": "2023-06-15T06:04:02.577885Z",
             "modified": "2023-06-15T06:04:02.577885Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--f2ee6e9a-3f0e-4afd-810a-246bb54507a5"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--8be2721c-49f3-4d71-beff-bbd2b8548567",
-            "created": "2023-06-15T06:04:02.578073Z",
-            "modified": "2023-06-15T06:04:02.578073Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
-            "target_ref": "observed-data--02a6ce2c-67f4-41f0-ae18-ceaadb141396"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--e71bdc4c-a0b1-43a3-a6b5-c04c0fea582c",
+            "id": "report--4fbb2c77-abf3-4a6a-ade5-5553882b6a33",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-14T09:58:05.000Z",
             "modified": "2023-06-14T09:58:05.000Z",
@@ -316,18 +316,18 @@
                 "indicator--80d64df7-0fac-4a39-acae-fafc1d7eb5e6",
                 "indicator--76a22dc7-0814-4d30-a7d2-73ea913f0f25",
                 "indicator--ee9b775b-f964-4b4a-8b12-1ca6ba0f8766",
-                "relationship--895e28e8-1fc2-4cbd-a87a-8fa17c93465f",
-                "relationship--90cd17ec-1b0b-4ddc-b04d-7a4188eee833",
-                "relationship--015d6b03-3e04-46c5-a342-50dffa237c06",
+                "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
+                "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
                 "relationship--5b343e06-4f9b-4429-a424-948235814e5b",
                 "relationship--be9fbcae-f520-42d4-83ae-2295c7845ece",
                 "relationship--004e2a1f-c424-471d-b12e-32131110bc09",
-                "indicator--47ad5737-8e72-4630-b64b-0034d179c456",
-                "relationship--15ad2fcb-7ee0-4b10-ac47-0875c771b97b",
                 "relationship--a079cac9-1b53-46c4-85d7-8578bf84c1e4",
-                "indicator--465a3343-bdce-44d2-a990-fb292629bb40",
-                "relationship--e98e0929-ffd0-46a6-b3e9-dc917b433034",
-                "relationship--8be2721c-49f3-4d71-beff-bbd2b8548567"
+                "relationship--8be2721c-49f3-4d71-beff-bbd2b8548567",
+                "relationship--895e28e8-1fc2-4cbd-a87a-8fa17c93465f",
+                "relationship--90cd17ec-1b0b-4ddc-b04d-7a4188eee833",
+                "relationship--015d6b03-3e04-46c5-a342-50dffa237c06",
+                "relationship--15ad2fcb-7ee0-4b10-ac47-0875c771b97b",
+                "relationship--e98e0929-ffd0-46a6-b3e9-dc917b433034"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

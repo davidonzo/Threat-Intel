@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--e1e16253-3421-4ef4-b347-7d5393e53bc6",
-            "created": "2023-06-15T06:04:15.980821Z",
-            "modified": "2023-06-15T06:04:15.980821Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--c3b1ba2a-f133-469c-aeab-5bad14ce59f3",
-            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
+            "id": "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T22:50:04.000Z",
+            "modified": "2023-06-14T22:50:04.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://reading-sugar.xyz/files/unknown.zip']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T22:50:04Z",
+            "valid_until": "2023-06-21T22:50:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f661eb69-f42a-4e0e-8bf0-2d96a0500b90",
-            "created": "2023-06-15T06:04:15.980983Z",
-            "modified": "2023-06-15T06:04:15.980983Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--b1d7b09d-88c8-4922-b08c-38047ab75744",
-            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--8540815e-6dcc-4c28-bcc2-691d070c2010",
-            "created": "2023-06-15T06:04:15.981134Z",
-            "modified": "2023-06-15T06:04:15.981134Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--29bb5dcb-78a8-4b91-bae0-19fccdc029f2",
-            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
+            "id": "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-14T22:50:04.000Z",
+            "modified": "2023-06-14T22:50:04.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'reading-sugar.xyz']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-14T22:50:04Z",
+            "valid_until": "2023-06-21T22:50:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--45421c73-7828-4082-aca2-5e4320f43266"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T22:50:04.000Z",
-            "modified": "2023-06-14T22:50:04.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://reading-sugar.xyz/files/unknown.zip']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T22:50:04Z",
-            "valid_until": "2023-06-21T22:50:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--725fa2f3-381a-498f-ad28-c21e1096a69a",
+            "created": "2023-06-15T06:04:15.98254Z",
+            "modified": "2023-06-15T06:04:15.98254Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
+            "target_ref": "observed-data--45421c73-7828-4082-aca2-5e4320f43266"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1d65e61b-286b-4140-bc48-f64ce5385ef8",
+            "created": "2023-06-15T06:04:15.983621Z",
+            "modified": "2023-06-15T06:04:15.983621Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
+            "target_ref": "observed-data--45421c73-7828-4082-aca2-5e4320f43266"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e1e16253-3421-4ef4-b347-7d5393e53bc6",
+            "created": "2023-06-15T06:04:15.980821Z",
+            "modified": "2023-06-15T06:04:15.980821Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c3b1ba2a-f133-469c-aeab-5bad14ce59f3",
+            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f661eb69-f42a-4e0e-8bf0-2d96a0500b90",
+            "created": "2023-06-15T06:04:15.980983Z",
+            "modified": "2023-06-15T06:04:15.980983Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--b1d7b09d-88c8-4922-b08c-38047ab75744",
+            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8540815e-6dcc-4c28-bcc2-691d070c2010",
+            "created": "2023-06-15T06:04:15.981134Z",
+            "modified": "2023-06-15T06:04:15.981134Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--29bb5dcb-78a8-4b91-bae0-19fccdc029f2",
+            "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--725fa2f3-381a-498f-ad28-c21e1096a69a",
-            "created": "2023-06-15T06:04:15.98254Z",
-            "modified": "2023-06-15T06:04:15.98254Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
-            "target_ref": "observed-data--45421c73-7828-4082-aca2-5e4320f43266"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-14T22:50:04.000Z",
-            "modified": "2023-06-14T22:50:04.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'reading-sugar.xyz']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-14T22:50:04Z",
-            "valid_until": "2023-06-21T22:50:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--e4d274c8-8ee4-4cdc-8946-a25628ffb7ca",
             "created": "2023-06-15T06:04:15.983465Z",
             "modified": "2023-06-15T06:04:15.983465Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--8807561b-a839-496b-a377-79f9873ac7c0"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--1d65e61b-286b-4140-bc48-f64ce5385ef8",
-            "created": "2023-06-15T06:04:15.983621Z",
-            "modified": "2023-06-15T06:04:15.983621Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
-            "target_ref": "observed-data--45421c73-7828-4082-aca2-5e4320f43266"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--363531ec-1834-4bb9-bde2-4471e868bdf4",
+            "id": "report--09943ec3-5347-47f6-9c3c-bc95e2442330",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-14T22:50:04.000Z",
             "modified": "2023-06-14T22:50:04.000Z",
@@ -316,18 +316,18 @@
                 "indicator--c3b1ba2a-f133-469c-aeab-5bad14ce59f3",
                 "indicator--b1d7b09d-88c8-4922-b08c-38047ab75744",
                 "indicator--29bb5dcb-78a8-4b91-bae0-19fccdc029f2",
-                "relationship--e1e16253-3421-4ef4-b347-7d5393e53bc6",
-                "relationship--f661eb69-f42a-4e0e-8bf0-2d96a0500b90",
-                "relationship--8540815e-6dcc-4c28-bcc2-691d070c2010",
+                "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
+                "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
                 "relationship--dadc1bd7-61a4-447c-b989-4e01c2109157",
                 "relationship--dad2f5c1-3de6-4b63-b3d2-08e5c9585d11",
                 "relationship--e59fe0e1-18ee-44ef-af38-f99c4d3c83cc",
-                "indicator--7a95c205-cc90-454c-bcb6-dcfabe26fbfe",
-                "relationship--841bee4e-7a30-4285-8168-b2a302274821",
                 "relationship--725fa2f3-381a-498f-ad28-c21e1096a69a",
-                "indicator--30c797ab-8a51-43ab-9581-636a383b28ed",
-                "relationship--e4d274c8-8ee4-4cdc-8946-a25628ffb7ca",
-                "relationship--1d65e61b-286b-4140-bc48-f64ce5385ef8"
+                "relationship--1d65e61b-286b-4140-bc48-f64ce5385ef8",
+                "relationship--e1e16253-3421-4ef4-b347-7d5393e53bc6",
+                "relationship--f661eb69-f42a-4e0e-8bf0-2d96a0500b90",
+                "relationship--8540815e-6dcc-4c28-bcc2-691d070c2010",
+                "relationship--841bee4e-7a30-4285-8168-b2a302274821",
+                "relationship--e4d274c8-8ee4-4cdc-8946-a25628ffb7ca"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
