@@ -13,14 +13,14 @@ For people who know what a TAXII2 server is, follows the base instructions:
 For the others, please, before read the technical specifications for [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-20-specification) and [STIX2](https://oasis-open.github.io/cti-documentation/resources#stix-21-specification).
 
 ## STIX objects shared via TAXII2
-*`identity`
-*`marking-definition`
-*`report`
-*`malware`
-*`file`
-*`observed-data`
-*`indicator`
-*`relationship`
+* `identity`
+* `marking-definition`
+* `report`
+* `malware`
+* `file`
+* `observed-data`
+* `indicator`
+* `relationship`
 
 ## How to and examples
 Since TAXII2.1 is basically a RESTful API there are no mandatory requirements to interact with it. Anyway, follows the instructions using official supported and developed [STIX](https://github.com/oasis-open/cti-python-stix2)/[TAXII](https://github.com/oasis-open/cti-taxii-client) client tools by [OASIS](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti).

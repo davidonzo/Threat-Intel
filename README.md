@@ -13,7 +13,7 @@ Three formats are available to download the reports:
 * * [URLs](https://osint.digitalside.it/Threat-Intel/lists/latesturls.txt)
 * * [IPs](https://osint.digitalside.it/Threat-Intel/lists/latestips.txt)
 * * [Domains](https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt)
-* [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-20-specification) server implementation containing STIX2 bundles shared reports (retention: 24 hours) - [[GO TO]](https://taxii.digitalside.it)
+* [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-21-specification) server implementation containing STIX2 bundles shared reports (retention: 24 hours) - [[GO TO]](https://osint.digitalside.it/taxiiserver.html)
 
 The majority of the information is stored in the MISP data format. So, best way to collect data is to subscribe to the [Digitalside-misp-feed](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/).
 All sharing formats are based on MISP export format. **All reports in any format can be consumed by any up-to-dated MISP instance**.
