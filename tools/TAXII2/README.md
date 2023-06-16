@@ -108,7 +108,7 @@ test = collection.get_objects()
 print(json.dumps(test, indent=4, sort_keys=True))
 ```
 
-### Example 3: get collection's objects ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetmalware.py))
+### Example 4: get collection's objects ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetmalware.py))
 
 ```
 #!/usr/bin/env python3
