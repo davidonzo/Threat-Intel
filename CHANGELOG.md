@@ -1,4 +1,11 @@
-# CHANGELOG 2023 #2
+# CHANGELOG 2023 #3
+| ID | Date         | Type      | Details |
+|:-:| --------- | :-------: | ------- |
+| 1 | 2023-06-16 | **ADDED** | TAXII2 server. For details please read the instructions pages available on [this repository](https://github.com/davidonzo/Threat-Intel/tree/master/tools/TAXII2/README.md) and on the official [project website](https://osint.digitalside.it/taxiiserver.html) |
+| 2 | 2023-06-10 | **CHANGED** | Example python [scripts to interact](https://github.com/davidonzo/Threat-Intel/tree/master/tools/TAXII2/) with the TAXII server |
+
+
+## CHANGELOG 2023 #2
 | ID | Date	    | Type      | Details |
 |:-:| --------- | :-------: | ------- |
 | 1 | 2023-06-10 | **FIXED** | HOST and DOMAIN indicators duplicated in single report |
