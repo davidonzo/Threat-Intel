@@ -18,7 +18,7 @@ print("Available API(s): "+str(len(server.api_roots))+"\n")
 
 for api in server.api_roots:
     print("ROOT API: "+api.url)
-    print(api.collections)
+    
     for coll in api.collections:
         print("\t  Collection: "+coll.title)
         print("\t  Description: "+coll.description)

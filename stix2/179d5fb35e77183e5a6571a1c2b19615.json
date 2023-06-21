@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--aa5c1120-7920-49c5-84b3-01e1f97e116c",
-            "created": "2023-06-21T06:09:23.687574Z",
-            "modified": "2023-06-21T06:09:23.687574Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--63f7da82-318f-4d4d-85ef-206022722116",
-            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
+            "id": "indicator--b193514a-dd7a-416f-b784-99875d49faad",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-21T06:08:02.000Z",
+            "modified": "2023-06-21T06:08:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://www.adrem-soft.com/vp2023.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-21T06:08:02Z",
+            "valid_until": "2023-06-28T06:08:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f8ec74fe-da7b-4454-86f9-943122a2ab9a",
-            "created": "2023-06-21T06:09:23.687743Z",
-            "modified": "2023-06-21T06:09:23.687743Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--a51cf00b-0df7-4f2b-aaeb-6bcaf1b5ca80",
-            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--d1686634-a410-4bfe-b691-a65ec92fab4e",
-            "created": "2023-06-21T06:09:23.687884Z",
-            "modified": "2023-06-21T06:09:23.687884Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--07e09a86-e4d6-44c5-acb5-45627587908a",
-            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
+            "id": "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-21T06:08:02.000Z",
+            "modified": "2023-06-21T06:08:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'www.adrem-soft.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-21T06:08:02Z",
+            "valid_until": "2023-06-28T06:08:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--485ede9d-4975-42f6-8265-a3a7a916cd9f"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--b193514a-dd7a-416f-b784-99875d49faad",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-21T06:08:02.000Z",
-            "modified": "2023-06-21T06:08:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://www.adrem-soft.com/vp2023.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-21T06:08:02Z",
-            "valid_until": "2023-06-28T06:08:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--ceec972c-693d-4204-bcf8-2b5e59d4cedc",
+            "created": "2023-06-21T06:09:23.689303Z",
+            "modified": "2023-06-21T06:09:23.689303Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--b193514a-dd7a-416f-b784-99875d49faad",
+            "target_ref": "observed-data--485ede9d-4975-42f6-8265-a3a7a916cd9f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3f22e446-90ef-4828-a17e-68db1fd6ba05",
+            "created": "2023-06-21T06:09:23.690412Z",
+            "modified": "2023-06-21T06:09:23.690412Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
+            "target_ref": "observed-data--485ede9d-4975-42f6-8265-a3a7a916cd9f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--aa5c1120-7920-49c5-84b3-01e1f97e116c",
+            "created": "2023-06-21T06:09:23.687574Z",
+            "modified": "2023-06-21T06:09:23.687574Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--63f7da82-318f-4d4d-85ef-206022722116",
+            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f8ec74fe-da7b-4454-86f9-943122a2ab9a",
+            "created": "2023-06-21T06:09:23.687743Z",
+            "modified": "2023-06-21T06:09:23.687743Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a51cf00b-0df7-4f2b-aaeb-6bcaf1b5ca80",
+            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d1686634-a410-4bfe-b691-a65ec92fab4e",
+            "created": "2023-06-21T06:09:23.687884Z",
+            "modified": "2023-06-21T06:09:23.687884Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--07e09a86-e4d6-44c5-acb5-45627587908a",
+            "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--ceec972c-693d-4204-bcf8-2b5e59d4cedc",
-            "created": "2023-06-21T06:09:23.689303Z",
-            "modified": "2023-06-21T06:09:23.689303Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--b193514a-dd7a-416f-b784-99875d49faad",
-            "target_ref": "observed-data--485ede9d-4975-42f6-8265-a3a7a916cd9f"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-21T06:08:02.000Z",
-            "modified": "2023-06-21T06:08:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'www.adrem-soft.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-21T06:08:02Z",
-            "valid_until": "2023-06-28T06:08:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--46dadc74-a793-4473-aa71-b88ca4119741",
             "created": "2023-06-21T06:09:23.690246Z",
             "modified": "2023-06-21T06:09:23.690246Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--52f4a152-6da6-41b3-83d4-eae8b8ea8c45"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--3f22e446-90ef-4828-a17e-68db1fd6ba05",
-            "created": "2023-06-21T06:09:23.690412Z",
-            "modified": "2023-06-21T06:09:23.690412Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
-            "target_ref": "observed-data--485ede9d-4975-42f6-8265-a3a7a916cd9f"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--226e0d9e-e159-47a4-b7ea-0304864f6a50",
+            "id": "report--91327147-0015-413a-82e1-5578a7f01b45",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-21T06:08:02.000Z",
             "modified": "2023-06-21T06:08:02.000Z",
@@ -316,18 +316,18 @@
                 "indicator--63f7da82-318f-4d4d-85ef-206022722116",
                 "indicator--a51cf00b-0df7-4f2b-aaeb-6bcaf1b5ca80",
                 "indicator--07e09a86-e4d6-44c5-acb5-45627587908a",
-                "relationship--aa5c1120-7920-49c5-84b3-01e1f97e116c",
-                "relationship--f8ec74fe-da7b-4454-86f9-943122a2ab9a",
-                "relationship--d1686634-a410-4bfe-b691-a65ec92fab4e",
+                "indicator--b193514a-dd7a-416f-b784-99875d49faad",
+                "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
                 "relationship--3e6bcfe1-0f35-4d1c-a4c4-bb6af51d83a8",
                 "relationship--f89052a8-dbd5-4d0b-a93d-05ce9176f26c",
                 "relationship--30b633b9-b97b-4d37-9722-10ea11761f98",
-                "indicator--b193514a-dd7a-416f-b784-99875d49faad",
-                "relationship--b3d053d9-c7a8-48da-819a-5152d00333ca",
                 "relationship--ceec972c-693d-4204-bcf8-2b5e59d4cedc",
-                "indicator--98fc5dc4-2a86-41c2-8cba-8aa82cdcf1a6",
-                "relationship--46dadc74-a793-4473-aa71-b88ca4119741",
-                "relationship--3f22e446-90ef-4828-a17e-68db1fd6ba05"
+                "relationship--3f22e446-90ef-4828-a17e-68db1fd6ba05",
+                "relationship--aa5c1120-7920-49c5-84b3-01e1f97e116c",
+                "relationship--f8ec74fe-da7b-4454-86f9-943122a2ab9a",
+                "relationship--d1686634-a410-4bfe-b691-a65ec92fab4e",
+                "relationship--b3d053d9-c7a8-48da-819a-5152d00333ca",
+                "relationship--46dadc74-a793-4473-aa71-b88ca4119741"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
