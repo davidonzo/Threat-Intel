@@ -12,12 +12,12 @@ tc_source = TAXIICollectionSource(collection)
 f1 = Filter("type","=", "indicator")
 f2 = Filter("pattern","contains", "domain-name:value =")
 
-malwares = tc_source.query([f1, f2])
+domains = tc_source.query([f1, f2])
 
-for malware in malwares:
-    print(malware)
+for domain in domains:
+    print(domain)
 
-print("===============================================")
-print("Detected "+str(len(malwares))+" malware objects")
-print("===============================================")
+print("====================================================")
+print("Detected "+str(len(domains))+" domain-name objects")
+print("====================================================")
 
