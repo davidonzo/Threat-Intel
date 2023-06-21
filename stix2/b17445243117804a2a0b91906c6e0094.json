@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--3b16a69a-6f69-42bb-9dca-5875e8136a20",
-            "created": "2023-06-20T06:07:43.395089Z",
-            "modified": "2023-06-20T06:07:43.395089Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--f741ba59-0fa1-4e3d-a5d7-1ad5be5a445b",
-            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
+            "id": "indicator--361c56dd-f421-486f-b391-695a949a9c74",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-19T14:04:04.000Z",
+            "modified": "2023-06-19T14:04:04.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://sofancy.co.za/data/Bin%20(2).exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-19T14:04:04Z",
+            "valid_until": "2023-06-26T14:04:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--99b880dc-83cb-4001-a955-022ae4d36f75",
-            "created": "2023-06-20T06:07:43.395255Z",
-            "modified": "2023-06-20T06:07:43.395255Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--a36ee1ba-c0db-495f-8706-409e4f89bd07",
-            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e56be554-5e56-4fad-a243-dada02b93e13",
-            "created": "2023-06-20T06:07:43.395397Z",
-            "modified": "2023-06-20T06:07:43.395397Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--713b8139-f5ed-4a43-b22b-05c552a2e1cb",
-            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
+            "id": "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-19T14:04:04.000Z",
+            "modified": "2023-06-19T14:04:04.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'sofancy.co.za']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-19T14:04:04Z",
+            "valid_until": "2023-06-26T14:04:04Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--7ab09a43-6e1d-49ec-9bc5-3dda95cc1e4d"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--361c56dd-f421-486f-b391-695a949a9c74",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-19T14:04:04.000Z",
-            "modified": "2023-06-19T14:04:04.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://sofancy.co.za/data/Bin%20(2).exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-19T14:04:04Z",
-            "valid_until": "2023-06-26T14:04:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--ab0ec5a1-bef0-44c4-858f-7e85209b7473",
+            "created": "2023-06-20T06:07:43.396844Z",
+            "modified": "2023-06-20T06:07:43.396844Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--361c56dd-f421-486f-b391-695a949a9c74",
+            "target_ref": "observed-data--7ab09a43-6e1d-49ec-9bc5-3dda95cc1e4d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fef63cdc-6134-4173-a7e9-83c68b7e04ba",
+            "created": "2023-06-20T06:07:43.397961Z",
+            "modified": "2023-06-20T06:07:43.397961Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
+            "target_ref": "observed-data--7ab09a43-6e1d-49ec-9bc5-3dda95cc1e4d"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3b16a69a-6f69-42bb-9dca-5875e8136a20",
+            "created": "2023-06-20T06:07:43.395089Z",
+            "modified": "2023-06-20T06:07:43.395089Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--f741ba59-0fa1-4e3d-a5d7-1ad5be5a445b",
+            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--99b880dc-83cb-4001-a955-022ae4d36f75",
+            "created": "2023-06-20T06:07:43.395255Z",
+            "modified": "2023-06-20T06:07:43.395255Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a36ee1ba-c0db-495f-8706-409e4f89bd07",
+            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e56be554-5e56-4fad-a243-dada02b93e13",
+            "created": "2023-06-20T06:07:43.395397Z",
+            "modified": "2023-06-20T06:07:43.395397Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--713b8139-f5ed-4a43-b22b-05c552a2e1cb",
+            "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--ab0ec5a1-bef0-44c4-858f-7e85209b7473",
-            "created": "2023-06-20T06:07:43.396844Z",
-            "modified": "2023-06-20T06:07:43.396844Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--361c56dd-f421-486f-b391-695a949a9c74",
-            "target_ref": "observed-data--7ab09a43-6e1d-49ec-9bc5-3dda95cc1e4d"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-19T14:04:04.000Z",
-            "modified": "2023-06-19T14:04:04.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'sofancy.co.za']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-19T14:04:04Z",
-            "valid_until": "2023-06-26T14:04:04Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--755d594d-f732-4e77-9c93-22e1783bc05a",
             "created": "2023-06-20T06:07:43.397799Z",
             "modified": "2023-06-20T06:07:43.397799Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--292e39f7-eaba-40f7-89f5-6cfc64e6e4a4"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--fef63cdc-6134-4173-a7e9-83c68b7e04ba",
-            "created": "2023-06-20T06:07:43.397961Z",
-            "modified": "2023-06-20T06:07:43.397961Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
-            "target_ref": "observed-data--7ab09a43-6e1d-49ec-9bc5-3dda95cc1e4d"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--798d0e19-87b7-4575-bb60-bece55b16389",
+            "id": "report--ca74a5ab-69f6-42d3-8244-a474c4fd340c",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-19T14:04:04.000Z",
             "modified": "2023-06-19T14:04:04.000Z",
@@ -316,18 +316,18 @@
                 "indicator--f741ba59-0fa1-4e3d-a5d7-1ad5be5a445b",
                 "indicator--a36ee1ba-c0db-495f-8706-409e4f89bd07",
                 "indicator--713b8139-f5ed-4a43-b22b-05c552a2e1cb",
-                "relationship--3b16a69a-6f69-42bb-9dca-5875e8136a20",
-                "relationship--99b880dc-83cb-4001-a955-022ae4d36f75",
-                "relationship--e56be554-5e56-4fad-a243-dada02b93e13",
+                "indicator--361c56dd-f421-486f-b391-695a949a9c74",
+                "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
                 "relationship--a9667a41-9976-4a8a-ad94-f2da4259fe8a",
                 "relationship--b2cddace-7225-4727-9da0-2bb86661feb1",
                 "relationship--49bc759d-e428-447f-80fe-1f8815828d35",
-                "indicator--361c56dd-f421-486f-b391-695a949a9c74",
-                "relationship--c570153d-512c-4b76-96f9-2264c493b549",
                 "relationship--ab0ec5a1-bef0-44c4-858f-7e85209b7473",
-                "indicator--3acaab67-4e29-41c9-a4a0-89480f29eb93",
-                "relationship--755d594d-f732-4e77-9c93-22e1783bc05a",
-                "relationship--fef63cdc-6134-4173-a7e9-83c68b7e04ba"
+                "relationship--fef63cdc-6134-4173-a7e9-83c68b7e04ba",
+                "relationship--3b16a69a-6f69-42bb-9dca-5875e8136a20",
+                "relationship--99b880dc-83cb-4001-a955-022ae4d36f75",
+                "relationship--e56be554-5e56-4fad-a243-dada02b93e13",
+                "relationship--c570153d-512c-4b76-96f9-2264c493b549",
+                "relationship--755d594d-f732-4e77-9c93-22e1783bc05a"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

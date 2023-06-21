@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--de9bb0c9-d26b-4bcd-9168-1be9edca6f63",
-            "created": "2023-06-20T06:07:42.076842Z",
-            "modified": "2023-06-20T06:07:42.076842Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--9387c006-f3ac-4388-afc8-64a9d9657724",
-            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
+            "id": "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-18T20:50:08.000Z",
+            "modified": "2023-06-18T20:50:08.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://capturefootball.xyz/files/unknown.zip']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-18T20:50:08Z",
+            "valid_until": "2023-06-25T20:50:08Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--1f2c7203-d33b-4c0f-a928-8b46972e4318",
-            "created": "2023-06-20T06:07:42.077009Z",
-            "modified": "2023-06-20T06:07:42.077009Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--7727f042-e305-4674-95ae-4823689223c7",
-            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--9e2b9c06-c290-40c0-97e2-f179ca9fc3da",
-            "created": "2023-06-20T06:07:42.077149Z",
-            "modified": "2023-06-20T06:07:42.077149Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--825e2adf-594d-4ca2-a4e6-2c1e0490bbd1",
-            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
+            "id": "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-18T20:50:08.000Z",
+            "modified": "2023-06-18T20:50:08.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'capturefootball.xyz']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-18T20:50:08Z",
+            "valid_until": "2023-06-25T20:50:08Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--a73ebfd8-6728-4b44-9fc8-7ea39c81f6ed"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-18T20:50:08.000Z",
-            "modified": "2023-06-18T20:50:08.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://capturefootball.xyz/files/unknown.zip']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-18T20:50:08Z",
-            "valid_until": "2023-06-25T20:50:08Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--6a17515f-dfca-4064-afc3-c11a3ebcb0a1",
+            "created": "2023-06-20T06:07:42.078664Z",
+            "modified": "2023-06-20T06:07:42.078664Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
+            "target_ref": "observed-data--a73ebfd8-6728-4b44-9fc8-7ea39c81f6ed"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e1f6a25e-a374-48af-baeb-02c4f8ab320e",
+            "created": "2023-06-20T06:07:42.079827Z",
+            "modified": "2023-06-20T06:07:42.079827Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
+            "target_ref": "observed-data--a73ebfd8-6728-4b44-9fc8-7ea39c81f6ed"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--de9bb0c9-d26b-4bcd-9168-1be9edca6f63",
+            "created": "2023-06-20T06:07:42.076842Z",
+            "modified": "2023-06-20T06:07:42.076842Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9387c006-f3ac-4388-afc8-64a9d9657724",
+            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1f2c7203-d33b-4c0f-a928-8b46972e4318",
+            "created": "2023-06-20T06:07:42.077009Z",
+            "modified": "2023-06-20T06:07:42.077009Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--7727f042-e305-4674-95ae-4823689223c7",
+            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9e2b9c06-c290-40c0-97e2-f179ca9fc3da",
+            "created": "2023-06-20T06:07:42.077149Z",
+            "modified": "2023-06-20T06:07:42.077149Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--825e2adf-594d-4ca2-a4e6-2c1e0490bbd1",
+            "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--6a17515f-dfca-4064-afc3-c11a3ebcb0a1",
-            "created": "2023-06-20T06:07:42.078664Z",
-            "modified": "2023-06-20T06:07:42.078664Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
-            "target_ref": "observed-data--a73ebfd8-6728-4b44-9fc8-7ea39c81f6ed"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-18T20:50:08.000Z",
-            "modified": "2023-06-18T20:50:08.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'capturefootball.xyz']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-18T20:50:08Z",
-            "valid_until": "2023-06-25T20:50:08Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--3134817c-17a5-4d9e-a357-ddb6f612b69a",
             "created": "2023-06-20T06:07:42.079665Z",
             "modified": "2023-06-20T06:07:42.079665Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--2ca2c2c2-3797-455f-a950-069c3d641fcd"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e1f6a25e-a374-48af-baeb-02c4f8ab320e",
-            "created": "2023-06-20T06:07:42.079827Z",
-            "modified": "2023-06-20T06:07:42.079827Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
-            "target_ref": "observed-data--a73ebfd8-6728-4b44-9fc8-7ea39c81f6ed"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--77669808-09e8-4988-9be2-40c9edb4341f",
+            "id": "report--5da2bb4e-c666-421d-b5a5-73b51a9db944",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-18T20:50:08.000Z",
             "modified": "2023-06-18T20:50:08.000Z",
@@ -316,18 +316,18 @@
                 "indicator--9387c006-f3ac-4388-afc8-64a9d9657724",
                 "indicator--7727f042-e305-4674-95ae-4823689223c7",
                 "indicator--825e2adf-594d-4ca2-a4e6-2c1e0490bbd1",
-                "relationship--de9bb0c9-d26b-4bcd-9168-1be9edca6f63",
-                "relationship--1f2c7203-d33b-4c0f-a928-8b46972e4318",
-                "relationship--9e2b9c06-c290-40c0-97e2-f179ca9fc3da",
+                "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
+                "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
                 "relationship--5a46e17a-1e00-476a-b8be-8a820c53235c",
                 "relationship--3950b9c8-8c26-4e3e-acc9-07f8cb7d34ea",
                 "relationship--00094060-802e-41d4-bca0-47b2f9f16dad",
-                "indicator--5063469c-77d5-4ea6-a543-fc355591f7f4",
-                "relationship--76a466bb-3d27-4707-885d-494f4ab00d48",
                 "relationship--6a17515f-dfca-4064-afc3-c11a3ebcb0a1",
-                "indicator--af82daab-fcfb-436e-92ca-a25779b2db0b",
-                "relationship--3134817c-17a5-4d9e-a357-ddb6f612b69a",
-                "relationship--e1f6a25e-a374-48af-baeb-02c4f8ab320e"
+                "relationship--e1f6a25e-a374-48af-baeb-02c4f8ab320e",
+                "relationship--de9bb0c9-d26b-4bcd-9168-1be9edca6f63",
+                "relationship--1f2c7203-d33b-4c0f-a928-8b46972e4318",
+                "relationship--9e2b9c06-c290-40c0-97e2-f179ca9fc3da",
+                "relationship--76a466bb-3d27-4707-885d-494f4ab00d48",
+                "relationship--3134817c-17a5-4d9e-a357-ddb6f612b69a"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
