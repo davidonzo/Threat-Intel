@@ -10,6 +10,31 @@ For people who know what a TAXII2 server is, follows the base instructions:
 * Authentication: basic access
 * TAXII version: `TAXII2.1`
 
+# Discovery output
+```
+=============================
+DigitalSide.IT TAXII2 Server
+=============================
+This repository cointains a set of Open Source Cyber Threat Intellegence information, monstly based on malware analysis and compromised URLs, IPs and domains. The purpose of this project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort. For more information please visit OSINT.digitalside.it website.
+
+Discovery URL: https://osint.digitalside.it/taxii2
+
+Available API(s): 1
+
+ROOT API: https://osint.digitalside.it/taxii2reports/
+	  Collection: OSINT.DigitalSide.it Malware Reports
+	  Description: Set of Open Source Cyber Threat Intellegence information, monstly based on malware analysis and compromised URLs, IPs and domains, related to OSINT.digitalside.it project.
+	  ID: e98d6c94-fbce-11ed-b5dd-3bad2ffe9ebf
+	  Media type: application/stix+json;version=2.1
+=======================================
+
+	  Collection: OSINT.DigitalSide.it Network IoCs Collected (24h)
+	  Description: The collection contains IPv4 addresses collected over the last 24 hours by OSINT.digitalside.it. The list is released without any warranty to the end users.
+	  ID: c1f43330-103b-11ee-9ee3-4b022e286589
+	  Media type: application/stix+json;version=2.1
+=======================================
+```
+
 For the others, please, before read the technical specifications for [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-20-specification) and [STIX2](https://oasis-open.github.io/cti-documentation/resources#stix-21-specification).
 
 ## STIX objects shared via TAXII2
@@ -109,6 +134,32 @@ print(json.dumps(test, indent=4, sort_keys=True))
 ```
 
 ### Example 4: get collection's objects ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetmalware.py))
+
+```
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from taxii2client import Collection
+from stix2 import TAXIICollectionSource, Filter
+
+
+collection = Collection("https://osint.digitalside.it/taxii2/collections/e98d6c94-fbce-11ed-b5dd-3bad2ffe9ebf/", user="guest", password="guest")
+tc_source = TAXIICollectionSource(collection)
+
+
+f1 = Filter("type","=", "malware")
+
+malwares = tc_source.query([f1])
+
+for malware in malwares:
+    print(malware)
+
+print("===============================================")
+print("Detected "+str(len(malwares))+" malware objects")
+print("===============================================")
+```
+
+### Example 5: get latest 24 hours domain-names ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetdomains.py))
 
 ```
 #!/usr/bin/env python3
