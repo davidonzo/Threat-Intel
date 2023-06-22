@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--9818d1d0-ccb9-4ec0-a7aa-d1bad9724118",
-            "created": "2023-06-21T18:28:02.027008Z",
-            "modified": "2023-06-21T18:28:02.027008Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--6491bc19-f07d-4dab-8da2-13ad84a766d1",
-            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
+            "id": "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-21T11:50:03.000Z",
+            "modified": "2023-06-21T11:50:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://cardanofoundatlon.org/ChromeDrivers23-061.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-21T11:50:03Z",
+            "valid_until": "2023-06-28T11:50:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--0b81cd70-395a-4668-93ee-34f52b14f816",
-            "created": "2023-06-21T18:28:02.027228Z",
-            "modified": "2023-06-21T18:28:02.027228Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--2a10409a-c0d6-4593-84b1-375b1c02ca0b",
-            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--92a76cd6-68ab-4dae-8d27-6d4d57f7664f",
-            "created": "2023-06-21T18:28:02.027409Z",
-            "modified": "2023-06-21T18:28:02.027409Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--9e0cf72f-ee39-4b3b-ab37-82d828f0c44b",
-            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
+            "id": "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-21T11:50:03.000Z",
+            "modified": "2023-06-21T11:50:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'cardanofoundatlon.org']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-21T11:50:03Z",
+            "valid_until": "2023-06-28T11:50:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--eafb7c70-f160-4af6-8ab8-0193ec20991f"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-21T11:50:03.000Z",
-            "modified": "2023-06-21T11:50:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://cardanofoundatlon.org/ChromeDrivers23-061.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-21T11:50:03Z",
-            "valid_until": "2023-06-28T11:50:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--e3e22ea9-2aec-4961-a80f-af54d070835c",
+            "created": "2023-06-21T18:28:02.029286Z",
+            "modified": "2023-06-21T18:28:02.029286Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
+            "target_ref": "observed-data--eafb7c70-f160-4af6-8ab8-0193ec20991f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--156c3391-2d22-4c65-bf06-845d69b24329",
+            "created": "2023-06-21T18:28:02.030917Z",
+            "modified": "2023-06-21T18:28:02.030917Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
+            "target_ref": "observed-data--eafb7c70-f160-4af6-8ab8-0193ec20991f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9818d1d0-ccb9-4ec0-a7aa-d1bad9724118",
+            "created": "2023-06-21T18:28:02.027008Z",
+            "modified": "2023-06-21T18:28:02.027008Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--6491bc19-f07d-4dab-8da2-13ad84a766d1",
+            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0b81cd70-395a-4668-93ee-34f52b14f816",
+            "created": "2023-06-21T18:28:02.027228Z",
+            "modified": "2023-06-21T18:28:02.027228Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2a10409a-c0d6-4593-84b1-375b1c02ca0b",
+            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--92a76cd6-68ab-4dae-8d27-6d4d57f7664f",
+            "created": "2023-06-21T18:28:02.027409Z",
+            "modified": "2023-06-21T18:28:02.027409Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9e0cf72f-ee39-4b3b-ab37-82d828f0c44b",
+            "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--e3e22ea9-2aec-4961-a80f-af54d070835c",
-            "created": "2023-06-21T18:28:02.029286Z",
-            "modified": "2023-06-21T18:28:02.029286Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
-            "target_ref": "observed-data--eafb7c70-f160-4af6-8ab8-0193ec20991f"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-21T11:50:03.000Z",
-            "modified": "2023-06-21T11:50:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'cardanofoundatlon.org']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-21T11:50:03Z",
-            "valid_until": "2023-06-28T11:50:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--532f2127-8d60-4e5e-b8b2-769f602d016a",
             "created": "2023-06-21T18:28:02.030679Z",
             "modified": "2023-06-21T18:28:02.030679Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--7c55da91-877a-455c-9668-d59a419ac570"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--156c3391-2d22-4c65-bf06-845d69b24329",
-            "created": "2023-06-21T18:28:02.030917Z",
-            "modified": "2023-06-21T18:28:02.030917Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
-            "target_ref": "observed-data--eafb7c70-f160-4af6-8ab8-0193ec20991f"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--2ffcd26f-72c1-4a6f-963b-cbb2784a56ce",
+            "id": "report--d2000cfc-1f4e-41d5-957f-11d2a29771c2",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-21T11:50:03.000Z",
             "modified": "2023-06-21T11:50:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--6491bc19-f07d-4dab-8da2-13ad84a766d1",
                 "indicator--2a10409a-c0d6-4593-84b1-375b1c02ca0b",
                 "indicator--9e0cf72f-ee39-4b3b-ab37-82d828f0c44b",
-                "relationship--9818d1d0-ccb9-4ec0-a7aa-d1bad9724118",
-                "relationship--0b81cd70-395a-4668-93ee-34f52b14f816",
-                "relationship--92a76cd6-68ab-4dae-8d27-6d4d57f7664f",
+                "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
+                "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
                 "relationship--01672762-47c8-4e2d-b075-00a0584d81b6",
                 "relationship--e3edaa07-1968-4b64-96ea-b1b5d675a29b",
                 "relationship--a733b33b-013c-4e3e-a940-c5ee5a4b9187",
-                "indicator--eb3c06ab-8ba6-4c4b-be6d-aa643f701785",
-                "relationship--8bf2e328-bcf7-44c5-8634-11fc8767b482",
                 "relationship--e3e22ea9-2aec-4961-a80f-af54d070835c",
-                "indicator--f0d80cc1-5260-4d67-a463-d6eb91c36f71",
-                "relationship--532f2127-8d60-4e5e-b8b2-769f602d016a",
-                "relationship--156c3391-2d22-4c65-bf06-845d69b24329"
+                "relationship--156c3391-2d22-4c65-bf06-845d69b24329",
+                "relationship--9818d1d0-ccb9-4ec0-a7aa-d1bad9724118",
+                "relationship--0b81cd70-395a-4668-93ee-34f52b14f816",
+                "relationship--92a76cd6-68ab-4dae-8d27-6d4d57f7664f",
+                "relationship--8bf2e328-bcf7-44c5-8634-11fc8767b482",
+                "relationship--532f2127-8d60-4e5e-b8b2-769f602d016a"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
