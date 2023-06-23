@@ -1,4 +1,14 @@
-# CHANGELOG 2023 #3
+# CHANGELOG 2023 #4
+| ID | Date	    | Type      | Details |
+|:-:| --------- | :-------: | ------- |
+| 1 | 2023-06-22 | **FIXED** | TAXII2 Endpoint moved to `https://osint.digitalside.it/taxii2reports/` |
+| 2 | 2023-06-22 | **ADDED** | New TAXII2 collection added: `OSINT.DigitalSide.it Network IoCs Collected (24h)` | 
+| 3 | 2023-06-22 | **CHANGED** | IoCs included in `lists/latestdomains.json`, `lists/latestips.json` and `lists/latesturls.json` are coordinated with reports included in `stix2` directory in a way the `STIXOBJECT.id` is persistence even if included in different reports. This should help against unwanted data duplication |
+| 4 | 2023-06-22 | **ADDED** | Added 3 new lists in STIX2.1 format related to the Newtwork IoCs collected in the latest 24 hours. Lists are `lists/latestdomainsdaily.json`, `lists/latestdomainsdaily.json` and `lists/latestdomainsdaily.json`. They are also used as source for the `OSINT.DigitalSide.it Network IoCs Collected (24h)` TAXII2 collection |
+| 5 | 2023-06-22 | **ADDED** | New example script file to interact with the `OSINT.DigitalSide.it Network IoCs Collected (24h)` TAXII2 collection => [`taxiigetdomains.py`](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetdomains.py) |
+| 6 | 2023-06-22 | **CHANGED** | Updated local [README.md](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/README.md) and official website [TAXII2 support page](https://osint.digitalside.it/taxiiserver.html) |
+
+## CHANGELOG 2023 #3
 | ID | Date         | Type      | Details |
 |:-:| --------- | :-------: | ------- |
 | 1 | 2023-06-16 | **ADDED** | TAXII2 server. For details please read the instructions pages available on [this repository](https://github.com/davidonzo/Threat-Intel/tree/master/tools/TAXII2/README.md) and on the official [project website](https://osint.digitalside.it/taxiiserver.html) |
