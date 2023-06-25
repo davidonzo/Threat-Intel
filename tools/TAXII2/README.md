@@ -188,7 +188,7 @@ for domain in domainz:
     print(domain.strip()[25:-1])
 ```
 
-### Example 5: get latest 24 hours detected urls ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigeturls.py))
+### Example 6: get latest 24 hours detected urls ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigeturls.py))
 
 ```
 #!/usr/bin/env python3
@@ -217,7 +217,7 @@ for domain in domainz:
     print(domain.strip()[25:-1])
 ```
 
-### Example 5: get latest 24 hours detected IPs ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetips.py))
+### Example 7: get latest 24 hours detected IPs ([download](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/taxiigetips.py))
 
 ```
 #!/usr/bin/env python3
