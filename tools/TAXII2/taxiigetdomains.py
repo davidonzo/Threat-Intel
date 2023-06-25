@@ -21,4 +21,4 @@ print("Detected "+str(len(domainz))+" domain-name objects")
 print("====================================================")
 
 for domain in domainz:
-    print(domain.strip()[25:-1])
+    print(domain.strip()[21:-1])
