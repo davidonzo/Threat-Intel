@@ -10,15 +10,15 @@ tc_source = TAXIICollectionSource(collection)
 
 
 f1 = Filter("type","=", "indicator")
-f2 = Filter("pattern","contains", "domain-name:value =")
+f2 = Filter("pattern","contains", "ipv4-addr:value =")
 
-domains = tc_source.query([f1, f2])
+ips = tc_source.query([f1, f2])
 
-domainz = domains[0].pattern[1:-1].split("OR")
+ipz = ips[0].pattern[1:-1].split("OR")
 
 print("====================================================")
-print("Detected "+str(len(domainz))+" domain-name objects")
+print("Detected "+str(len(ipz))+" ipv4-addr objects")
 print("====================================================")
 
-for domain in domainz:
-    print(domain.strip()[25:-1])
+for ip in ipz:
+    print(ip.strip()[19:-1])
