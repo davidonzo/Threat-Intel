@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--fe13992c-0ad9-4b80-816b-9beb57e55816",
-            "created": "2023-06-25T14:28:27.663813Z",
-            "modified": "2023-06-25T14:28:27.663813Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--e6f8a3a1-cd89-400c-b2e9-e5f066c607eb",
-            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
+            "id": "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-25T10:58:03.000Z",
+            "modified": "2023-06-25T10:58:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://outdoortacklebox.com/1.dll']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-25T10:58:03Z",
+            "valid_until": "2023-07-02T10:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--08bd940a-f2e6-4f4f-8427-1e8a4fc06b4e",
-            "created": "2023-06-25T14:28:27.663996Z",
-            "modified": "2023-06-25T14:28:27.663996Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--a923afb4-a1fe-47bf-9068-6e74a7426c2a",
-            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--21daf807-a0b4-4ada-a0c2-0754f0282751",
-            "created": "2023-06-25T14:28:27.664149Z",
-            "modified": "2023-06-25T14:28:27.664149Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5a806199-f4be-4dcc-82a0-9274cd970b32",
-            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
+            "id": "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-25T10:58:03.000Z",
+            "modified": "2023-06-25T10:58:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'outdoortacklebox.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-25T10:58:03Z",
+            "valid_until": "2023-07-02T10:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--12098f42-fd4c-4e05-a4e0-9eea2d86d646"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-25T10:58:03.000Z",
-            "modified": "2023-06-25T10:58:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://outdoortacklebox.com/1.dll']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-25T10:58:03Z",
-            "valid_until": "2023-07-02T10:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--82c7ead3-92af-4927-b9eb-a32f4fa96967",
+            "created": "2023-06-25T14:28:27.665932Z",
+            "modified": "2023-06-25T14:28:27.665932Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
+            "target_ref": "observed-data--12098f42-fd4c-4e05-a4e0-9eea2d86d646"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--bc2f46c2-5aa9-4b31-9121-6795497546e7",
+            "created": "2023-06-25T14:28:27.667214Z",
+            "modified": "2023-06-25T14:28:27.667214Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
+            "target_ref": "observed-data--12098f42-fd4c-4e05-a4e0-9eea2d86d646"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--fe13992c-0ad9-4b80-816b-9beb57e55816",
+            "created": "2023-06-25T14:28:27.663813Z",
+            "modified": "2023-06-25T14:28:27.663813Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--e6f8a3a1-cd89-400c-b2e9-e5f066c607eb",
+            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--08bd940a-f2e6-4f4f-8427-1e8a4fc06b4e",
+            "created": "2023-06-25T14:28:27.663996Z",
+            "modified": "2023-06-25T14:28:27.663996Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--a923afb4-a1fe-47bf-9068-6e74a7426c2a",
+            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--21daf807-a0b4-4ada-a0c2-0754f0282751",
+            "created": "2023-06-25T14:28:27.664149Z",
+            "modified": "2023-06-25T14:28:27.664149Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5a806199-f4be-4dcc-82a0-9274cd970b32",
+            "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--82c7ead3-92af-4927-b9eb-a32f4fa96967",
-            "created": "2023-06-25T14:28:27.665932Z",
-            "modified": "2023-06-25T14:28:27.665932Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
-            "target_ref": "observed-data--12098f42-fd4c-4e05-a4e0-9eea2d86d646"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-25T10:58:03.000Z",
-            "modified": "2023-06-25T10:58:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'outdoortacklebox.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-25T10:58:03Z",
-            "valid_until": "2023-07-02T10:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--f5ae51c2-8394-4d50-985d-fe939c2ab158",
             "created": "2023-06-25T14:28:27.667039Z",
             "modified": "2023-06-25T14:28:27.667039Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--4b0ef79b-5974-42ac-a865-462f458fd68e"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--bc2f46c2-5aa9-4b31-9121-6795497546e7",
-            "created": "2023-06-25T14:28:27.667214Z",
-            "modified": "2023-06-25T14:28:27.667214Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
-            "target_ref": "observed-data--12098f42-fd4c-4e05-a4e0-9eea2d86d646"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--dad75e0a-d9ff-4a9a-a5f6-9e8cac78b6b8",
+            "id": "report--abbec27d-c610-475c-bc5c-5e5ed3ef150c",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-25T10:58:03.000Z",
             "modified": "2023-06-25T10:58:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--e6f8a3a1-cd89-400c-b2e9-e5f066c607eb",
                 "indicator--a923afb4-a1fe-47bf-9068-6e74a7426c2a",
                 "indicator--5a806199-f4be-4dcc-82a0-9274cd970b32",
-                "relationship--fe13992c-0ad9-4b80-816b-9beb57e55816",
-                "relationship--08bd940a-f2e6-4f4f-8427-1e8a4fc06b4e",
-                "relationship--21daf807-a0b4-4ada-a0c2-0754f0282751",
+                "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
+                "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
                 "relationship--c7c745ee-7af1-478a-b310-2dc78f1266ae",
                 "relationship--df231fc9-b38f-4ec3-8800-ef5e7ecc83d1",
                 "relationship--58d049f1-b007-43a9-945b-0c3e08ef0ec5",
-                "indicator--1ef523d5-c897-4e0b-af14-ce808d477786",
-                "relationship--48e4d8ee-8fe8-4d0d-9146-0aebb9375250",
                 "relationship--82c7ead3-92af-4927-b9eb-a32f4fa96967",
-                "indicator--063f87a4-cb45-4a14-9148-bfd8f4073b83",
-                "relationship--f5ae51c2-8394-4d50-985d-fe939c2ab158",
-                "relationship--bc2f46c2-5aa9-4b31-9121-6795497546e7"
+                "relationship--bc2f46c2-5aa9-4b31-9121-6795497546e7",
+                "relationship--fe13992c-0ad9-4b80-816b-9beb57e55816",
+                "relationship--08bd940a-f2e6-4f4f-8427-1e8a4fc06b4e",
+                "relationship--21daf807-a0b4-4ada-a0c2-0754f0282751",
+                "relationship--48e4d8ee-8fe8-4d0d-9146-0aebb9375250",
+                "relationship--f5ae51c2-8394-4d50-985d-fe939c2ab158"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

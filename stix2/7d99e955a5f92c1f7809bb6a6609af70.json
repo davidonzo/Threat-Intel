@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--f9e3f866-7e31-4db5-9070-5c1e7bfd1826",
-            "created": "2023-06-25T14:28:16.93968Z",
-            "modified": "2023-06-25T14:28:16.93968Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--fa8895a0-8a9f-4be4-a470-53d1f94c843d",
-            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
+            "id": "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-25T03:58:03.000Z",
+            "modified": "2023-06-25T03:58:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://web.geomegasoft.net/cspwge.rar']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-25T03:58:03Z",
+            "valid_until": "2023-07-02T03:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--3c2f2985-e693-441a-9c4b-837bce03ef6d",
-            "created": "2023-06-25T14:28:16.939858Z",
-            "modified": "2023-06-25T14:28:16.939858Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--439af763-4276-4d72-8fce-8ddf3850edac",
-            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--ccdf94d2-ad6f-4e93-a7c9-3635952fe40a",
-            "created": "2023-06-25T14:28:16.940012Z",
-            "modified": "2023-06-25T14:28:16.940012Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--f24ffb02-2fa2-4996-87fd-293ec11339ed",
-            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
+            "id": "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-25T03:58:03.000Z",
+            "modified": "2023-06-25T03:58:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'web.geomegasoft.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-25T03:58:03Z",
+            "valid_until": "2023-07-02T03:58:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--bed8a301-339d-42b0-b117-89cba30d17c3"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-25T03:58:03.000Z",
-            "modified": "2023-06-25T03:58:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://web.geomegasoft.net/cspwge.rar']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-25T03:58:03Z",
-            "valid_until": "2023-07-02T03:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--41a2a13f-21d7-40fe-994b-120fc70c51e7",
+            "created": "2023-06-25T14:28:16.941617Z",
+            "modified": "2023-06-25T14:28:16.941617Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
+            "target_ref": "observed-data--bed8a301-339d-42b0-b117-89cba30d17c3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--7a672499-4948-49a9-a0d9-0092997a224f",
+            "created": "2023-06-25T14:28:16.942884Z",
+            "modified": "2023-06-25T14:28:16.942884Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
+            "target_ref": "observed-data--bed8a301-339d-42b0-b117-89cba30d17c3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--f9e3f866-7e31-4db5-9070-5c1e7bfd1826",
+            "created": "2023-06-25T14:28:16.93968Z",
+            "modified": "2023-06-25T14:28:16.93968Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--fa8895a0-8a9f-4be4-a470-53d1f94c843d",
+            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3c2f2985-e693-441a-9c4b-837bce03ef6d",
+            "created": "2023-06-25T14:28:16.939858Z",
+            "modified": "2023-06-25T14:28:16.939858Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--439af763-4276-4d72-8fce-8ddf3850edac",
+            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ccdf94d2-ad6f-4e93-a7c9-3635952fe40a",
+            "created": "2023-06-25T14:28:16.940012Z",
+            "modified": "2023-06-25T14:28:16.940012Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--f24ffb02-2fa2-4996-87fd-293ec11339ed",
+            "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--41a2a13f-21d7-40fe-994b-120fc70c51e7",
-            "created": "2023-06-25T14:28:16.941617Z",
-            "modified": "2023-06-25T14:28:16.941617Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
-            "target_ref": "observed-data--bed8a301-339d-42b0-b117-89cba30d17c3"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-25T03:58:03.000Z",
-            "modified": "2023-06-25T03:58:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'web.geomegasoft.net']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-25T03:58:03Z",
-            "valid_until": "2023-07-02T03:58:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--a3b729eb-f4ca-450b-8672-339b0be957cb",
             "created": "2023-06-25T14:28:16.942707Z",
             "modified": "2023-06-25T14:28:16.942707Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--8b9dc4b6-f8de-48a4-af72-724c1e972a24"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--7a672499-4948-49a9-a0d9-0092997a224f",
-            "created": "2023-06-25T14:28:16.942884Z",
-            "modified": "2023-06-25T14:28:16.942884Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
-            "target_ref": "observed-data--bed8a301-339d-42b0-b117-89cba30d17c3"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--2248caa2-4d13-4015-bb40-f5fd2c94fd41",
+            "id": "report--87939961-3d01-4d3a-ab23-2fc4a1503b7d",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-25T03:58:03.000Z",
             "modified": "2023-06-25T03:58:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--fa8895a0-8a9f-4be4-a470-53d1f94c843d",
                 "indicator--439af763-4276-4d72-8fce-8ddf3850edac",
                 "indicator--f24ffb02-2fa2-4996-87fd-293ec11339ed",
-                "relationship--f9e3f866-7e31-4db5-9070-5c1e7bfd1826",
-                "relationship--3c2f2985-e693-441a-9c4b-837bce03ef6d",
-                "relationship--ccdf94d2-ad6f-4e93-a7c9-3635952fe40a",
+                "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
+                "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
                 "relationship--926e5519-2a1d-42eb-9df4-f82ac77c156c",
                 "relationship--5de3c04e-37a0-4d25-ba1d-21af17bc4413",
                 "relationship--1652ef0f-7a1c-480f-abcc-a9642ba2aa42",
-                "indicator--7dc2b0c2-b50d-4988-afd8-e42d02026a48",
-                "relationship--e6ff13b3-a138-401d-8c8b-fd41b27c7db1",
                 "relationship--41a2a13f-21d7-40fe-994b-120fc70c51e7",
-                "indicator--fa29e36a-67c4-4c93-8810-472eccade3f2",
-                "relationship--a3b729eb-f4ca-450b-8672-339b0be957cb",
-                "relationship--7a672499-4948-49a9-a0d9-0092997a224f"
+                "relationship--7a672499-4948-49a9-a0d9-0092997a224f",
+                "relationship--f9e3f866-7e31-4db5-9070-5c1e7bfd1826",
+                "relationship--3c2f2985-e693-441a-9c4b-837bce03ef6d",
+                "relationship--ccdf94d2-ad6f-4e93-a7c9-3635952fe40a",
+                "relationship--e6ff13b3-a138-401d-8c8b-fd41b27c7db1",
+                "relationship--a3b729eb-f4ca-450b-8672-339b0be957cb"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

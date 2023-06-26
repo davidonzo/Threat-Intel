@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--54c9fced-4c99-49a2-9ce5-a35e2433c196",
-            "created": "2023-06-25T14:28:42.016304Z",
-            "modified": "2023-06-25T14:28:42.016304Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--cb494b26-5828-4f4a-932c-cd0305dca440",
-            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
+            "id": "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-24T21:39:03.000Z",
+            "modified": "2023-06-24T21:39:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://funletters.net/flowers/flowers1/smell-the-roses.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-24T21:39:03Z",
+            "valid_until": "2023-07-01T21:39:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--176a65ad-96e2-41c9-906e-ae2313278d96",
-            "created": "2023-06-25T14:28:42.01648Z",
-            "modified": "2023-06-25T14:28:42.01648Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--93fef9b2-721d-4a58-9b81-f1dd532d6e4f",
-            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--2f17a6b4-74b9-4da8-94c1-a2358364542d",
-            "created": "2023-06-25T14:28:42.016657Z",
-            "modified": "2023-06-25T14:28:42.016657Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--feaa18d4-4fae-4ca2-b2b0-c922ca35cf63",
-            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
+            "id": "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-24T21:39:03.000Z",
+            "modified": "2023-06-24T21:39:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'funletters.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-24T21:39:03Z",
+            "valid_until": "2023-07-01T21:39:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--accfbd07-8b3f-4842-8f99-25f30c48f60a"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-24T21:39:03.000Z",
-            "modified": "2023-06-24T21:39:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://funletters.net/flowers/flowers1/smell-the-roses.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-24T21:39:03Z",
-            "valid_until": "2023-07-01T21:39:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--b748aa3c-9f6a-4992-9fda-f5f336ada9fc",
+            "created": "2023-06-25T14:28:42.018283Z",
+            "modified": "2023-06-25T14:28:42.018283Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
+            "target_ref": "observed-data--accfbd07-8b3f-4842-8f99-25f30c48f60a"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3bc53539-9ec0-4ace-b9a6-a3840f909310",
+            "created": "2023-06-25T14:28:42.019633Z",
+            "modified": "2023-06-25T14:28:42.019633Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
+            "target_ref": "observed-data--accfbd07-8b3f-4842-8f99-25f30c48f60a"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--54c9fced-4c99-49a2-9ce5-a35e2433c196",
+            "created": "2023-06-25T14:28:42.016304Z",
+            "modified": "2023-06-25T14:28:42.016304Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--cb494b26-5828-4f4a-932c-cd0305dca440",
+            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--176a65ad-96e2-41c9-906e-ae2313278d96",
+            "created": "2023-06-25T14:28:42.01648Z",
+            "modified": "2023-06-25T14:28:42.01648Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--93fef9b2-721d-4a58-9b81-f1dd532d6e4f",
+            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--2f17a6b4-74b9-4da8-94c1-a2358364542d",
+            "created": "2023-06-25T14:28:42.016657Z",
+            "modified": "2023-06-25T14:28:42.016657Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--feaa18d4-4fae-4ca2-b2b0-c922ca35cf63",
+            "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--b748aa3c-9f6a-4992-9fda-f5f336ada9fc",
-            "created": "2023-06-25T14:28:42.018283Z",
-            "modified": "2023-06-25T14:28:42.018283Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
-            "target_ref": "observed-data--accfbd07-8b3f-4842-8f99-25f30c48f60a"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-24T21:39:03.000Z",
-            "modified": "2023-06-24T21:39:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'funletters.net']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-24T21:39:03Z",
-            "valid_until": "2023-07-01T21:39:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--709e27ec-68e4-4a72-954a-465d9d0e11ad",
             "created": "2023-06-25T14:28:42.019454Z",
             "modified": "2023-06-25T14:28:42.019454Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--caf7085f-060f-4c85-99c4-a1b73d0ca7d5"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--3bc53539-9ec0-4ace-b9a6-a3840f909310",
-            "created": "2023-06-25T14:28:42.019633Z",
-            "modified": "2023-06-25T14:28:42.019633Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
-            "target_ref": "observed-data--accfbd07-8b3f-4842-8f99-25f30c48f60a"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--5d856629-48cb-4f82-8141-69f81b9c7eb1",
+            "id": "report--3cfab24f-96cd-4c19-bc99-cabdc7a0ae90",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-24T21:39:03.000Z",
             "modified": "2023-06-24T21:39:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--cb494b26-5828-4f4a-932c-cd0305dca440",
                 "indicator--93fef9b2-721d-4a58-9b81-f1dd532d6e4f",
                 "indicator--feaa18d4-4fae-4ca2-b2b0-c922ca35cf63",
-                "relationship--54c9fced-4c99-49a2-9ce5-a35e2433c196",
-                "relationship--176a65ad-96e2-41c9-906e-ae2313278d96",
-                "relationship--2f17a6b4-74b9-4da8-94c1-a2358364542d",
+                "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
+                "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
                 "relationship--73125112-3a4a-4edd-9d81-c6a8040a33f9",
                 "relationship--e93dd895-7609-42ed-b045-9370a8b5e14f",
                 "relationship--dd14dd61-868e-4831-9e2e-63cae9930283",
-                "indicator--413e0580-c04b-46b0-a7fe-bb0a21087519",
-                "relationship--aa2814ec-7751-4528-b149-40a1b9238932",
                 "relationship--b748aa3c-9f6a-4992-9fda-f5f336ada9fc",
-                "indicator--6313538d-426a-43ed-88ce-32f3918a713d",
-                "relationship--709e27ec-68e4-4a72-954a-465d9d0e11ad",
-                "relationship--3bc53539-9ec0-4ace-b9a6-a3840f909310"
+                "relationship--3bc53539-9ec0-4ace-b9a6-a3840f909310",
+                "relationship--54c9fced-4c99-49a2-9ce5-a35e2433c196",
+                "relationship--176a65ad-96e2-41c9-906e-ae2313278d96",
+                "relationship--2f17a6b4-74b9-4da8-94c1-a2358364542d",
+                "relationship--aa2814ec-7751-4528-b149-40a1b9238932",
+                "relationship--709e27ec-68e4-4a72-954a-465d9d0e11ad"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

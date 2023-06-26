@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--6a508eda-a4c8-4796-9a1e-77922f9b99b1",
-            "created": "2023-06-25T14:28:36.029403Z",
-            "modified": "2023-06-25T14:28:36.029403Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--3f150c12-cb9c-49b1-93dd-9f3b7a75c38c",
-            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
+            "id": "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-24T19:55:07.000Z",
+            "modified": "2023-06-24T19:55:07.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://www.opolis.io/Opolis.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-24T19:55:07Z",
+            "valid_until": "2023-07-01T19:55:07Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--3d0e0538-a1cd-44e6-9738-d97329ac7465",
-            "created": "2023-06-25T14:28:36.029581Z",
-            "modified": "2023-06-25T14:28:36.029581Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--08ef8c92-db36-4485-8569-771ead311264",
-            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--837300d3-f20e-4a80-9534-580ab9fcb606",
-            "created": "2023-06-25T14:28:36.029734Z",
-            "modified": "2023-06-25T14:28:36.029734Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--8296aac6-6a9a-4d9f-80f2-2d8123766464",
-            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
+            "id": "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-24T19:55:07.000Z",
+            "modified": "2023-06-24T19:55:07.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'www.opolis.io']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-24T19:55:07Z",
+            "valid_until": "2023-07-01T19:55:07Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--47219cc3-7e43-41c6-abfa-d5d51c4a4c25"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-24T19:55:07.000Z",
-            "modified": "2023-06-24T19:55:07.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://www.opolis.io/Opolis.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-24T19:55:07Z",
-            "valid_until": "2023-07-01T19:55:07Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--16bc9f3b-61c6-439f-9e85-a4bae26a13cb",
+            "created": "2023-06-25T14:28:36.031301Z",
+            "modified": "2023-06-25T14:28:36.031301Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
+            "target_ref": "observed-data--47219cc3-7e43-41c6-abfa-d5d51c4a4c25"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a21c0580-257d-4860-aa54-2f0755592c7a",
+            "created": "2023-06-25T14:28:36.032557Z",
+            "modified": "2023-06-25T14:28:36.032557Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
+            "target_ref": "observed-data--47219cc3-7e43-41c6-abfa-d5d51c4a4c25"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--6a508eda-a4c8-4796-9a1e-77922f9b99b1",
+            "created": "2023-06-25T14:28:36.029403Z",
+            "modified": "2023-06-25T14:28:36.029403Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--3f150c12-cb9c-49b1-93dd-9f3b7a75c38c",
+            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--3d0e0538-a1cd-44e6-9738-d97329ac7465",
+            "created": "2023-06-25T14:28:36.029581Z",
+            "modified": "2023-06-25T14:28:36.029581Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--08ef8c92-db36-4485-8569-771ead311264",
+            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--837300d3-f20e-4a80-9534-580ab9fcb606",
+            "created": "2023-06-25T14:28:36.029734Z",
+            "modified": "2023-06-25T14:28:36.029734Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--8296aac6-6a9a-4d9f-80f2-2d8123766464",
+            "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--16bc9f3b-61c6-439f-9e85-a4bae26a13cb",
-            "created": "2023-06-25T14:28:36.031301Z",
-            "modified": "2023-06-25T14:28:36.031301Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
-            "target_ref": "observed-data--47219cc3-7e43-41c6-abfa-d5d51c4a4c25"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-24T19:55:07.000Z",
-            "modified": "2023-06-24T19:55:07.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'www.opolis.io']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-24T19:55:07Z",
-            "valid_until": "2023-07-01T19:55:07Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--fe1d9229-7b63-4c86-a140-374816c4d0ee",
             "created": "2023-06-25T14:28:36.032367Z",
             "modified": "2023-06-25T14:28:36.032367Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--e2a4f46d-e7f1-4574-a88c-3dca2f8879b1"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--a21c0580-257d-4860-aa54-2f0755592c7a",
-            "created": "2023-06-25T14:28:36.032557Z",
-            "modified": "2023-06-25T14:28:36.032557Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
-            "target_ref": "observed-data--47219cc3-7e43-41c6-abfa-d5d51c4a4c25"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--025667ab-e180-4025-8285-01ebdc45199a",
+            "id": "report--9ab615a2-6c6f-468e-b947-6912473d00ec",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-24T19:55:07.000Z",
             "modified": "2023-06-24T19:55:07.000Z",
@@ -316,18 +316,18 @@
                 "indicator--3f150c12-cb9c-49b1-93dd-9f3b7a75c38c",
                 "indicator--08ef8c92-db36-4485-8569-771ead311264",
                 "indicator--8296aac6-6a9a-4d9f-80f2-2d8123766464",
-                "relationship--6a508eda-a4c8-4796-9a1e-77922f9b99b1",
-                "relationship--3d0e0538-a1cd-44e6-9738-d97329ac7465",
-                "relationship--837300d3-f20e-4a80-9534-580ab9fcb606",
+                "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
+                "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
                 "relationship--a9446686-0d15-49b2-838c-a992f70dc72a",
                 "relationship--ffea2b6b-0431-47a2-acb6-ed1b57af722d",
                 "relationship--8402dbb1-8a34-4c87-83ec-fd97427cf6da",
-                "indicator--62ebb80b-465f-4250-9914-63bfa95a7afb",
-                "relationship--97b2ce7c-0dd9-45c4-8aa9-cf5e6e7cf218",
                 "relationship--16bc9f3b-61c6-439f-9e85-a4bae26a13cb",
-                "indicator--713af460-b502-43ce-8413-08d6197ef0d2",
-                "relationship--fe1d9229-7b63-4c86-a140-374816c4d0ee",
-                "relationship--a21c0580-257d-4860-aa54-2f0755592c7a"
+                "relationship--a21c0580-257d-4860-aa54-2f0755592c7a",
+                "relationship--6a508eda-a4c8-4796-9a1e-77922f9b99b1",
+                "relationship--3d0e0538-a1cd-44e6-9738-d97329ac7465",
+                "relationship--837300d3-f20e-4a80-9534-580ab9fcb606",
+                "relationship--97b2ce7c-0dd9-45c4-8aa9-cf5e6e7cf218",
+                "relationship--fe1d9229-7b63-4c86-a140-374816c4d0ee"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
