@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--771b3d20-3848-4655-8f4c-a441031a1e51",
-            "created": "2023-06-27T06:35:05.130807Z",
-            "modified": "2023-06-27T06:35:05.130807Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--9099cffb-84d4-413d-be21-e3e1e774967e",
-            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
+            "id": "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T07:55:07.000Z",
+            "modified": "2023-06-27T07:55:07.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://drcesargalvan.com/wp-content/download/File.7z?pfile=file.zip']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T07:55:07Z",
+            "valid_until": "2023-07-04T07:55:07Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--9c19c058-026c-4f0e-8cde-2938b9074e24",
-            "created": "2023-06-27T06:35:05.130988Z",
-            "modified": "2023-06-27T06:35:05.130988Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--91797d97-dc08-4ea4-93c2-acb118e3030c",
-            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--9b2adf2e-191e-4c9a-aab8-9e6755a26b14",
-            "created": "2023-06-27T06:35:05.131144Z",
-            "modified": "2023-06-27T06:35:05.131144Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--4d9a0e83-11b9-4a13-80fb-bbb331264d81",
-            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
+            "id": "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T07:55:07.000Z",
+            "modified": "2023-06-27T07:55:07.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'drcesargalvan.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T07:55:07Z",
+            "valid_until": "2023-07-04T07:55:07Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--1322cf41-9a16-4a4b-a8f6-a26961b4cb21"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T07:55:07.000Z",
-            "modified": "2023-06-27T07:55:07.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://drcesargalvan.com/wp-content/download/File.7z?pfile=file.zip']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T07:55:07Z",
-            "valid_until": "2023-07-04T07:55:07Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--4c5e02a9-6661-4d62-906a-e0e0f21dbf85",
+            "created": "2023-06-27T06:35:05.132758Z",
+            "modified": "2023-06-27T06:35:05.132758Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
+            "target_ref": "observed-data--1322cf41-9a16-4a4b-a8f6-a26961b4cb21"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--87ff21c5-d2a0-4e79-98f6-459cf365e6bd",
+            "created": "2023-06-27T06:35:05.133977Z",
+            "modified": "2023-06-27T06:35:05.133977Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
+            "target_ref": "observed-data--1322cf41-9a16-4a4b-a8f6-a26961b4cb21"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--771b3d20-3848-4655-8f4c-a441031a1e51",
+            "created": "2023-06-27T06:35:05.130807Z",
+            "modified": "2023-06-27T06:35:05.130807Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9099cffb-84d4-413d-be21-e3e1e774967e",
+            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9c19c058-026c-4f0e-8cde-2938b9074e24",
+            "created": "2023-06-27T06:35:05.130988Z",
+            "modified": "2023-06-27T06:35:05.130988Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--91797d97-dc08-4ea4-93c2-acb118e3030c",
+            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9b2adf2e-191e-4c9a-aab8-9e6755a26b14",
+            "created": "2023-06-27T06:35:05.131144Z",
+            "modified": "2023-06-27T06:35:05.131144Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--4d9a0e83-11b9-4a13-80fb-bbb331264d81",
+            "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--4c5e02a9-6661-4d62-906a-e0e0f21dbf85",
-            "created": "2023-06-27T06:35:05.132758Z",
-            "modified": "2023-06-27T06:35:05.132758Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
-            "target_ref": "observed-data--1322cf41-9a16-4a4b-a8f6-a26961b4cb21"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T07:55:07.000Z",
-            "modified": "2023-06-27T07:55:07.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'drcesargalvan.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T07:55:07Z",
-            "valid_until": "2023-07-04T07:55:07Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--2651ec00-bac1-4309-8bf7-c424d54b6fdb",
             "created": "2023-06-27T06:35:05.1338Z",
             "modified": "2023-06-27T06:35:05.1338Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--82c16083-1447-4fbc-ab79-9cd31470cdbf"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--87ff21c5-d2a0-4e79-98f6-459cf365e6bd",
-            "created": "2023-06-27T06:35:05.133977Z",
-            "modified": "2023-06-27T06:35:05.133977Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
-            "target_ref": "observed-data--1322cf41-9a16-4a4b-a8f6-a26961b4cb21"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--dddf9aa0-ade7-44b0-91fc-1ae25616e43a",
+            "id": "report--746c35d5-025c-4c21-b6a4-2da09616aa1e",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-27T07:55:07.000Z",
             "modified": "2023-06-27T07:55:07.000Z",
@@ -316,18 +316,18 @@
                 "indicator--9099cffb-84d4-413d-be21-e3e1e774967e",
                 "indicator--91797d97-dc08-4ea4-93c2-acb118e3030c",
                 "indicator--4d9a0e83-11b9-4a13-80fb-bbb331264d81",
-                "relationship--771b3d20-3848-4655-8f4c-a441031a1e51",
-                "relationship--9c19c058-026c-4f0e-8cde-2938b9074e24",
-                "relationship--9b2adf2e-191e-4c9a-aab8-9e6755a26b14",
+                "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
+                "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
                 "relationship--09b5030b-d819-4562-8b9b-272271daa645",
                 "relationship--b333fa3c-340d-44cf-ad84-24e97c28d8ad",
                 "relationship--5aac3fc4-cb3b-48ac-95bf-cca00a262b34",
-                "indicator--eeb005d8-d379-42ef-be17-9a652d96e734",
-                "relationship--8bdb84b6-bf09-4730-b518-47bef3e26b12",
                 "relationship--4c5e02a9-6661-4d62-906a-e0e0f21dbf85",
-                "indicator--394ba905-e0d5-4da9-a61b-813614953ffa",
-                "relationship--2651ec00-bac1-4309-8bf7-c424d54b6fdb",
-                "relationship--87ff21c5-d2a0-4e79-98f6-459cf365e6bd"
+                "relationship--87ff21c5-d2a0-4e79-98f6-459cf365e6bd",
+                "relationship--771b3d20-3848-4655-8f4c-a441031a1e51",
+                "relationship--9c19c058-026c-4f0e-8cde-2938b9074e24",
+                "relationship--9b2adf2e-191e-4c9a-aab8-9e6755a26b14",
+                "relationship--8bdb84b6-bf09-4730-b518-47bef3e26b12",
+                "relationship--2651ec00-bac1-4309-8bf7-c424d54b6fdb"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

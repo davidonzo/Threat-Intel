@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--5e528587-7d0d-459a-9fae-94051064df5b",
-            "created": "2023-06-27T06:34:07.411316Z",
-            "modified": "2023-06-27T06:34:07.411316Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--16c4a6da-565c-41ff-a0ca-33389776d8e6",
-            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
+            "id": "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T23:43:05.000Z",
+            "modified": "2023-06-26T23:43:05.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://thedoctorsgym.net/10/data64_5.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T23:43:05Z",
+            "valid_until": "2023-07-03T23:43:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--32449503-d2a7-4cc6-a0df-103b84dff19d",
-            "created": "2023-06-27T06:34:07.411497Z",
-            "modified": "2023-06-27T06:34:07.411497Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--e31ed1f8-4cb0-419f-a744-a5525111a7c2",
-            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e1ce6680-76e5-45b5-a5e0-1fae767bca96",
-            "created": "2023-06-27T06:34:07.411654Z",
-            "modified": "2023-06-27T06:34:07.411654Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--579a0d9f-3700-4fd1-a545-0775d7e60e60",
-            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
+            "id": "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T23:43:05.000Z",
+            "modified": "2023-06-26T23:43:05.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'thedoctorsgym.net']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T23:43:05Z",
+            "valid_until": "2023-07-03T23:43:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--d72ecd4c-c720-4c4c-ae8b-8a2100e24df3"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T23:43:05.000Z",
-            "modified": "2023-06-26T23:43:05.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://thedoctorsgym.net/10/data64_5.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T23:43:05Z",
-            "valid_until": "2023-07-03T23:43:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--de299dc3-a524-4b08-9299-ca42ac1b690a",
+            "created": "2023-06-27T06:34:07.413251Z",
+            "modified": "2023-06-27T06:34:07.413251Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
+            "target_ref": "observed-data--d72ecd4c-c720-4c4c-ae8b-8a2100e24df3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8e05f119-bb99-493f-8d44-1ccbfb7dc5bd",
+            "created": "2023-06-27T06:34:07.414485Z",
+            "modified": "2023-06-27T06:34:07.414485Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
+            "target_ref": "observed-data--d72ecd4c-c720-4c4c-ae8b-8a2100e24df3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--5e528587-7d0d-459a-9fae-94051064df5b",
+            "created": "2023-06-27T06:34:07.411316Z",
+            "modified": "2023-06-27T06:34:07.411316Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--16c4a6da-565c-41ff-a0ca-33389776d8e6",
+            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--32449503-d2a7-4cc6-a0df-103b84dff19d",
+            "created": "2023-06-27T06:34:07.411497Z",
+            "modified": "2023-06-27T06:34:07.411497Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--e31ed1f8-4cb0-419f-a744-a5525111a7c2",
+            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e1ce6680-76e5-45b5-a5e0-1fae767bca96",
+            "created": "2023-06-27T06:34:07.411654Z",
+            "modified": "2023-06-27T06:34:07.411654Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--579a0d9f-3700-4fd1-a545-0775d7e60e60",
+            "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--de299dc3-a524-4b08-9299-ca42ac1b690a",
-            "created": "2023-06-27T06:34:07.413251Z",
-            "modified": "2023-06-27T06:34:07.413251Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
-            "target_ref": "observed-data--d72ecd4c-c720-4c4c-ae8b-8a2100e24df3"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T23:43:05.000Z",
-            "modified": "2023-06-26T23:43:05.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'thedoctorsgym.net']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T23:43:05Z",
-            "valid_until": "2023-07-03T23:43:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--99d22b3b-aead-4dd7-b005-61771c0114bd",
             "created": "2023-06-27T06:34:07.414297Z",
             "modified": "2023-06-27T06:34:07.414297Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--471c0e40-c8ea-4636-a3ec-332dba6a649f"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--8e05f119-bb99-493f-8d44-1ccbfb7dc5bd",
-            "created": "2023-06-27T06:34:07.414485Z",
-            "modified": "2023-06-27T06:34:07.414485Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
-            "target_ref": "observed-data--d72ecd4c-c720-4c4c-ae8b-8a2100e24df3"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--9b09ac54-1c2e-4298-a36f-cf4eda313980",
+            "id": "report--53640601-6639-4e6c-baca-aa94d360877f",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-26T23:43:05.000Z",
             "modified": "2023-06-26T23:43:05.000Z",
@@ -316,18 +316,18 @@
                 "indicator--16c4a6da-565c-41ff-a0ca-33389776d8e6",
                 "indicator--e31ed1f8-4cb0-419f-a744-a5525111a7c2",
                 "indicator--579a0d9f-3700-4fd1-a545-0775d7e60e60",
-                "relationship--5e528587-7d0d-459a-9fae-94051064df5b",
-                "relationship--32449503-d2a7-4cc6-a0df-103b84dff19d",
-                "relationship--e1ce6680-76e5-45b5-a5e0-1fae767bca96",
+                "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
+                "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
                 "relationship--25276c86-1a66-4370-a4f8-17e9c9225a8e",
                 "relationship--0e4b9cc2-35c9-4523-bb8c-e9461393f48e",
                 "relationship--5b48e72f-45f0-4fa0-b683-478b4e53411c",
-                "indicator--7ea4dd3d-38a6-4a43-9be1-b2d007750441",
-                "relationship--5519faa6-7a10-41bf-ae7d-36ff7cec2f71",
                 "relationship--de299dc3-a524-4b08-9299-ca42ac1b690a",
-                "indicator--a0aa7a80-0b75-45b0-af8c-457a87b9b99c",
-                "relationship--99d22b3b-aead-4dd7-b005-61771c0114bd",
-                "relationship--8e05f119-bb99-493f-8d44-1ccbfb7dc5bd"
+                "relationship--8e05f119-bb99-493f-8d44-1ccbfb7dc5bd",
+                "relationship--5e528587-7d0d-459a-9fae-94051064df5b",
+                "relationship--32449503-d2a7-4cc6-a0df-103b84dff19d",
+                "relationship--e1ce6680-76e5-45b5-a5e0-1fae767bca96",
+                "relationship--5519faa6-7a10-41bf-ae7d-36ff7cec2f71",
+                "relationship--99d22b3b-aead-4dd7-b005-61771c0114bd"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

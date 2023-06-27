@@ -148,34 +148,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--cb284ca5-3bac-417c-8308-f0cbc01f77b7",
-            "created": "2023-06-27T06:35:03.244701Z",
-            "modified": "2023-06-27T06:35:03.244701Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--1d0e361e-4df9-4f48-97b1-c1c198cf4117",
-            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
+            "id": "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T17:14:02.000Z",
+            "modified": "2023-06-26T17:14:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://www.snappyshop.it/img/index.php']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T17:14:02Z",
+            "valid_until": "2023-07-03T17:14:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--9c32e1e9-21df-443f-a170-41e9756ced67",
-            "created": "2023-06-27T06:35:03.24488Z",
-            "modified": "2023-06-27T06:35:03.24488Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--88d47557-2191-4081-9485-301d4df4b4db",
-            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--d3fe3cc1-da21-4488-860e-5d303b284837",
-            "created": "2023-06-27T06:35:03.245032Z",
-            "modified": "2023-06-27T06:35:03.245032Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5f2820d7-f26a-4399-945c-f2be8f565335",
-            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
+            "id": "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T17:14:02.000Z",
+            "modified": "2023-06-26T17:14:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'www.snappyshop.it']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T17:14:02Z",
+            "valid_until": "2023-07-03T17:14:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -208,28 +226,54 @@
             "target_ref": "observed-data--46625d77-cc30-496b-bfc9-21b9fbba10ad"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T17:14:02.000Z",
-            "modified": "2023-06-26T17:14:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://www.snappyshop.it/img/index.php']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T17:14:02Z",
-            "valid_until": "2023-07-03T17:14:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--241156ff-733c-45ec-b880-5e37d1a43baa",
+            "created": "2023-06-27T06:35:03.246604Z",
+            "modified": "2023-06-27T06:35:03.246604Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
+            "target_ref": "observed-data--46625d77-cc30-496b-bfc9-21b9fbba10ad"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e6c28499-cae0-45e9-9cad-528512ab10cd",
+            "created": "2023-06-27T06:35:03.247824Z",
+            "modified": "2023-06-27T06:35:03.247824Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
+            "target_ref": "observed-data--46625d77-cc30-496b-bfc9-21b9fbba10ad"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--cb284ca5-3bac-417c-8308-f0cbc01f77b7",
+            "created": "2023-06-27T06:35:03.244701Z",
+            "modified": "2023-06-27T06:35:03.244701Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--1d0e361e-4df9-4f48-97b1-c1c198cf4117",
+            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9c32e1e9-21df-443f-a170-41e9756ced67",
+            "created": "2023-06-27T06:35:03.24488Z",
+            "modified": "2023-06-27T06:35:03.24488Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--88d47557-2191-4081-9485-301d4df4b4db",
+            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d3fe3cc1-da21-4488-860e-5d303b284837",
+            "created": "2023-06-27T06:35:03.245032Z",
+            "modified": "2023-06-27T06:35:03.245032Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5f2820d7-f26a-4399-945c-f2be8f565335",
+            "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
         },
         {
             "type": "relationship",
@@ -244,40 +288,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--241156ff-733c-45ec-b880-5e37d1a43baa",
-            "created": "2023-06-27T06:35:03.246604Z",
-            "modified": "2023-06-27T06:35:03.246604Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
-            "target_ref": "observed-data--46625d77-cc30-496b-bfc9-21b9fbba10ad"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T17:14:02.000Z",
-            "modified": "2023-06-26T17:14:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'www.snappyshop.it']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T17:14:02Z",
-            "valid_until": "2023-07-03T17:14:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--53504c51-28f7-4af5-bdf9-b99aa0449469",
             "created": "2023-06-27T06:35:03.247646Z",
             "modified": "2023-06-27T06:35:03.247646Z",
@@ -286,19 +296,9 @@
             "target_ref": "malware--6f79bdcc-fdc6-49f6-9459-4df44705ab41"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e6c28499-cae0-45e9-9cad-528512ab10cd",
-            "created": "2023-06-27T06:35:03.247824Z",
-            "modified": "2023-06-27T06:35:03.247824Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
-            "target_ref": "observed-data--46625d77-cc30-496b-bfc9-21b9fbba10ad"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--4215864a-ed70-4801-8b2e-66e746209e62",
+            "id": "report--a44ae01c-eceb-4dcb-88ee-8d9ead00b96c",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-26T17:14:02.000Z",
             "modified": "2023-06-26T17:14:02.000Z",
@@ -311,18 +311,18 @@
                 "indicator--1d0e361e-4df9-4f48-97b1-c1c198cf4117",
                 "indicator--88d47557-2191-4081-9485-301d4df4b4db",
                 "indicator--5f2820d7-f26a-4399-945c-f2be8f565335",
-                "relationship--cb284ca5-3bac-417c-8308-f0cbc01f77b7",
-                "relationship--9c32e1e9-21df-443f-a170-41e9756ced67",
-                "relationship--d3fe3cc1-da21-4488-860e-5d303b284837",
+                "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
+                "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
                 "relationship--e47876e1-86e8-4235-8123-8e3c3872139c",
                 "relationship--ad042669-25d8-447b-a46f-7d7b502c3f6d",
                 "relationship--3cd98867-1fd7-4f38-ab59-e4059544267d",
-                "indicator--a845e7aa-1cc5-40db-b327-3002a89ecae9",
-                "relationship--2d23dc33-cb90-4755-b474-dd2cc8fc59d6",
                 "relationship--241156ff-733c-45ec-b880-5e37d1a43baa",
-                "indicator--10e5c4e4-8c25-4a52-9d70-972918edcdc1",
-                "relationship--53504c51-28f7-4af5-bdf9-b99aa0449469",
-                "relationship--e6c28499-cae0-45e9-9cad-528512ab10cd"
+                "relationship--e6c28499-cae0-45e9-9cad-528512ab10cd",
+                "relationship--cb284ca5-3bac-417c-8308-f0cbc01f77b7",
+                "relationship--9c32e1e9-21df-443f-a170-41e9756ced67",
+                "relationship--d3fe3cc1-da21-4488-860e-5d303b284837",
+                "relationship--2d23dc33-cb90-4755-b474-dd2cc8fc59d6",
+                "relationship--53504c51-28f7-4af5-bdf9-b99aa0449469"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
