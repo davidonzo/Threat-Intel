@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--8f2db53c-7b9d-4a49-8c65-9710020e6573",
-            "created": "2023-06-26T06:13:45.19772Z",
-            "modified": "2023-06-26T06:13:45.19772Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--1205cb03-1fc6-426a-b2ae-b690a6c430ab",
-            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
+            "id": "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T05:27:06.000Z",
+            "modified": "2023-06-26T05:27:05.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://andrewpharma.com/wp-includes/WqgKtKrYJM/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T05:27:06Z",
+            "valid_until": "2023-07-03T05:27:06Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--d2ccd493-17d1-4c15-9815-0c5e17d5756b",
-            "created": "2023-06-26T06:13:45.197906Z",
-            "modified": "2023-06-26T06:13:45.197906Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--0ad64910-c5c7-474b-a9e8-2742c8856859",
-            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--56dc6bb3-7cdd-48ce-8cdf-e5789c9d7de7",
-            "created": "2023-06-26T06:13:45.198064Z",
-            "modified": "2023-06-26T06:13:45.198064Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--8bb1f387-4845-44fa-8816-447762ae1cf6",
-            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
+            "id": "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T05:27:06.000Z",
+            "modified": "2023-06-26T05:27:05.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'andrewpharma.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T05:27:06Z",
+            "valid_until": "2023-07-03T05:27:06Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--bd650cfe-b28d-4f98-aede-699da854dde3"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T05:27:06.000Z",
-            "modified": "2023-06-26T05:27:05.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://andrewpharma.com/wp-includes/WqgKtKrYJM/']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T05:27:06Z",
-            "valid_until": "2023-07-03T05:27:06Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--5270ffbd-7105-41eb-90c9-3a4ce822c042",
+            "created": "2023-06-26T06:13:45.199799Z",
+            "modified": "2023-06-26T06:13:45.199799Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
+            "target_ref": "observed-data--bd650cfe-b28d-4f98-aede-699da854dde3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--e7be562d-61a5-4c6e-8901-9ca9e320cf3b",
+            "created": "2023-06-26T06:13:45.201053Z",
+            "modified": "2023-06-26T06:13:45.201053Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
+            "target_ref": "observed-data--bd650cfe-b28d-4f98-aede-699da854dde3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--8f2db53c-7b9d-4a49-8c65-9710020e6573",
+            "created": "2023-06-26T06:13:45.19772Z",
+            "modified": "2023-06-26T06:13:45.19772Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--1205cb03-1fc6-426a-b2ae-b690a6c430ab",
+            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d2ccd493-17d1-4c15-9815-0c5e17d5756b",
+            "created": "2023-06-26T06:13:45.197906Z",
+            "modified": "2023-06-26T06:13:45.197906Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--0ad64910-c5c7-474b-a9e8-2742c8856859",
+            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--56dc6bb3-7cdd-48ce-8cdf-e5789c9d7de7",
+            "created": "2023-06-26T06:13:45.198064Z",
+            "modified": "2023-06-26T06:13:45.198064Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--8bb1f387-4845-44fa-8816-447762ae1cf6",
+            "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--5270ffbd-7105-41eb-90c9-3a4ce822c042",
-            "created": "2023-06-26T06:13:45.199799Z",
-            "modified": "2023-06-26T06:13:45.199799Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
-            "target_ref": "observed-data--bd650cfe-b28d-4f98-aede-699da854dde3"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T05:27:06.000Z",
-            "modified": "2023-06-26T05:27:05.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'andrewpharma.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T05:27:06Z",
-            "valid_until": "2023-07-03T05:27:06Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--32e39547-cfa5-4759-9ab4-176509b5c264",
             "created": "2023-06-26T06:13:45.200868Z",
             "modified": "2023-06-26T06:13:45.200868Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--4a43193b-acc3-457c-9484-0c524c2c8182"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--e7be562d-61a5-4c6e-8901-9ca9e320cf3b",
-            "created": "2023-06-26T06:13:45.201053Z",
-            "modified": "2023-06-26T06:13:45.201053Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
-            "target_ref": "observed-data--bd650cfe-b28d-4f98-aede-699da854dde3"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--21ec5388-ce2b-4751-896e-eeb87f29b923",
+            "id": "report--bb5ef01a-346f-4118-9977-7cc45f12339f",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-26T05:27:05.000Z",
             "modified": "2023-06-26T05:27:05.000Z",
@@ -316,18 +316,18 @@
                 "indicator--1205cb03-1fc6-426a-b2ae-b690a6c430ab",
                 "indicator--0ad64910-c5c7-474b-a9e8-2742c8856859",
                 "indicator--8bb1f387-4845-44fa-8816-447762ae1cf6",
-                "relationship--8f2db53c-7b9d-4a49-8c65-9710020e6573",
-                "relationship--d2ccd493-17d1-4c15-9815-0c5e17d5756b",
-                "relationship--56dc6bb3-7cdd-48ce-8cdf-e5789c9d7de7",
+                "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
+                "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
                 "relationship--c2167a1a-6633-43aa-b489-a748f8ca47b6",
                 "relationship--47f752e1-6e9b-473a-9098-ff0fc73ed575",
                 "relationship--88f41df1-a78a-4359-9de6-964786aee68a",
-                "indicator--0bc735bc-80bf-4c16-9e21-d3db47d4cdd3",
-                "relationship--a3584646-818a-4c68-8e6f-dfb648edd83e",
                 "relationship--5270ffbd-7105-41eb-90c9-3a4ce822c042",
-                "indicator--ca594e6a-2435-4142-b245-1b6ecc00a849",
-                "relationship--32e39547-cfa5-4759-9ab4-176509b5c264",
-                "relationship--e7be562d-61a5-4c6e-8901-9ca9e320cf3b"
+                "relationship--e7be562d-61a5-4c6e-8901-9ca9e320cf3b",
+                "relationship--8f2db53c-7b9d-4a49-8c65-9710020e6573",
+                "relationship--d2ccd493-17d1-4c15-9815-0c5e17d5756b",
+                "relationship--56dc6bb3-7cdd-48ce-8cdf-e5789c9d7de7",
+                "relationship--a3584646-818a-4c68-8e6f-dfb648edd83e",
+                "relationship--32e39547-cfa5-4759-9ab4-176509b5c264"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"

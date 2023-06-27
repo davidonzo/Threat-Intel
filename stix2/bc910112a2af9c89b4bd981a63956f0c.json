@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--4e621c6f-af2d-43de-8fb5-454325cb2175",
-            "created": "2023-06-26T06:12:11.936718Z",
-            "modified": "2023-06-26T06:12:11.936718Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--2520961b-1211-4a86-ab1f-0f91ee0a76ae",
-            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
+            "id": "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T04:09:05.000Z",
+            "modified": "2023-06-26T04:09:05.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://ponizinny.nl/wp-admin/KdLO9n/']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T04:09:05Z",
+            "valid_until": "2023-07-03T04:09:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--05b591ee-69a4-4b30-9460-fae93ecea229",
-            "created": "2023-06-26T06:12:11.936904Z",
-            "modified": "2023-06-26T06:12:11.936904Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--8b5e1222-d16b-43ed-a7c1-5b063995c4eb",
-            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--d832c208-3ec4-44f3-a47e-7b61fab43a49",
-            "created": "2023-06-26T06:12:11.937061Z",
-            "modified": "2023-06-26T06:12:11.937061Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--c9b25749-4b69-49e0-b4a4-414edea6b97f",
-            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
+            "id": "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-26T04:09:05.000Z",
+            "modified": "2023-06-26T04:09:05.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'ponizinny.nl']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-26T04:09:05Z",
+            "valid_until": "2023-07-03T04:09:05Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--93dd272f-3519-4c47-9030-de74b0bcbdbe"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T04:09:05.000Z",
-            "modified": "2023-06-26T04:09:05.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://ponizinny.nl/wp-admin/KdLO9n/']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T04:09:05Z",
-            "valid_until": "2023-07-03T04:09:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--bed9ca7e-a7d7-496f-9898-ed1fb78f7626",
+            "created": "2023-06-26T06:12:11.938687Z",
+            "modified": "2023-06-26T06:12:11.938687Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
+            "target_ref": "observed-data--93dd272f-3519-4c47-9030-de74b0bcbdbe"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0221ccbf-bc82-4cf6-bea4-abc0b95af6fb",
+            "created": "2023-06-26T06:12:11.93993Z",
+            "modified": "2023-06-26T06:12:11.93993Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
+            "target_ref": "observed-data--93dd272f-3519-4c47-9030-de74b0bcbdbe"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--4e621c6f-af2d-43de-8fb5-454325cb2175",
+            "created": "2023-06-26T06:12:11.936718Z",
+            "modified": "2023-06-26T06:12:11.936718Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2520961b-1211-4a86-ab1f-0f91ee0a76ae",
+            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--05b591ee-69a4-4b30-9460-fae93ecea229",
+            "created": "2023-06-26T06:12:11.936904Z",
+            "modified": "2023-06-26T06:12:11.936904Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--8b5e1222-d16b-43ed-a7c1-5b063995c4eb",
+            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d832c208-3ec4-44f3-a47e-7b61fab43a49",
+            "created": "2023-06-26T06:12:11.937061Z",
+            "modified": "2023-06-26T06:12:11.937061Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--c9b25749-4b69-49e0-b4a4-414edea6b97f",
+            "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--bed9ca7e-a7d7-496f-9898-ed1fb78f7626",
-            "created": "2023-06-26T06:12:11.938687Z",
-            "modified": "2023-06-26T06:12:11.938687Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
-            "target_ref": "observed-data--93dd272f-3519-4c47-9030-de74b0bcbdbe"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-26T04:09:05.000Z",
-            "modified": "2023-06-26T04:09:05.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'ponizinny.nl']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-26T04:09:05Z",
-            "valid_until": "2023-07-03T04:09:05Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--bd9ea225-e1de-46d4-a968-793d55999bdb",
             "created": "2023-06-26T06:12:11.939746Z",
             "modified": "2023-06-26T06:12:11.939746Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--736ef949-85a5-4ca9-9eb4-e1b9981cf4b3"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--0221ccbf-bc82-4cf6-bea4-abc0b95af6fb",
-            "created": "2023-06-26T06:12:11.93993Z",
-            "modified": "2023-06-26T06:12:11.93993Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
-            "target_ref": "observed-data--93dd272f-3519-4c47-9030-de74b0bcbdbe"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--49b72284-e905-4eec-8538-0d74764f864e",
+            "id": "report--a1661da8-1db6-4fd8-ac6f-6a62ee17b8e7",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-26T04:09:05.000Z",
             "modified": "2023-06-26T04:09:05.000Z",
@@ -316,18 +316,18 @@
                 "indicator--2520961b-1211-4a86-ab1f-0f91ee0a76ae",
                 "indicator--8b5e1222-d16b-43ed-a7c1-5b063995c4eb",
                 "indicator--c9b25749-4b69-49e0-b4a4-414edea6b97f",
-                "relationship--4e621c6f-af2d-43de-8fb5-454325cb2175",
-                "relationship--05b591ee-69a4-4b30-9460-fae93ecea229",
-                "relationship--d832c208-3ec4-44f3-a47e-7b61fab43a49",
+                "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
+                "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
                 "relationship--bb13e0b1-91a4-4744-b7fc-21e6e392a3bf",
                 "relationship--12f03888-f726-4f67-b266-9355fe06b813",
                 "relationship--e63d2fc9-4904-42a9-901c-dd6176a77c29",
-                "indicator--d64e339d-62f7-4253-88df-a2d9d0c051a1",
-                "relationship--9f4c1001-4868-4ce2-b787-a3abe39bf076",
                 "relationship--bed9ca7e-a7d7-496f-9898-ed1fb78f7626",
-                "indicator--1a26f2c6-cf76-4da4-97bd-ae49fe3ae961",
-                "relationship--bd9ea225-e1de-46d4-a968-793d55999bdb",
-                "relationship--0221ccbf-bc82-4cf6-bea4-abc0b95af6fb"
+                "relationship--0221ccbf-bc82-4cf6-bea4-abc0b95af6fb",
+                "relationship--4e621c6f-af2d-43de-8fb5-454325cb2175",
+                "relationship--05b591ee-69a4-4b30-9460-fae93ecea229",
+                "relationship--d832c208-3ec4-44f3-a47e-7b61fab43a49",
+                "relationship--9f4c1001-4868-4ce2-b787-a3abe39bf076",
+                "relationship--bd9ea225-e1de-46d4-a968-793d55999bdb"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
