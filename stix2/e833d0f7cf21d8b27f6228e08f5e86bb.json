@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--46e6eed1-671c-4041-bed4-6d8d7295ae9f",
-            "created": "2023-06-27T06:15:57.346932Z",
-            "modified": "2023-06-27T06:15:57.346932Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--9d201312-6fad-40f8-8124-4c70d2f5dc79",
-            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
+            "id": "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T03:06:02.000Z",
+            "modified": "2023-06-27T03:06:02.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'http://solapurcancer.com/16/data64_4.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T03:06:02Z",
+            "valid_until": "2023-07-04T03:06:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--d03979be-f0a1-4d6a-beb6-551bfc937f88",
-            "created": "2023-06-27T06:15:57.347105Z",
-            "modified": "2023-06-27T06:15:57.347105Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--43cf04b3-d445-4890-bedb-3a0af5606ac8",
-            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--a7db877a-a129-4d6b-8dcd-208947977f89",
-            "created": "2023-06-27T06:15:57.347255Z",
-            "modified": "2023-06-27T06:15:57.347255Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--5fcdba01-3f0a-4b9d-a995-4fb10af69880",
-            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
+            "id": "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T03:06:02.000Z",
+            "modified": "2023-06-27T03:06:02.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'solapurcancer.com']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T03:06:02Z",
+            "valid_until": "2023-07-04T03:06:02Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--59fbbdc6-cba2-4dd5-b2a3-186ca22b1ae0"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T03:06:02.000Z",
-            "modified": "2023-06-27T03:06:02.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'http://solapurcancer.com/16/data64_4.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T03:06:02Z",
-            "valid_until": "2023-07-04T03:06:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--25c7235e-61e9-4dd3-836a-52fe0769ff9a",
+            "created": "2023-06-27T06:15:57.348779Z",
+            "modified": "2023-06-27T06:15:57.348779Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
+            "target_ref": "observed-data--59fbbdc6-cba2-4dd5-b2a3-186ca22b1ae0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c7d85c59-1715-4c40-8b8e-15794625ef0f",
+            "created": "2023-06-27T06:15:57.349967Z",
+            "modified": "2023-06-27T06:15:57.349967Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
+            "target_ref": "observed-data--59fbbdc6-cba2-4dd5-b2a3-186ca22b1ae0"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--46e6eed1-671c-4041-bed4-6d8d7295ae9f",
+            "created": "2023-06-27T06:15:57.346932Z",
+            "modified": "2023-06-27T06:15:57.346932Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--9d201312-6fad-40f8-8124-4c70d2f5dc79",
+            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--d03979be-f0a1-4d6a-beb6-551bfc937f88",
+            "created": "2023-06-27T06:15:57.347105Z",
+            "modified": "2023-06-27T06:15:57.347105Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--43cf04b3-d445-4890-bedb-3a0af5606ac8",
+            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--a7db877a-a129-4d6b-8dcd-208947977f89",
+            "created": "2023-06-27T06:15:57.347255Z",
+            "modified": "2023-06-27T06:15:57.347255Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--5fcdba01-3f0a-4b9d-a995-4fb10af69880",
+            "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--25c7235e-61e9-4dd3-836a-52fe0769ff9a",
-            "created": "2023-06-27T06:15:57.348779Z",
-            "modified": "2023-06-27T06:15:57.348779Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
-            "target_ref": "observed-data--59fbbdc6-cba2-4dd5-b2a3-186ca22b1ae0"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T03:06:02.000Z",
-            "modified": "2023-06-27T03:06:02.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'solapurcancer.com']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T03:06:02Z",
-            "valid_until": "2023-07-04T03:06:02Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--b1845870-158e-419e-879f-4d0ee0669fb3",
             "created": "2023-06-27T06:15:57.349795Z",
             "modified": "2023-06-27T06:15:57.349795Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--e555823b-7810-4b6b-8ba7-0d4f47b15b36"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--c7d85c59-1715-4c40-8b8e-15794625ef0f",
-            "created": "2023-06-27T06:15:57.349967Z",
-            "modified": "2023-06-27T06:15:57.349967Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
-            "target_ref": "observed-data--59fbbdc6-cba2-4dd5-b2a3-186ca22b1ae0"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--3be9ccfd-f020-4f57-9272-250917b53529",
+            "id": "report--132a04af-be5a-4f14-b1e5-b9854333d085",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-27T03:06:02.000Z",
             "modified": "2023-06-27T03:06:02.000Z",
@@ -316,18 +316,18 @@
                 "indicator--9d201312-6fad-40f8-8124-4c70d2f5dc79",
                 "indicator--43cf04b3-d445-4890-bedb-3a0af5606ac8",
                 "indicator--5fcdba01-3f0a-4b9d-a995-4fb10af69880",
-                "relationship--46e6eed1-671c-4041-bed4-6d8d7295ae9f",
-                "relationship--d03979be-f0a1-4d6a-beb6-551bfc937f88",
-                "relationship--a7db877a-a129-4d6b-8dcd-208947977f89",
+                "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
+                "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
                 "relationship--fa80ba27-878c-49e8-9c48-136316c7a470",
                 "relationship--b4e3531f-2389-4e1d-9ba8-5e62a5f75ab0",
                 "relationship--26f45cad-dcb4-4623-b00d-eb51e267bc23",
-                "indicator--a319287e-2eb1-430b-a8e3-acb2028304e7",
-                "relationship--3620ce90-3da5-457e-ba95-954afa5f2dba",
                 "relationship--25c7235e-61e9-4dd3-836a-52fe0769ff9a",
-                "indicator--02bd8ab3-a305-4ad2-9994-3034944c9baa",
-                "relationship--b1845870-158e-419e-879f-4d0ee0669fb3",
-                "relationship--c7d85c59-1715-4c40-8b8e-15794625ef0f"
+                "relationship--c7d85c59-1715-4c40-8b8e-15794625ef0f",
+                "relationship--46e6eed1-671c-4041-bed4-6d8d7295ae9f",
+                "relationship--d03979be-f0a1-4d6a-beb6-551bfc937f88",
+                "relationship--a7db877a-a129-4d6b-8dcd-208947977f89",
+                "relationship--3620ce90-3da5-457e-ba95-954afa5f2dba",
+                "relationship--b1845870-158e-419e-879f-4d0ee0669fb3"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
