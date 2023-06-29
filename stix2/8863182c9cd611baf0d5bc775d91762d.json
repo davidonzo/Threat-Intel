@@ -153,34 +153,52 @@
             ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--18bb16f9-a6f0-4f09-aeff-6135310834a2",
-            "created": "2023-06-28T06:20:19.343887Z",
-            "modified": "2023-06-28T06:20:19.343887Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--02c707be-6710-48f7-8a2a-01e2f73b588d",
-            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
+            "id": "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T09:16:03.000Z",
+            "modified": "2023-06-27T09:16:03.000Z",
+            "name": "Malicious url hosting downloader",
+            "description": "URL hosting the souspicious file.",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[url:value = 'https://zellewallet.site/Zelle104.27.exe']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T09:16:03Z",
+            "valid_until": "2023-07-04T09:16:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
-            "type": "relationship",
+            "type": "indicator",
             "spec_version": "2.1",
-            "id": "relationship--ce0bba82-bae0-4cbb-972c-79b290be5dcd",
-            "created": "2023-06-28T06:20:19.344034Z",
-            "modified": "2023-06-28T06:20:19.344034Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--799fed3d-b432-4b8e-bfa5-f497b8ee1965",
-            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--0edc29c9-38c5-4536-a79e-4e66ebb14c8e",
-            "created": "2023-06-28T06:20:19.344158Z",
-            "modified": "2023-06-28T06:20:19.344158Z",
-            "relationship_type": "indicates",
-            "source_ref": "indicator--b33898a2-bedc-4025-99eb-03e96c4e57e4",
-            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
+            "id": "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
+            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
+            "created": "2023-06-27T09:16:03.000Z",
+            "modified": "2023-06-27T09:16:03.000Z",
+            "name": "Malicious host hosting downloader",
+            "description": "Souspicious file host",
+            "indicator_types": [
+                "malicious-activity"
+            ],
+            "pattern": "[domain-name:value = 'zellewallet.site']",
+            "pattern_type": "stix",
+            "pattern_version": "2.1",
+            "valid_from": "2023-06-27T09:16:03Z",
+            "valid_until": "2023-07-04T09:16:03Z",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "category",
+                    "phase_name": "network-activity"
+                }
+            ]
         },
         {
             "type": "relationship",
@@ -213,28 +231,54 @@
             "target_ref": "observed-data--1b3c0050-61b3-4218-9706-71e73ebb55cb"
         },
         {
-            "type": "indicator",
+            "type": "relationship",
             "spec_version": "2.1",
-            "id": "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T09:16:03.000Z",
-            "modified": "2023-06-27T09:16:03.000Z",
-            "name": "Malicious url hosting downloader",
-            "description": "URL hosting the souspicious file.",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[url:value = 'https://zellewallet.site/Zelle104.27.exe']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T09:16:03Z",
-            "valid_until": "2023-07-04T09:16:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
+            "id": "relationship--9bd5a728-bf25-48f0-b9e3-0ab832ae578e",
+            "created": "2023-06-28T06:20:19.345442Z",
+            "modified": "2023-06-28T06:20:19.345442Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
+            "target_ref": "observed-data--1b3c0050-61b3-4218-9706-71e73ebb55cb"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--196fb779-da3b-4a52-a6c7-977ca0bd3f49",
+            "created": "2023-06-28T06:20:19.346445Z",
+            "modified": "2023-06-28T06:20:19.346445Z",
+            "relationship_type": "based-on",
+            "source_ref": "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
+            "target_ref": "observed-data--1b3c0050-61b3-4218-9706-71e73ebb55cb"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--18bb16f9-a6f0-4f09-aeff-6135310834a2",
+            "created": "2023-06-28T06:20:19.343887Z",
+            "modified": "2023-06-28T06:20:19.343887Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--02c707be-6710-48f7-8a2a-01e2f73b588d",
+            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ce0bba82-bae0-4cbb-972c-79b290be5dcd",
+            "created": "2023-06-28T06:20:19.344034Z",
+            "modified": "2023-06-28T06:20:19.344034Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--799fed3d-b432-4b8e-bfa5-f497b8ee1965",
+            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--0edc29c9-38c5-4536-a79e-4e66ebb14c8e",
+            "created": "2023-06-28T06:20:19.344158Z",
+            "modified": "2023-06-28T06:20:19.344158Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--b33898a2-bedc-4025-99eb-03e96c4e57e4",
+            "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
         },
         {
             "type": "relationship",
@@ -249,40 +293,6 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--9bd5a728-bf25-48f0-b9e3-0ab832ae578e",
-            "created": "2023-06-28T06:20:19.345442Z",
-            "modified": "2023-06-28T06:20:19.345442Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
-            "target_ref": "observed-data--1b3c0050-61b3-4218-9706-71e73ebb55cb"
-        },
-        {
-            "type": "indicator",
-            "spec_version": "2.1",
-            "id": "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
-            "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
-            "created": "2023-06-27T09:16:03.000Z",
-            "modified": "2023-06-27T09:16:03.000Z",
-            "name": "Malicious host hosting downloader",
-            "description": "Souspicious file host",
-            "indicator_types": [
-                "malicious-activity"
-            ],
-            "pattern": "[domain-name:value = 'zellewallet.site']",
-            "pattern_type": "stix",
-            "pattern_version": "2.1",
-            "valid_from": "2023-06-27T09:16:03Z",
-            "valid_until": "2023-07-04T09:16:03Z",
-            "kill_chain_phases": [
-                {
-                    "kill_chain_name": "category",
-                    "phase_name": "network-activity"
-                }
-            ]
-        },
-        {
-            "type": "relationship",
-            "spec_version": "2.1",
             "id": "relationship--401f83e2-08f4-45ee-8a91-95f2a2636e46",
             "created": "2023-06-28T06:20:19.346291Z",
             "modified": "2023-06-28T06:20:19.346291Z",
@@ -291,19 +301,9 @@
             "target_ref": "malware--6822d08f-5bd0-425b-abf4-15c9741b64d9"
         },
         {
-            "type": "relationship",
-            "spec_version": "2.1",
-            "id": "relationship--196fb779-da3b-4a52-a6c7-977ca0bd3f49",
-            "created": "2023-06-28T06:20:19.346445Z",
-            "modified": "2023-06-28T06:20:19.346445Z",
-            "relationship_type": "based-on",
-            "source_ref": "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
-            "target_ref": "observed-data--1b3c0050-61b3-4218-9706-71e73ebb55cb"
-        },
-        {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--9cdaa58e-4d0b-4dc4-b539-61c4d6f8d1ee",
+            "id": "report--f7c714b4-4f7d-4f89-9fe2-69d269039db5",
             "created_by_ref": "identity--9fa9e87c-4c07-4376-96b1-7dbe0ba5b8a6",
             "created": "2023-06-27T09:16:03.000Z",
             "modified": "2023-06-27T09:16:03.000Z",
@@ -316,18 +316,18 @@
                 "indicator--02c707be-6710-48f7-8a2a-01e2f73b588d",
                 "indicator--799fed3d-b432-4b8e-bfa5-f497b8ee1965",
                 "indicator--b33898a2-bedc-4025-99eb-03e96c4e57e4",
-                "relationship--18bb16f9-a6f0-4f09-aeff-6135310834a2",
-                "relationship--ce0bba82-bae0-4cbb-972c-79b290be5dcd",
-                "relationship--0edc29c9-38c5-4536-a79e-4e66ebb14c8e",
+                "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
+                "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
                 "relationship--80a5e8b1-3c6d-4504-8a20-c20b6c03321f",
                 "relationship--6d003555-3783-4c90-a41d-3ed2388481fe",
                 "relationship--4eff534f-23da-4edc-a790-9fc0de3579c5",
-                "indicator--5b5254c7-171e-4ec7-af75-e7c73c676275",
-                "relationship--334ef685-8e66-4ed3-8cf4-c9633c94301d",
                 "relationship--9bd5a728-bf25-48f0-b9e3-0ab832ae578e",
-                "indicator--0fcf7680-8181-481f-8606-7b1f58e8a3b0",
-                "relationship--401f83e2-08f4-45ee-8a91-95f2a2636e46",
-                "relationship--196fb779-da3b-4a52-a6c7-977ca0bd3f49"
+                "relationship--196fb779-da3b-4a52-a6c7-977ca0bd3f49",
+                "relationship--18bb16f9-a6f0-4f09-aeff-6135310834a2",
+                "relationship--ce0bba82-bae0-4cbb-972c-79b290be5dcd",
+                "relationship--0edc29c9-38c5-4536-a79e-4e66ebb14c8e",
+                "relationship--334ef685-8e66-4ed3-8cf4-c9633c94301d",
+                "relationship--401f83e2-08f4-45ee-8a91-95f2a2636e46"
             ],
             "object_marking_refs": [
                 "marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9"
