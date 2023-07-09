@@ -9,11 +9,13 @@ Three formats are available to download the reports:
 * [MISP](https://www.misp-project.org/) feed and events (retention: 7 days) - [[GO TO]](https://github.com/davidonzo/Threat-Intel/tree/master/digitalside-misp-feed)
 * Structured Threat Information Expression - [STIX™ v2](https://oasis-open.github.io/cti-documentation/stix/intro.html) (retention: 30 days) [[GO TO]](https://github.com/davidonzo/Threat-Intel/tree/master/stix2)
 * Comma Separated Values (retention: 30 days) [[GO TO]](https://github.com/davidonzo/Threat-Intel/tree/master/csv)
+* [Public API](https://apiosintds.readthedocs.io) using [apiosintDS](https://github.com/davidonzo/apiosintDS) library - [[DOCS]](https://apiosintds.readthedocs.io)
 * IoC lists of unique indicators in squid like format (retention: 7 days) splitted in:
 * * [URLs](https://osint.digitalside.it/Threat-Intel/lists/latesturls.txt)
 * * [IPs](https://osint.digitalside.it/Threat-Intel/lists/latestips.txt)
 * * [Domains](https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt)
 * [TAXII2](https://oasis-open.github.io/cti-documentation/resources#taxii-21-specification) server implementation containing STIX2 bundles shared reports (retention: 24 hours) - [[GO TO]](https://osint.digitalside.it/taxiiserver.html)
+* [apiosintDS MISP Module](https://github.com/MISP/misp-modules) available in any up to dated MISP instance - [[DOCS]](https://apiosintds.readthedocs.io/en/latest/userguidemisp.html)
 
 The majority of the information is stored in the MISP data format. So, best way to collect data is to subscribe to the [Digitalside-misp-feed](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/).
 
