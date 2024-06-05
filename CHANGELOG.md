@@ -1,12 +1,11 @@
 # CHANGELOG 2024 #1
 | ID | Date         | Type      | Details |
 |:-:| --------- | :-------: | ------- |
-| 1 | 2024-06-02 | **ADDED** | TAXII2 Endpoint moved to `https://osint.digitalside.it/taxii2reports/` |
-| 2 | 2023-06-22 | **ADDED** | New TAXII2 collection added: `OSINT.DigitalSide.it Network IoCs Collected (24h)` |
-| 3 | 2023-06-22 | **CHANGED** | IoCs included in `lists/latestdomains.json`, `lists/latestips.json` and `lists/latesturls.json` are coordinated with reports included in `stix2` directory in a way the `S>
-| 4 | 2023-06-22 | **ADDED** | Added 3 new lists in STIX2.1 format related to the Newtwork IoCs collected in the latest 24 hours. Lists are `lists/latestdomainsdaily.json`, `lists/latestdomainsdaily.json>
-| 5 | 2023-06-22 | **ADDED** | New example script file to interact with the `OSINT.DigitalSide.it Network IoCs Collected (24h)` TAXII2 collection => [`taxiigetdomains.py`](https://github.com/davidonzo/Th>
-| 6 | 2023-06-22 | **CHANGED** | Updated local [README.md](https://github.com/davidonzo/Threat-Intel/blob/master/tools/TAXII2/README.md) and official website [TAXII2 support page](https://osint.digitalsi>
+| 1 | 2024-06-02 | **ADDED** | Added OSINT enrichments data to `core system` |
+| 2 | 2024-06-02 | **CHANGED** | `VirusTotal` data ingestion |
+| 3 | 2024-06-02 | **ADDED** | Data enrichment to MISP events (where available) added as `Tag` attributes |
+| 4 | 2024-06-02 | **ADDED** | Data enrichment to HTML, JSON and STIX2 reports (where available). Enrichment has been added as `labels` attribute attached to the `Report` object |
+| 5 | 2024-06-02 | **IMPROVED** | STIX reports available via TAXII server can be filtered by `Report:labels` |
 
 
 
