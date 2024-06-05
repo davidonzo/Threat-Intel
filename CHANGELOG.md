@@ -3,9 +3,9 @@
 |:-:| --------- | :-------: | ------- |
 | 1 | 2024-06-02 | **ADDED** | Added OSINT enrichments data to `core system` |
 | 2 | 2024-06-02 | **CHANGED** | `VirusTotal` data ingestion |
-| 3 | 2024-06-02 | **ADDED** | Data enrichment to MISP events (where available) added as `Tag` attributes |
-| 4 | 2024-06-02 | **ADDED** | Data enrichment to HTML, JSON and STIX2 reports (where available). Enrichment has been added as `labels` attribute attached to the `Report` object |
-| 5 | 2024-06-02 | **IMPROVED** | STIX reports available via TAXII server can be filtered by `Report:labels` |
+| 3 | 2024-06-02 | **ADDED** | Data enrichment to [MISP events](https://osint.digitalside.it/Threat-Intel/digitalside-misp-feed/) (where available) added as `Tag` attributes |
+| 4 | 2024-06-02 | **ADDED** | Data enrichment to [HTML](https://osint.digitalside.it/report/) and [STIX2](https://osint.digitalside.it/Threat-Intel/stix2/) reports (where available). Enrichment has been added as `labels` attribute attached to the `Report` object |
+| 5 | 2024-06-02 | **IMPROVED** | STIX reports available via [TAXII server](https://osint.digitalside.it/taxiiserver.html) can be filtered by `Report:labels` |
 
 
 
